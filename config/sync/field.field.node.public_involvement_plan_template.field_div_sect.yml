@@ -1,0 +1,29 @@
+uuid: 17d3e410-997e-4109-bd79-bccd9e7b547c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_div_sect
+    - node.type.public_involvement_plan_template
+    - taxonomy.vocabulary.sections_and_divisions
+id: node.public_involvement_plan_template.field_div_sect
+field_name: field_div_sect
+entity_type: node
+bundle: public_involvement_plan_template
+label: Div/Sect
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sections_and_divisions: sections_and_divisions
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

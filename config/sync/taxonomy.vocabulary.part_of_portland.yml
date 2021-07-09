@@ -1,0 +1,8 @@
+uuid: 9e7db9ca-0cf8-4d35-a047-27a10bb27839
+langcode: en
+status: true
+dependencies: {  }
+name: 'Part of Portland'
+vid: part_of_portland
+description: 'Regions of Portland. '
+weight: 0

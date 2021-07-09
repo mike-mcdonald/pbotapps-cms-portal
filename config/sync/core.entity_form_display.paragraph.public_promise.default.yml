@@ -1,0 +1,42 @@
+uuid: 4433a1db-ca03-4237-9853-d7653a599360
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.public_promise.field_promdescription
+    - field.field.paragraph.public_promise.field_promparagraph
+    - paragraphs.paragraphs_type.public_promise
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.public_promise.default
+targetEntityType: paragraph
+bundle: public_promise
+mode: default
+content:
+  field_promdescription:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_promparagraph:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

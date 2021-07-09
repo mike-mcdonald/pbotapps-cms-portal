@@ -1,0 +1,34 @@
+diff --git a/src/Plugin/OpenIDConnectClient/WindowsAad.php b/src/Plugin/OpenIDConnectClient/WindowsAad.php
+index 8a2d2ca..32bb932 100644
+--- a/src/Plugin/OpenIDConnectClient/WindowsAad.php
++++ b/src/Plugin/OpenIDConnectClient/WindowsAad.php
+@@ -155,6 +155,15 @@ class WindowsAad extends OpenIDConnectClientBase {
+     ];
+   }
+ 
++
++  /**
++   * {@inheritdoc}
++   */
++  public function authorize($scope = 'openid email') {
++    // Use GitHub specific authorisations.
++    return parent::authorize('openid profile email user.read');
++  }
++
+   /**
+    * Implements OpenIDConnectClientInterface::retrieveIDToken().
+    *
+@@ -193,11 +202,11 @@ class WindowsAad extends OpenIDConnectClientBase {
+     // Add a Graph API as resource if an option is selected.
+     switch ($this->configuration['userinfo_graph_api_wa']) {
+       case 1:
+-        $request_options['form_params']['resource'] = 'https://graph.windows.net';
++        $request_options['form_params']['scope'] = 'user.read';
+         break;
+ 
+       case 2:
+-        $request_options['form_params']['resource'] = 'https://graph.microsoft.com';
++        $request_options['form_params']['scope'] = 'user.read';
+         break;
+     }
+ 

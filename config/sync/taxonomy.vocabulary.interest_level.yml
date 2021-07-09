@@ -1,0 +1,8 @@
+uuid: a060ef3d-014c-40af-9746-14c08197057a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Interest Level'
+vid: interest_level
+description: ''
+weight: 0

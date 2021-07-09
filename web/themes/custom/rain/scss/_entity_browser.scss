@@ -1,0 +1,28 @@
+/**
+ * @file
+ * Styles for lists of entities display using FieldWidgetDisplayInterface plugins.
+ */
+/*! purgecss start ignore */
+.entities-list .item-container {
+  @apply flex items-center px-2 py-1 -mx-2;
+  &>img,
+  &>input {
+    @apply mx-2 block;
+  }
+  input:first-of-type {
+    @apply ml-auto;
+  }
+}
+
+.entities-list.sortable .item-container:hover {
+  @apply cursor-move bg-blue-100 rounded opacity-100;
+}
+
+.entities-list .rendered-entity {
+  @apply flex items-center;
+}
+
+.entities-list.hidden {
+  @apply invisible;
+}
+/*! purgecss end ignore */

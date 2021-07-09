@@ -1,0 +1,22 @@
+/*! purgecss start ignore */
+.views-display-columns {
+  @apply flex flex-row -mx-3;
+  .views-display-column {
+    @apply flex-1 mx-3;
+  }
+}
+
+.views-display-setting {
+  @apply mb-3;
+  a {
+    @apply border-black border-b-2;
+  }
+}
+
+.views-display-link {
+  @apply mr-3 my-3 border-b-2 border-current inline-flex;
+  + .views-display-link {
+    @apply ml-0;
+  }
+}
+/*! purgecss end ignore */

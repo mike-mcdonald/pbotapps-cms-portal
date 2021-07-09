@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700,800&display=swap');
+
+@import "typography";
+@import "buttons";
+@import "comments";
+@import "dropbuttons";
+@import "entity_browser";
+@import "environment_indicator";
+@import "facets";
+@import "forms";
+@import "images";
+@import "links";
+@import "lists";
+@import "menus";
+@import "views";
+@import "select2/layout";
+
+details[open] {
+  > summary {
+    @apply border-b pb-3 mb-3;
+  }
+}

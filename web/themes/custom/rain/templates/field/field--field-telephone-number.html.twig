@@ -1,0 +1,26 @@
+{% embed 'field.html.twig' with {
+  'item_classes': [
+    'flex',
+    'items-center',
+  ],
+} %}
+  {% block content %}
+    {%- for item in items -%}
+      {% set content %}
+        <span{{ create_attribute().addClass(item_classes) }}>
+          {% include active_theme_path() ~ '/icons/phone.svg' %}
+          <span class="ml-2 border-b-2 border-current">{{ item.content['#title'] }}</span>
+        </span>
+      {% endset %}
+      {% include '@rain/component/link.html.twig' with {
+        attributes: item.attributes,
+        classes: [
+          'border-0',
+          'flex',
+        ],
+        url: 'tel:+1' ~ item.content['#title']|trim,
+        text: content,
+      } only %}
+    {%- endfor -%}
+  {% endblock %}
+{% endembed %}

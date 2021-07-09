@@ -1,0 +1,6 @@
+/artifacts/
+/vendor/
+.env
+
+public.key
+private.key

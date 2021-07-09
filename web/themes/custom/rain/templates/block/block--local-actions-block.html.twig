@@ -1,0 +1,28 @@
+{% embed "block.html.twig" with {
+  'block_classes': [
+    'my-2',
+  ],
+  'content_classes':[
+    'flex',
+    'flex-row',
+    'flex-wrap',
+  ]
+} %}
+  {#
+    /**
+     * @file
+     * Theme override for local actions (primary admin actions.)
+     */
+    #}
+  {% block content %}
+    {% if content %}
+      {% spaceless %}
+        <nav{{create_attribute({'class':content_classes})}}>
+          <ul class="list-none -mx-2 flex flex-wrap items-center">
+            {{ content }}
+          </ul>
+        </nav>
+      {% endspaceless %}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

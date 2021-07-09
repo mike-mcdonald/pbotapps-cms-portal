@@ -1,0 +1,97 @@
+/*! purgecss start ignore */
+.form-required {
+  @apply text-red-600;
+}
+
+#edit-actions {
+  @apply -mx-2;
+}
+
+.field-multiple-table {
+  .label {
+    font-size: inherit;
+  }
+}
+
+.container-inline {
+  div,
+  label {
+    @apply inline-flex;
+  }
+}
+
+.js-form-type-checkbox,
+.js-form-type-radio {
+  position: relative;
+
+  label {
+
+    label {
+      @apply pl-8;
+    }
+  }
+
+  input {
+    @apply p-1 w-6 h-6 cursor-pointer;
+    z-index: 1;
+    margin: 0;
+    zoom: 1;
+
+    &[type="checkbox"]:checked {
+      + label::after {
+        opacity: 1;
+        transform: translateX(40%) translateY(110%) rotate(-45deg);
+      }
+    }
+
+    &[type="radio"]:checked {
+      + label::after {
+        opacity: 1;
+        transform: translateX(40%) translateY(40%);
+      }
+    }
+  }
+
+  [type="checkbox"] {
+    &:focus {
+        @apply ring;
+    }
+  }
+
+  [type="radio"] {
+    &:focus {
+      @apply ring;
+
+    }
+  }
+}
+
+.field-ui-overview .field-plugin-settings-editing .field-plugin-type + * {
+  @apply hidden;
+}
+.cke_editable {
+  @apply px-2;
+}
+
+#views-exposed-form-full-index-page-1 {
+  .form-item-fulltext {
+    @apply col-span-3;
+  }
+}
+
+#edit-group-content-wrapper {
+  .gcontent-type-top {
+    @apply flex flex-wrap items-center justify-between;
+  }
+
+  .gc-field-dropbutton-wrapper {
+    .dropbutton {
+      @apply list-none flex items-center;
+    }
+  }
+
+  .form-item-group-content-add-more-add-relation {
+    @apply my-2;
+  }
+}
+/*! purgecss end ignore */

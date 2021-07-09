@@ -1,0 +1,65 @@
+.select2-selection--multiple {
+  @apply bg-gray-100 appearance-none block border border-gray-500 rounded w-full py-3 px-4;
+  cursor: text;
+
+  .select2-selection__rendered {
+    @apply pl-0 list-none flex flex-wrap items-center;
+  }
+
+  .select2-selection__placeholder {
+    float: left;
+  }
+
+  .select2-selection__clear {
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .select2-selection__choice {
+    @apply bg-blue-100 border rounded border-blue-800 mr-1 px-2 py-1;
+    cursor: default;
+  }
+
+  .select2-selection__choice__remove {
+    @apply cursor-pointer mr-1 font-bold;
+  }
+}
+
+&[dir="rtl"] {
+  .select2-selection--multiple {
+    .select2-selection__choice,
+    .select2-selection__placeholder,
+    .select2-search--inline {
+      float: right;
+    }
+
+    .select2-selection__choice {
+      margin-left: 5px;
+      margin-right: auto;
+    }
+
+    .select2-selection__choice__remove {
+      margin-left: 2px;
+      margin-right: auto;
+    }
+  }
+}
+
+&.select2-container--focus {
+  .select2-selection--multiple {
+    @apply outline-none bg-white border-gray-900;
+  }
+}
+
+&.select2-container--disabled {
+  .select2-selection--multiple {
+    background-color: #eee;
+    cursor: default;
+  }
+
+  .select2-selection__choice__remove {
+    display: none;
+  }
+}

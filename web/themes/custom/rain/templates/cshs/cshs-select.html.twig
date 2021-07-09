@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a CSHS select element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the select tag.
+ * - options: The option element children.
+ *
+ * @see template_preprocess_cshs_select()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% include 'select.html.twig' with {
+  'attributes': attributes,
+  wrapper_classes: [
+    'relative',
+    'grid',
+    'grid-cols-1',
+    'gap-1',
+  ],
+  required: element["#required"],
+  'add_icon': 'false',
+} %}
+{#
+{% spaceless %}
+  <select{{ attributes }}>
+    {% for option in options %}
+      <option value="{{ option.value }}" data-parent="{{ option.parent }}"{{ option.selected ? ' selected="selected"' }}>
+        {{ option.label }}
+      </option>
+    {% endfor %}
+  </select>
+{% endspaceless %} #}

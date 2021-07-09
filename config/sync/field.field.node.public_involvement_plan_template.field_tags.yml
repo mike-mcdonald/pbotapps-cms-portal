@@ -1,0 +1,29 @@
+uuid: 452e9f1f-4d07-46d8-90f7-da3f0518cbca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.public_involvement_plan_template
+    - taxonomy.vocabulary.part_of_portland
+id: node.public_involvement_plan_template.field_tags
+field_name: field_tags
+entity_type: node
+bundle: public_involvement_plan_template
+label: 'Region of Portland'
+description: '(Central City/Lloyd, Central Northeast, East, Inner Northeast, North, Portland (citywide), Southeast, Southwest, West/Northwest)'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      part_of_portland: part_of_portland
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: part_of_portland
+field_type: entity_reference

@@ -1,0 +1,240 @@
+uuid: 68474520-48b0-47de-8d81-91bf9a2634c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.public_involvement_plan_template.field_budget
+    - field.field.node.public_involvement_plan_template.field_consultant
+    - field.field.node.public_involvement_plan_template.field_div_sect
+    - field.field.node.public_involvement_plan_template.field_impact_level
+    - field.field.node.public_involvement_plan_template.field_interest_level
+    - field.field.node.public_involvement_plan_template.field_legal_requirements
+    - field.field.node.public_involvement_plan_template.field_legal_mandate
+    - field.field.node.public_involvement_plan_template.field_partners
+    - field.field.node.public_involvement_plan_template.field_description
+    - field.field.node.public_involvement_plan_template.field_staff
+    - field.field.node.public_involvement_plan_template.field_website
+    - field.field.node.public_involvement_plan_template.field_public_promise
+    - field.field.node.public_involvement_plan_template.field_questions
+    - field.field.node.public_involvement_plan_template.field_timeframe
+    - field.field.node.public_involvement_plan_template.field_benefit
+    - field.field.node.public_involvement_plan_template.field_promise_description
+    - field.field.node.public_involvement_plan_template.field_related_documents
+    - field.field.node.public_involvement_plan_template.field_strategy
+    - field.field.node.public_involvement_plan_template.field_tags
+    - field.field.node.public_involvement_plan_template.field_intended_outcomes
+    - field.field.node.public_involvement_plan_template.field_impact_description
+    - field.field.node.public_involvement_plan_template.field_interest_description
+    - field.field.node.public_involvement_plan_template.field_key_decision
+    - node.type.public_involvement_plan_template
+  module:
+    - ds
+    - entity_reference_revisions
+    - file
+    - options
+    - paragraphs
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      content:
+        - node_title
+        - field_division_section_res
+        - field_consultant_if_applicable_
+        - field_questions
+        - field_key_decision
+        - field_intended_outcomes_or_objec
+        - field_interest_level
+        - field_impact_level
+        - field_benefit
+        - field_strategy
+        - field_public_promise
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+id: node.public_involvement_plan_template.default
+targetEntityType: node
+bundle: public_involvement_plan_template
+mode: default
+content:
+  field_budget:
+    type: entity_reference_revisions_entity_view
+    weight: 26
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_consultant:
+    weight: 20
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_div_sect:
+    weight: 28
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_impact_level:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_interest_level:
+    weight: 6
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_legal_requirements:
+    weight: 15
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_legal_mandate:
+    weight: 16
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_partners:
+    weight: 21
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_description:
+    weight: 23
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_staff:
+    weight: 24
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_website:
+    weight: 29
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_public_promise:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_questions:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_timeframe:
+    type: entity_reference_revisions_entity_view
+    weight: 25
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_benefit:
+    type: basic_string
+    weight: 8
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_promise_description:
+    weight: 32
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_related_documents:
+    weight: 33
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_strategy:
+    type: paragraph_summary
+    weight: 9
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_tags:
+    weight: 31
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_intended_outcomes:
+    weight: 14
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_impact_description:
+    weight: 17
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_interest_description:
+    weight: 18
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_key_decision:
+    type: basic_string
+    weight: 4
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  links: true

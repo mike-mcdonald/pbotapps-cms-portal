@@ -1,0 +1,59 @@
+uuid: 0cd1a44d-252c-423e-9f7a-83688bdada43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.public_engagement_timeframe.field_date
+    - field.field.paragraph.public_engagement_timeframe.field_engagement_activity
+    - field.field.paragraph.public_engagement_timeframe.field_involvement_strategy_and_t
+    - paragraphs.paragraphs_type.public_engagement_timeframe
+  module:
+    - datetime
+    - ds
+    - field_layout
+third_party_settings:
+  field_layout:
+    id: ds_3col_equal_width
+    settings:
+      label: ''
+      wrappers:
+        left: div
+        middle: div
+        right: div
+      outer_wrapper: div
+      attributes: ''
+      link_attribute: ''
+      link_custom: ''
+      classes:
+        layout_class: {  }
+id: paragraph.public_engagement_timeframe.default
+targetEntityType: paragraph
+bundle: public_engagement_timeframe
+mode: default
+content:
+  field_date:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: left
+  field_engagement_activity:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: left
+  field_involvement_strategy_and_t:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: left
+hidden:
+  created: true
+  status: true
+  uid: true

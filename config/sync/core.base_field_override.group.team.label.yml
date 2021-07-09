@@ -1,0 +1,18 @@
+uuid: 073fd8c5-780f-4b51-946c-c8fef4ae023f
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+id: group.team.label
+field_name: label
+entity_type: group
+bundle: team
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

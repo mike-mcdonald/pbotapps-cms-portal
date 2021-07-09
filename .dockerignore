@@ -1,0 +1,11 @@
+.git/
+.github/
+.gitignore
+
+.editorconfig
+
+.docker/
+chart/
+docker-compose.yml
+
+.vscode/

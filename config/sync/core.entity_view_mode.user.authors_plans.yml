@@ -1,0 +1,10 @@
+uuid: acb492b8-fa00-48d0-9694-b59b220a1409
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.authors_plans
+label: 'Authors Plans'
+targetEntityType: user
+cache: true

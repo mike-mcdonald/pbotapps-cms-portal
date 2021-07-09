@@ -1,0 +1,29 @@
+uuid: 96b1d93b-ab9a-4298-b333-d78ec76be711
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.public_promise.field_promdescription
+    - field.field.paragraph.public_promise.field_promparagraph
+    - paragraphs.paragraphs_type.public_promise
+id: paragraph.public_promise.default
+targetEntityType: paragraph
+bundle: public_promise
+mode: default
+content:
+  field_promdescription:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_promparagraph:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

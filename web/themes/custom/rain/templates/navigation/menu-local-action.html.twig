@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for a single local action link.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper element.
+ * - link: A rendered link element.
+ *
+ * @see template_preprocess_menu_local_action()
+ */
+#}
+{%
+  set item_classes = item_classes|default([
+    'm-2',
+  ])
+%}
+{%
+  set action_classes = action_classes|default([])
+%}
+<li{{ create_attribute({class: item_classes})}}>
+  <a{{attributes.addClass(action_classes)}} href="{{ link['#url'].toString() }}">
+    {{ link['#title'] }}
+  </a>
+</li>

@@ -1,0 +1,255 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the rain theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function rain_preprocess_html(array &$variables) {
+  /* Add class to html tag */
+  //$variables['html_attributes']->addClass('no-js');
+
+  // Don't display the site name twice on the front page (and potentially others)
+  /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
+    $variables['head_title'] = $variables['head_title_array']['name'];
+  }*/
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function rain_page_attachments_alter(array &$page) {
+  // Tell IE to use latest rendering engine (not to use compatibility mode).
+  /*$ie_edge = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+    'http-equiv' => 'X-UA-Compatible',
+    'content' => 'IE=edge',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
+}
+
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+function rain_preprocess_page(array &$variables) {
+
+  /** @var \Drupal\Core\Routing\AdminContext $admin_context */
+  $admin_context = \Drupal::service('router.admin_context');
+  if (!$admin_context->isAdminRoute()) {
+    $variables['is_admin'] = FALSE;
+  }
+  else {
+    $variables['is_admin'] = TRUE;
+  }
+}
+
+function rain_preprocess_views_view_grid(array &$variables) {
+  foreach ($variables['items'] as $item) {
+    foreach ($item['content'] as $content) {
+      $content['attributes']['style'] = NULL;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function rain_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_node_alter().
+ */
+function rain_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  /*$node = $variables['elements']['#node'];
+
+  if ($variables['elements']['#view_mode'] == "full") {
+
+  }*/
+}
+
+function rain_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+
+   /** @var \Drupal\taxonomy\TermInterface $term */
+  $term = $variables['elements']['#taxonomy_term'];
+
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+}
+
+function rain_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if (isset($variables["element"]["#theme"]) && is_array($variables["element"]["#theme"])) {
+    foreach ($variables["element"]["#theme"] as $key => $value) {
+      array_unshift ($suggestions, $variables["theme_hook_original"] . '__' . $value);
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_input_alter().
+ */
+function rain_theme_suggestions_input_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  if (isset($element['#attributes']['data-twig-suggestion'])) {
+    $suggestions[] = 'input__' . $element['#type'] . '__' . $element['#attributes']['data-twig-suggestion'];
+  }
+ }
+
+/**
+ * Implements hook_preprocess_HOOK() for Block document templates.
+ */
+function rain_preprocess_block(array &$variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function rain_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+
+  $entity_type = $element['#entity_type'];
+  $bundle = $element['#bundle'];
+  $view_mode = $element['#view_mode'];
+  $field_type = $element['#field_type'];
+  $field_name = $element['#field_name'];
+
+  if (isset($element['#third_party_settings']['layout_builder']['view_mode'])) {
+    $view_mode = $element['#third_party_settings']['layout_builder']['view_mode'];
+  }
+
+  $suggestions[] = 'field__' . $view_mode;
+  $suggestions[] = 'field__' . $field_type  . '__' . $bundle;
+  $suggestions[] = 'field__' . $field_type  . '__' . $view_mode;
+  $suggestions[] = 'field__' . $field_name  . '__' . $bundle;
+  $suggestions[] = 'field__' . $field_name  . '__' . $view_mode;
+  $suggestions[] = 'field__' . $entity_type . '__' . $view_mode;
+  $suggestions[] = 'field__' . $entity_type . '__' . $bundle;
+  $suggestions[] = 'field__' . $entity_type . '__' . $bundle . '__' . $view_mode;
+  $suggestions[] = 'field__' . $entity_type . '__' . $field_name . '__' .$view_mode ;
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function rain_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+  /*$element = $variables['element'];
+  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
+    $suggestions[] = 'fieldset__form_composite';
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function rain_preprocess_node(array &$variables) {
+  // Default to turning off byline/submitted.
+  //$variables['display_submitted'] = FALSE;
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function rain_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_form().
+ */
+function rain_preprocess_form(array &$variables) {
+  //$variables['attributes']['novalidate'] = 'novalidate';
+}
+
+/**
+ * Implements hook_preprocess_input().
+ */
+function rain_preprocess_input(array &$variables) {
+  if(isset($variables['element']['#required']) && $variables['element']['#required'] == TRUE) {
+    $variables['required'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_select().
+ */
+function rain_preprocess_select(array &$variables) {
+  if(isset($variables['element']['#required']) && $variables['element']['#required'] == TRUE) {
+    $variables['required'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function rain_preprocess_field(array &$variables, $hook) {
+  /*switch ($variables['element']['#field_name']) {
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_details().
+ */
+function rain_preprocess_details(array &$variables) {
+  /*$variables['attributes']['class'][] = 'details';
+  $variables['summary_attributes']['class'] = 'summary';*/
+}
+
+/**
+ * Implements hook_theme_suggestions_details_alter().
+ */
+function rain_theme_suggestions_details_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task().
+ */
+function rain_preprocess_menu_local_task(array &$variables) {
+  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+}
+
+/**
+ * Implements hook_preprocess_facets_item_list().
+ */
+function rain_preprocess_facets_item_list(array &$variables) {
+  /* value in items is a link which needs to be styled here and not in a template */
+  $link_classes = [
+    'px-2',
+    'py-1',
+    'rounded-sm',
+    'flex',
+    'items-center',
+    'justify-between',
+    'transition',
+    'ease-in-out',
+    'duration-15',
+    'hover:bg-gray-100',
+    'focus:bg-gray-100',
+    'focus:shadow-outline',
+  ];
+
+  $active_classes = [
+    'bg-gray-100',
+  ];
+
+  foreach ($variables['items'] as $key => &$item) {
+    if(isset($item['value']['#title']['#is_active']) && $item['value']['#title']['#is_active']) {
+      $item['value']['#attributes']['class'] = array_merge($active_classes, $link_classes);
+    }
+    else {
+      $item['value']['#attributes']['class'] = $link_classes;
+    }
+  }
+}

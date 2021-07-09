@@ -1,0 +1,105 @@
+{% embed 'links.html.twig' with {
+  'list_classes': [
+    'list-none',
+    'relative',
+  ],
+  'list_item_classes': [
+    'flex',
+    'flex-row',
+    'items-center',
+    'justify-between',
+    'bg-cyan-500',
+    'appearance-none',
+    'cursor-pointer',
+    'border',
+    'border-transparent',
+    'rounded-lg',
+    'shadow',
+    'p-3',
+    'text-white',
+    'focus:outline-none',
+    'focus:border-cyan-800',
+    'hover:border-cyan',
+    'transition',
+    'ease-in-out',
+    'duration-150',
+  ],
+  link_classes: [
+    'border-0',
+    'whitespace-no-wrap',
+    'pr-3',
+  ]
+} %}
+{% set secondary_list_attributes = secondary_list_attributes|default(create_attribute()) %}
+{% set secondary_list_classes = secondary_list_classes|default([
+  'relative',
+  'list-none',
+  'secondary-action',
+]) %}
+
+{% set secondary_list_item_classes = secondary_list_item_classes|default([
+  'flex',
+  'flex-row',
+  'items-center',
+  'justify-between',
+  'hover:bg-fog-600',
+  'appearance-none',
+  'cursor-pointer',
+  'p-2',
+  'text-body',
+  'focus:outline-none',
+]) %}
+
+{% set pin_attributes = pin_attributes|default(create_attribute()) %}
+{% set pin_classes = pin_classes|default([
+  'absolute',
+  'top-0',
+  'right-0',
+  'z-50',
+  'w-64',
+  'mt-1',
+  'py-1',
+  'bg-fog-500',
+  'border',
+  'rounded',
+  'shadow-lg',
+]) %}
+
+{% set dropbutton_classes = dropbutton_classes|default([
+  'dropbutton-action',
+]) %}
+
+{% block list %}
+  <div{{ attributes.addClass(list_classes) }}>
+    {% set first = links|first %}
+    <span{{ first.attributes.addClass(list_item_classes).addClass(dropbutton_classes) }}>
+      {%- if first.link -%}
+        <a{{ link_attributes.addClass(link_classes) }} href="{{ first.link['#url'].toString() }}">{{ first.text }}</a>
+      {%- elseif first.text_attributes -%}
+        <span{{ first.text_attributes }}>{{ first.text }}</span>
+      {%- else -%}
+        {{ first.text }}
+      {%- endif -%}
+    </span>
+    {% if links|length > 1 %}
+      <div{{ secondary_list_attributes.addClass(secondary_list_classes).addClass(dropbutton_classes) }}>
+        <div{{ pin_attributes.addClass(pin_classes) }}>
+          {%- for item in links -%}
+            {% if not loop.first %}
+            <span{{ item.attributes.removeClass(secondary_list_classes).removeClass(dropbutton_classes).addClass(secondary_list_item_classes) }}>
+              {%- if item.link -%}
+                <a{{ link_attributes.addClass(link_classes) }} href="{{ item.link['#url'].toString() }}">{{ item.text }}</a>
+              {%- elseif item.text_attributes -%}
+                <span{{ item.text_attributes }}>{{ item.text }}</span>
+              {%- else -%}
+                {{ item.text }}
+              {%- endif -%}
+            </span>
+            {% endif %}
+          {%- endfor -%}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
+{% endembed %}

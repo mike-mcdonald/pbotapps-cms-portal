@@ -1,0 +1,88 @@
+version: "3.3"
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: public_involvement
+      POSTGRES_USER: public_involvement
+      POSTGRES_PASSWORD: public_involvement
+    volumes:
+      - "./artifacts:/docker-entrypoint-initdb.d"
+      - "db:/var/lib/postgresql/data"
+    networks:
+      - code-network
+      - db-network
+
+  redis:
+    image: redis
+    networks:
+      - cache-network
+
+  ui-web:
+    build:
+      context: ./ui
+    environment:
+      PANTHEON_ENVIRONMENT: dev
+      FASTCGI_HOST: cms
+      FASTCGI_PORT: 9000
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./ui:/home/node:cached"
+    networks:
+      - code-network
+      - cache-network
+
+  cms-web:
+    build:
+      context: .docker/cms
+    environment:
+      PANTHEON_ENVIRONMENT: dev
+      FASTCGI_HOST: cms
+      FASTCGI_PORT: 9000
+    ports:
+      - "8888:80"
+    volumes:
+      - "./.docker/cms/rootfs/etc/nginx/templates:/etc/nginx/templates:cached"
+      - "./cms:/var/www/html:cached"
+    networks:
+      - code-network
+      - cache-network
+
+  cms:
+    build:
+      context: .docker/php
+      args:
+        INSTALL_XDEBUG: "true"
+        INSTALL_COMPOSER: "true"
+    user: www-data
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_NAME: public_involvement
+      DATABASE_USER: public_involvement
+      DATABASE_PASSWORD: public_involvement
+      CACHE_HOST: redis
+      CACHE_PORT: 6379
+      DRUPAL_ENV: development
+      XDEBUG_CONFIG: mode=debug client_host=host.docker.internal start_with_request=yes
+      AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
+      AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
+    volumes:
+      - "./cms:/var/www/html:cached"
+    networks:
+      - code-network
+      - cache-network
+      - db-network
+
+networks:
+  code-network:
+    driver: bridge
+  db-network:
+    driver: bridge
+  cache-network:
+    driver: bridge
+
+volumes:
+  tmp:
+  db:

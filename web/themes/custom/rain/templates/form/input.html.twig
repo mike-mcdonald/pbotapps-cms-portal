@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ * - required: Exists if this input is required
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{%
+  set input_classes = input_classes|default([
+    required ? 'bg-red-100' : 'bg-gray-100',
+    required ? 'text-red-900' : 'text-current',
+    'appearance-none',
+    'block',
+    'border',
+    required ? 'border-red-500' : 'border-gray-500',
+    'rounded',
+    'w-full',
+    'px-4',
+    'py-3',
+    'focus:outline-none',
+    'focus:shadow-outline',
+    'focus:bg-white',
+    'focus:text-black',
+    'focus:border-gray-900',
+    'transition',
+    'ease-in-out',
+    'duration-150',
+  ])
+%}
+{% spaceless %}
+	<input{{attributes.addClass(input_classes)}}/>{{ children }}
+{% endspaceless %}

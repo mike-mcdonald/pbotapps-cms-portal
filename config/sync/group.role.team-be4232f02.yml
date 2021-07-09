@@ -1,0 +1,17 @@
+uuid: c2fd7b7d-f2a4-4dae-b4bb-52929b170ac1
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+  enforced:
+    config:
+      - user.role.bureau_spokesperson
+id: team-be4232f02
+label: 'Bureau Spokesperson'
+weight: -6
+internal: true
+audience: outsider
+group_type: team
+permissions_ui: false
+permissions: {  }

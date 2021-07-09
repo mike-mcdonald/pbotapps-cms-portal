@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set layout_classes = layout_classes|default([
+    'my-2',
+    'p-4',
+    'border',
+    'rounded',
+    'shadow',
+  ])
+%}
+{% if content %}
+  <section{{region_attributes.content.addClass(layout_classes)}}>
+    {{ content.content }}
+  </section>
+{% endif %}

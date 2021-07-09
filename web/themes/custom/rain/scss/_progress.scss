@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Progress behavior.
+ */
+/*! purgecss start ignore */
+.progress {
+  @apply relative;
+}
+.progress__track {
+  @apply border;
+}
+.progress__bar {
+  @apply bg-green;
+}
+/*! purgecss end ignore */
