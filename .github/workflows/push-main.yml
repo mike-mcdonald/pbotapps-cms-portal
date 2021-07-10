@@ -1,0 +1,269 @@
+name: Push to main
+
+on:
+  push:
+    branches: [main]
+
+env:
+  REPOSITORY: pbotapps.azurecr.io/public-involvement-planning
+  COMPOSER_MEMORY_LIMIT: -1
+
+jobs:
+  cms-build:
+    name: "Install CMS dependencies"
+    runs-on: "ubuntu-20.04"
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version: ["7.4"]
+        drupal-release: ["stable"]
+        composer-channel: ["stable"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache composer packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-composer-packages
+        with:
+          path: |
+            ./vendor
+            ./web/core
+            ./web/modules/contrib
+            ./web/profiles/contrib
+            ./web/themes/contrib
+          key: composer-build-v4-${{ env.cache-name }}-${{ hashFiles('./composer.lock') }}
+          restore-keys: |
+            composer-build-v4-${{ env.cache-name }}-
+            composer-build-v4-
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          extensions: gd
+
+      - name: Update composer
+        run: composer --verbose self-update --${{ matrix.composer-channel }}
+
+      - name: Dump composer verson
+        run: composer --version
+
+      - name: Validate composer.json
+        run: composer --verbose validate
+
+      - name: Install dependencies
+        run: composer --verbose --no-dev install
+
+  cms-php-docker-build:
+    name: "Build PHP Docker image"
+    needs: cms-build
+    runs-on: "ubuntu-20.04"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Make image directory
+        run: mkdir -p ./.docker/images/fpm
+
+      - name: Cache docker image
+        id: docker-cache-hit
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-php-docker
+        with:
+          path: ./.docker/images/fpm/base.tar.gz
+          key: ${{ runner.os }}-${{ env.cache-name }}-v2-${{ hashFiles('.docker/php/**') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-v2-
+
+      - name: Build base image
+        if: ${{ !steps.docker-cache-hit.outputs.cache-hit }}
+        run: |
+          docker \
+          build \
+          -t base \
+          -f ./.docker/php/Dockerfile \
+          --build-arg INSTALL_COMPOSER=false \
+          ./.docker/php
+
+      - name: Save base image
+        if: ${{ !steps.docker-cache-hit.outputs.cache-hit }}
+        run: docker save base | gzip > ./.docker/images/fpm/base.tar.gz
+
+      - name: Load base image
+        if: ${{ steps.docker-cache-hit.outputs.cache-hit }}
+        run: |
+          gzip --keep -d ./.docker/images/fpm/base.tar.gz
+          docker load --input ./.docker/images/fpm/base.tar
+
+      - name: Cache composer packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-composer-packages
+        with:
+          path: |
+            ./vendor
+            ./web/core
+            ./web/modules/contrib
+            ./web/profiles/contrib
+            ./web/themes/contrib
+          key: composer-build-v4-${{ env.cache-name }}-${{ hashFiles('./composer.lock') }}
+          restore-keys: |
+            composer-build-v4-${{ env.cache-name }}-
+            composer-build-v4-
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: gd
+
+      - name: Update composer
+        run: composer --verbose self-update --stable
+
+      - name: Install dependencies
+        run: composer --verbose --no-dev install
+
+      - name: Build full image
+        run: |
+          docker build \
+          -t $REPOSITORY/fpm \
+          -f ./.github/docker/Dockerfile \
+          --build-arg USER=www-data \
+          --build-arg GROUP=www-data \
+          .
+
+      - name: Save full image
+        run: docker save $REPOSITORY/fpm | gzip > ./.docker/images/fpm/full.tar.gz
+
+      - name: Upload full image
+        uses: actions/upload-artifact@v2
+        with:
+          name: fpm-image
+          path: ./.docker/images/fpm/full.tar.gz
+
+  cms-nginx-docker-build:
+    name: "Build CMS Nginx Docker image"
+    needs: cms-build
+    runs-on: "ubuntu-20.04"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Make image directory
+        run: mkdir -p ./.docker/images/nginx
+
+      - name: Cache docker image
+        id: docker-cache-hit
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-nginx-docker
+        with:
+          path: ./.docker/images/nginx/base.tar.gz
+          key: ${{ runner.os }}-${{ env.cache-name }}-v2-${{ hashFiles('.docker/nginx/**') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ env.cache-name }}-v2-
+
+      - name: Build base image
+        if: ${{ !steps.docker-cache-hit.outputs.cache-hit }}
+        run: |
+          docker \
+          build \
+          -t base \
+          -f ./.docker/nginx/Dockerfile \
+          ./.docker/nginx
+
+      - name: Save base image
+        if: ${{ !steps.docker-cache-hit.outputs.cache-hit }}
+        run: docker save base | gzip > ./.docker/images/nginx/base.tar.gz
+
+      - name: Load base image
+        if: ${{ steps.docker-cache-hit.outputs.cache-hit }}
+        run: |
+          gzip --keep -d ./.docker/images/nginx/base.tar.gz
+          docker load --input ./.docker/images/nginx/base.tar
+
+      - name: Cache composer packages
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-composer-packages
+        with:
+          path: |
+            ./vendor
+            ./web/core
+            ./web/modules/contrib
+            ./web/profiles/contrib
+            ./web/themes/contrib
+          key: composer-build-v4-${{ env.cache-name }}-${{ hashFiles('./composer.lock') }}
+          restore-keys: |
+            composer-build-v4-${{ env.cache-name }}-
+            composer-build-v4-
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+          extensions: gd
+
+      - name: Update composer
+        run: composer --verbose self-update --stable
+
+      - name: Install dependencies
+        run: composer --verbose --no-dev install
+
+      - name: Build full image
+        run: |
+          docker build \
+          -t $REPOSITORY/nginx \
+          -f ./.github/docker/Dockerfile \
+          --build-arg USER=root \
+          --build-arg GROUP=nginx \
+          .
+
+      - name: Save full image
+        run: docker save $REPOSITORY/nginx | gzip > ./.docker/images/nginx/full.tar.gz
+
+      - name: Upload full image
+        uses: actions/upload-artifact@v2
+        with:
+          name: nginx-image
+          path: ./.docker/images/nginx/full.tar.gz
+
+  push-images:
+    name: "Push Docker images"
+    needs:
+      - cms-php-docker-build
+      - cms-nginx-docker-build
+    runs-on: "ubuntu-20.04"
+    strategy:
+      matrix:
+        image: ["nginx", "fpm"]
+    steps:
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Log in to Azure Container Registry
+        env:
+          ACR_NAME: ${{ secrets.ACR_NAME }}
+        run: az acr login --name $ACR_NAME
+
+      - name: Download full image
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ matrix.image }}-image
+          path: ./.docker/images/${{ matrix.image }}
+
+      - name: Load image
+        run: |
+          gzip -d ./.docker/images/${{ matrix.image }}/full.tar.gz
+          docker load --input ./.docker/images/${{ matrix.image }}/full.tar
+
+      - name: Tag image
+        run: docker tag $REPOSITORY/${{ matrix.image }} $REPOSITORY/${{ matrix.image }}:main
+
+      - name: Push images to repository
+        run: docker push $REPOSITORY/${{ matrix.image }}:main
