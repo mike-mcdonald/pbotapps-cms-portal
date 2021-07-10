@@ -4,9 +4,9 @@ services:
   postgres:
     image: postgres:13
     environment:
-      POSTGRES_DB: public_involvement
-      POSTGRES_USER: public_involvement
-      POSTGRES_PASSWORD: public_involvement
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     volumes:
       - "./artifacts:/docker-entrypoint-initdb.d"
       - "db:/var/lib/postgresql/data"
@@ -19,38 +19,23 @@ services:
     networks:
       - cache-network
 
-  ui-web:
+  web:
     build:
-      context: ./ui
+      context: .docker/nginx
     environment:
       PANTHEON_ENVIRONMENT: dev
-      FASTCGI_HOST: cms
-      FASTCGI_PORT: 9000
-    ports:
-      - "8080:8080"
-    volumes:
-      - "./ui:/home/node:cached"
-    networks:
-      - code-network
-      - cache-network
-
-  cms-web:
-    build:
-      context: .docker/cms
-    environment:
-      PANTHEON_ENVIRONMENT: dev
-      FASTCGI_HOST: cms
+      FASTCGI_HOST: php
       FASTCGI_PORT: 9000
     ports:
       - "8888:80"
     volumes:
-      - "./.docker/cms/rootfs/etc/nginx/templates:/etc/nginx/templates:cached"
-      - "./cms:/var/www/html:cached"
+      - "./.docker/nginx/rootfs/etc/nginx/templates:/etc/nginx/templates:cached"
+      - ".:/var/www/html:cached"
     networks:
       - code-network
       - cache-network
 
-  cms:
+  php:
     build:
       context: .docker/php
       args:
@@ -59,9 +44,8 @@ services:
     user: www-data
     environment:
       DATABASE_HOST: postgres
-      DATABASE_NAME: public_involvement
-      DATABASE_USER: public_involvement
-      DATABASE_PASSWORD: public_involvement
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
       CACHE_HOST: redis
       CACHE_PORT: 6379
       DRUPAL_ENV: development
@@ -69,7 +53,7 @@ services:
       AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
       AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
     volumes:
-      - "./cms:/var/www/html:cached"
+      - ".:/var/www/html:cached"
     networks:
       - code-network
       - cache-network
