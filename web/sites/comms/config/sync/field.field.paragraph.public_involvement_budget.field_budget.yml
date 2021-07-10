@@ -1,0 +1,23 @@
+uuid: d5f7e92b-42f2-45e4-a68e-bd83adf49199
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_budget
+    - paragraphs.paragraphs_type.public_involvement_budget
+id: paragraph.public_involvement_budget.field_budget
+field_name: field_budget
+entity_type: paragraph
+bundle: public_involvement_budget
+label: Budget
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: !!float 1000000
+  prefix: $
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,29 @@
+uuid: d2616b43-597c-472e-b12b-fa9a25eeb844
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_proposed_level_of_involvem
+    - paragraphs.paragraphs_type.stakeholder_involvement_strategy
+    - taxonomy.vocabulary.levels_of_public_involvement
+id: paragraph.stakeholder_involvement_strategy.field_proposed_level_of_involvem
+field_name: field_proposed_level_of_involvem
+entity_type: paragraph
+bundle: stakeholder_involvement_strategy
+label: 'Proposed Level of Involvement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      levels_of_public_involvement: levels_of_public_involvement
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

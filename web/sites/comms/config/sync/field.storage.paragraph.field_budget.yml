@@ -1,0 +1,20 @@
+uuid: d3c19ff2-0c95-42a9-9023-0db476cca341
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_budget
+field_name: field_budget
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 0
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

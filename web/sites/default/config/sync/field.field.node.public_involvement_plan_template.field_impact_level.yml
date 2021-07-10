@@ -1,0 +1,29 @@
+uuid: c5c2e395-9cb3-4862-b708-ba242221ee87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_impact_level
+    - node.type.public_involvement_plan_template
+    - taxonomy.vocabulary.impact_level
+id: node.public_involvement_plan_template.field_impact_level
+field_name: field_impact_level
+entity_type: node
+bundle: public_involvement_plan_template
+label: 'Impact Level'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      impact_level: impact_level
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

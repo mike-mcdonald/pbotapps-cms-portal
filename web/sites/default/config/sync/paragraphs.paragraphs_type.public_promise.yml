@@ -1,0 +1,10 @@
+uuid: 5dd3450e-c674-4b7e-b798-517e2923fc1b
+langcode: en
+status: true
+dependencies: {  }
+id: public_promise
+label: 'Public Promise'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

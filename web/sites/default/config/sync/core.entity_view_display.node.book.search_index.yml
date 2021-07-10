@@ -1,0 +1,44 @@
+uuid: cb8ad78f-6e9c-48d6-9532-cc52696a55cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.book.body
+    - node.type.book
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_twocol
+      library: layout_discovery/twocol
+      disable_css: false
+      entity_classes: all_classes
+      settings: {  }
+    regions:
+      top:
+        - body
+        - links
+_core:
+  default_config_hash: UWTnZUj-u-jp8I_S1C1nUCTlM5iIV2QKdxm37ehFjoI
+id: node.book.search_index
+targetEntityType: node
+bundle: book
+mode: search_index
+content:
+  body:
+    label: inline
+    type: text_default
+    weight: 100
+    region: top
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 101
+    region: top
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,66 @@
+uuid: 2796edd8-c4c7-428f-8f1e-352a63ddbe2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.book.body
+    - node.type.book
+  module:
+    - ds
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col_wrapper
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - book_navigation
+        - body
+        - node_links
+        - links
+    fields:
+      book_navigation:
+        plugin_id: book_navigation
+        weight: 0
+        label: inline
+        formatter: default
+      node_links:
+        plugin_id: node_links
+        weight: 2
+        label: inline
+        formatter: default
+_core:
+  default_config_hash: UWTnZUj-u-jp8I_S1C1nUCTlM5iIV2QKdxm37ehFjoI
+id: node.book.full
+targetEntityType: node
+bundle: book
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 3
+    region: ds_content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

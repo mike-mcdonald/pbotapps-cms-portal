@@ -1,0 +1,19 @@
+uuid: ab7a7128-7d75-4928-a6ce-c88e1249b7db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promise_description
+    - node.type.public_involvement_plan_template
+id: node.public_involvement_plan_template.field_promise_description
+field_name: field_promise_description
+entity_type: node
+bundle: public_involvement_plan_template
+label: 'What is the promise to the public? If there are multiple, for different stakeholders, why?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

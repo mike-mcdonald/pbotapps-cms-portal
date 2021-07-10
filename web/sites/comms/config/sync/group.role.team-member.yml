@@ -1,0 +1,26 @@
+uuid: f81434a9-bc7d-49d1-ab3f-08bdfdac8598
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+id: team-member
+label: Member
+weight: -100
+internal: true
+audience: member
+group_type: team
+permissions_ui: true
+permissions:
+  - 'access group_node overview'
+  - 'create group_node:public_involvement_plan_template content'
+  - 'create group_node:public_involvement_plan_template entity'
+  - 'delete own group_node:public_involvement_plan_template content'
+  - 'delete own group_node:public_involvement_plan_template entity'
+  - 'leave group'
+  - 'update own group_membership content'
+  - 'update own group_node:public_involvement_plan_template content'
+  - 'update own group_node:public_involvement_plan_template entity'
+  - 'view group_membership content'
+  - 'view group_node:public_involvement_plan_template content'
+  - 'view unpublished group_node:public_involvement_plan_template entity'

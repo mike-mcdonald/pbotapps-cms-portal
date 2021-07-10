@@ -1,0 +1,21 @@
+uuid: 60735b3d-303a-4b78-b2d4-ce5bb86c6107
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_stakeholders
+field_name: field_stakeholders
+entity_type: paragraph
+type: string
+settings:
+  max_length: 100
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

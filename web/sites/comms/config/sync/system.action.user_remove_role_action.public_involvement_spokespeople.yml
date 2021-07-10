@@ -1,0 +1,14 @@
+uuid: e0763e67-0c7f-4683-9c49-02a5c79ef0b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.public_involvement_spokespeople
+  module:
+    - user
+id: user_remove_role_action.public_involvement_spokespeople
+label: 'Remove the Public Involvement Spokespeople role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: public_involvement_spokespeople

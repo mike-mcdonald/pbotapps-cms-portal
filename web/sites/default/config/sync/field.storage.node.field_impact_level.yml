@@ -1,0 +1,20 @@
+uuid: 9e0b8d3a-a308-4391-bf7d-47bdea4a2b65
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_impact_level
+field_name: field_impact_level
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

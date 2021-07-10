@@ -1,0 +1,8 @@
+uuid: d9d66a5f-17dc-4c38-9fd0-43e4f7c14cb8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Levels of Public Involvement'
+vid: levels_of_public_involvement
+description: 'Inform, Consult, Involve, Collaborate, Empower'
+weight: 0

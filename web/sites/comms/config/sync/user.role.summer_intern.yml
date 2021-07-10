@@ -1,0 +1,9 @@
+uuid: 4a45b6ce-c4b1-4690-9e4e-7a184fb0cb72
+langcode: en
+status: true
+dependencies: {  }
+id: summer_intern
+label: 'Summer Intern'
+weight: -8
+is_admin: null
+permissions: {  }

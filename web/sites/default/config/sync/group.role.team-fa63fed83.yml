@@ -1,0 +1,17 @@
+uuid: 6420a0d2-fec8-46d3-b16f-79a89ed41479
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+  enforced:
+    config:
+      - user.role.public_involvement_spokespeople
+id: team-fa63fed83
+label: 'Public Involvement Planner'
+weight: -7
+internal: true
+audience: outsider
+group_type: team
+permissions_ui: false
+permissions: {  }

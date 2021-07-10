@@ -1,0 +1,45 @@
+uuid: 15e7d598-57fd-4b37-a53d-26226669872f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stakeholder_involvement_strategy.field_involvement_strategy
+    - field.field.paragraph.stakeholder_involvement_strategy.field_proposed_level_of_involvem
+    - field.field.paragraph.stakeholder_involvement_strategy.field_stakeholders
+    - paragraphs.paragraphs_type.stakeholder_involvement_strategy
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: paragraph.stakeholder_involvement_strategy.default
+targetEntityType: paragraph
+bundle: stakeholder_involvement_strategy
+mode: default
+content:
+  field_involvement_strategy:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_proposed_level_of_involvem:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_stakeholders:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

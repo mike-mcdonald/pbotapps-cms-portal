@@ -1,0 +1,17 @@
+uuid: 98eb94a2-ca4a-4039-ba13-1ecd63d8a443
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Welcome Page'
+type: welcome_page
+description: 'Landing page for users who have not logged in yet. '
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

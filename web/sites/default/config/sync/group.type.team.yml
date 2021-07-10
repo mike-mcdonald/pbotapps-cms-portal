@@ -1,0 +1,11 @@
+uuid: 349b5a2b-eadd-4588-b89f-6811f8d37798
+langcode: en
+status: true
+dependencies: {  }
+id: team
+label: Team
+description: 'Teams allow users to collaborate on shared plans and other content in this application.'
+new_revision: true
+creator_membership: true
+creator_wizard: true
+creator_roles: {  }

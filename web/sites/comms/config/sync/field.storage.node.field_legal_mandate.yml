@@ -1,0 +1,27 @@
+uuid: 53413881-bb24-40ff-93c6-eb232cb1cfe2
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_legal_mandate
+field_name: field_legal_mandate
+entity_type: node
+type: list_float
+settings:
+  allowed_values:
+    -
+      value: !!float 0
+      label: 'Yes'
+    -
+      value: !!float 1
+      label: 'No'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -89,7 +89,7 @@
  * @endcode
  */
 $databases['default']['default'] = array (
-  'database' => $_ENV['DATABASE_NAME'],
+  'database' => 'pbotapps',
   'username' => $_ENV['DATABASE_USER'],
   'password' => $_ENV['DATABASE_PASSWORD'],
   'prefix' => '',
@@ -261,7 +261,7 @@ $databases['default']['default'] = array (
  * directory in the public files path. The setting below allows you to set
  * its location.
  */
-$settings['config_sync_directory'] = '../config/sync';
+$settings['config_sync_directory'] = './sites/default/config/sync';
 
 /**
  * Settings:
@@ -290,7 +290,7 @@ $settings['config_sync_directory'] = '../config/sync';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'cYrdon8rAPu37cm9CWdkRE_XxCZYL0o6xLYFTFGRKdDMQbtnfbCDSiaS8gyOH-Ymkrqtj2-JXw';
+$settings['hash_salt'] = 'EP97Cc6gNSoAfixM6ZoW5A3vJzJGiqAmjs6xkQt0NA_ZRI8dZKx2bcyQ1eU3qMswRLgBX5ncOA';
 
 /**
  * Deployment identifier.
@@ -791,3 +791,13 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
+$databases['default']['default'] = array (
+  'database' => 'pbotapps',
+  'username' => 'postgres',
+  'password' => 'postgres',
+  'prefix' => '',
+  'host' => 'postgres',
+  'port' => '5432',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\pgsql',
+  'driver' => 'pgsql',
+);

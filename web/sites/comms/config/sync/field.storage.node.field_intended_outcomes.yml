@@ -1,0 +1,19 @@
+uuid: 9f5651cd-775a-4e2b-a3ac-2fe525b0c0d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_intended_outcomes
+field_name: field_intended_outcomes
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

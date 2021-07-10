@@ -1,0 +1,19 @@
+uuid: 79117323-e2a0-428a-b0e9-b60c4fd0f624
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_consultant
+field_name: field_consultant
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

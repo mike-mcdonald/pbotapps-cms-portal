@@ -1,0 +1,14 @@
+uuid: 21b63e42-6a41-42b6-9514-ae8d3f61913c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.public_involvement_spokespeople
+  module:
+    - user
+id: user_add_role_action.public_involvement_spokespeople
+label: 'Add the Public Involvement Spokespeople role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: public_involvement_spokespeople

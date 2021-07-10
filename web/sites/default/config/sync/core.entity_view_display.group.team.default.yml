@@ -1,0 +1,30 @@
+uuid: a9e90a29-aa42-428d-9bda-3129876e69e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - group.type.team
+id: group.team.default
+targetEntityType: group
+bundle: team
+mode: default
+content:
+  label:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_label
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true

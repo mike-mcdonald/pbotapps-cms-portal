@@ -1,0 +1,19 @@
+uuid: 517c6082-b5c2-4b7d-99e5-b3fc38a88d64
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_involvement_strategy_and_t
+field_name: field_involvement_strategy_and_t
+entity_type: paragraph
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

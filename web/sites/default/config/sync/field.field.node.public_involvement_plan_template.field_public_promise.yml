@@ -1,0 +1,21 @@
+uuid: e76aeb58-b33b-4d47-83be-288bf7f7517d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_public_promise
+    - node.type.public_involvement_plan_template
+  module:
+    - options
+id: node.public_involvement_plan_template.field_public_promise
+field_name: field_public_promise
+entity_type: node
+bundle: public_involvement_plan_template
+label: 'Promise to the Public'
+description: "<a href=\"what-promise-public\" target=\"_blank\">Promise to the Public</a> \r\nPlease enter the highest promise to the public. "
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_float

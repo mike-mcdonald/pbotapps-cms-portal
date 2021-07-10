@@ -1,0 +1,19 @@
+uuid: d3f1173b-486a-4cd9-94c3-c517e8092431
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hello
+    - node.type.welcome_page
+id: node.welcome_page.field_hello
+field_name: field_hello
+entity_type: node
+bundle: welcome_page
+label: Hello
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
