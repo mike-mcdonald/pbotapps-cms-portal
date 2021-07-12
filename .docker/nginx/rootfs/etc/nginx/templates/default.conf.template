@@ -47,14 +47,19 @@ server {
         return 403;
     }
 
+    location ~ ^/comms(.*) {
+      # sub site, set fastcgi script name to help drupal figure this out
+      set $script_prefix "/comms";
+      try_files $1 @rewrite;
+    }
+
     location / {
-        # try_files $uri @rewrite; # For Drupal <= 6
+        set $script_prefix "";
         try_files $uri /index.php?$query_string; # For Drupal >= 7
     }
 
     location @rewrite {
-        #rewrite ^/(.*)$ /index.php?q=$1; # For Drupal <= 6
-        rewrite ^ /index.php; # For Drupal >= 7
+        rewrite ^ /index.php;
     }
 
     # Don't allow direct access to PHP files in the vendor directory.
@@ -69,27 +74,21 @@ server {
         return 404;
     }
 
-    # In Drupal 8, we must also match new paths where the '.php' appears in
-    # the middle, such as update.php/selection. The rule we use is strict,
-    # and only allows this pattern with the update.php front controller.
-    # This allows legacy path aliases in the form of
-    # blog/index.php/legacy-path to continue to route to Drupal nodes. If
-    # you do not have any paths like that, then you might prefer to use a
-    # laxer rule, such as:
-    #   location ~ \.php(/|$) {
-    # The laxer rule will continue to work if Drupal uses this new URL
-    # pattern with front controllers other than update.php in a future
-    # release.
     location ~ \.php(/|$) {
         fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
+
         # Ensure the php file exists. Mitigates CVE-2019-11043
         try_files $fastcgi_script_name =404;
+
         # Security note: If you're running a version of PHP older than the
         # latest 5.3, you should have "cgi.fix_pathinfo = 0;" in php.ini.
         # See http://serverfault.com/q/627903/94922 for details.
         include fastcgi_params;
+
         # Block httpoxy attacks. See https://httpoxy.org/.
         fastcgi_param HTTP_PROXY "";
+
+        fastcgi_param SCRIPT_NAME $script_prefix$fastcgi_script_name;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         fastcgi_param PATH_INFO $fastcgi_path_info;
         fastcgi_param QUERY_STRING $query_string;
