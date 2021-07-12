@@ -10,7 +10,7 @@
       "request": "launch",
       "port": 9003,
       "pathMappings": {
-        "/var/www/html": "${workspaceRoot}/cms"
+        "/var/www/html": "${workspaceRoot}"
       },
       "hostname": "localhost"
     },
