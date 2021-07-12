@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - group.type.team
-    - node.type.public_involvement_plan_template
+    - node.type.public_involvement_plan
   module:
     - gnode
     - node
@@ -12,7 +12,7 @@ id: group_content_type_903ea603eb8c7
 label: 'Team: Group node (Public Involvement Plan Template)'
 description: 'Adds <em class="placeholder">Public Involvement Plan Template</em> content to groups both publicly and privately.'
 group_type: team
-content_plugin: 'group_node:public_involvement_plan_template'
+content_plugin: 'group_node:public_involvement_plan'
 plugin_config:
   group_cardinality: 1
   entity_cardinality: 1

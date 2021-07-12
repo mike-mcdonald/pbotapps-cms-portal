@@ -1,0 +1,40 @@
+uuid: 75a0be0b-f7e9-41fc-aad9-d362889411bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_timeframe
+    - node.type.public_involvement_plan
+    - paragraphs.paragraphs_type.public_engagement_timeframe
+  module:
+    - entity_reference_revisions
+id: node.public_involvement_plan.field_timeframe
+field_name: field_timeframe
+entity_type: node
+bundle: public_involvement_plan
+label: 'Public Involvement Timeframe'
+description: '<a href="timeframe-public-engagement-activities" target="_blank">Timeframe Considerations</a> '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      public_engagement_timeframe: public_engagement_timeframe
+    target_bundles_drag_drop:
+      public_engagement_timeframe:
+        enabled: true
+        weight: 3
+      public_involvement_budget:
+        weight: 5
+        enabled: false
+      public_promise:
+        weight: 7
+        enabled: false
+      stakeholder_involvement_strategy:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

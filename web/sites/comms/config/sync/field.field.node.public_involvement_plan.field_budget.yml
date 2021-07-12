@@ -1,0 +1,40 @@
+uuid: febd57db-42fb-493b-89d4-d622d2282bc1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_budget
+    - node.type.public_involvement_plan
+    - paragraphs.paragraphs_type.public_involvement_budget
+  module:
+    - entity_reference_revisions
+id: node.public_involvement_plan.field_budget
+field_name: field_budget
+entity_type: node
+bundle: public_involvement_plan
+label: Budget
+description: '<a href="involvement-budget" target="_blank">Budget Considerations</a> '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      public_involvement_budget: public_involvement_budget
+    target_bundles_drag_drop:
+      public_engagement_timeframe:
+        weight: 4
+        enabled: false
+      public_involvement_budget:
+        enabled: true
+        weight: 5
+      public_promise:
+        weight: 7
+        enabled: false
+      stakeholder_involvement_strategy:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - node.type.public_involvement_plan_template
+    - node.type.public_involvement_plan
     - system.menu.main
     - taxonomy.vocabulary.impact_level
     - taxonomy.vocabulary.interest_level
@@ -315,7 +315,7 @@ display:
           admin_label: ''
           operator: in
           value:
-            public_involvement_plan_template: public_involvement_plan_template
+            public_involvement_plan: public_involvement_plan
           group: 1
           exposed: false
           expose:

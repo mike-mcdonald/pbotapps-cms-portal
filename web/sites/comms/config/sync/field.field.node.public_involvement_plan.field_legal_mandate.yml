@@ -1,0 +1,21 @@
+uuid: ea13ead5-8619-40db-adf6-d8245658b6dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legal_mandate
+    - node.type.public_involvement_plan
+  module:
+    - options
+id: node.public_involvement_plan.field_legal_mandate
+field_name: field_legal_mandate
+entity_type: node
+bundle: public_involvement_plan
+label: 'Is public engagement legally mandated?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_float

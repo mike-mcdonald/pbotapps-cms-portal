@@ -1,0 +1,18 @@
+uuid: 4d2731b9-d2fd-4efb-bf88-bfd1acc66879
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.public_involvement_plan
+id: node.public_involvement_plan.title
+field_name: title
+entity_type: node
+bundle: public_involvement_plan
+label: 'Public Involvement Plan Template'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

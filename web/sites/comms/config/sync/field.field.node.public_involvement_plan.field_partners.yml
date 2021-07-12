@@ -1,0 +1,19 @@
+uuid: 9149f541-956c-40e4-8ab7-76940cf5afd4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_partners
+    - node.type.public_involvement_plan
+id: node.public_involvement_plan.field_partners
+field_name: field_partners
+entity_type: node
+bundle: public_involvement_plan
+label: 'Partners (Government & Organizations)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
