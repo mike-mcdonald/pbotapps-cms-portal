@@ -5,11 +5,11 @@ on:
     branches: [main]
 
 env:
-  REPOSITORY: pbotapps.azurecr.io/public-involvement-planning
+  REPOSITORY: pbotapps.azurecr.io/cms-portal
   COMPOSER_MEMORY_LIMIT: -1
 
 jobs:
-  cms-build:
+  composer-install:
     name: "Install CMS dependencies"
     runs-on: "ubuntu-20.04"
     strategy:
@@ -56,9 +56,9 @@ jobs:
       - name: Install dependencies
         run: composer --verbose --no-dev install
 
-  cms-php-docker-build:
+  php-docker-build:
     name: "Build PHP Docker image"
-    needs: cms-build
+    needs: composer-install
     runs-on: "ubuntu-20.04"
     steps:
       - name: Checkout
@@ -146,7 +146,7 @@ jobs:
 
   cms-nginx-docker-build:
     name: "Build CMS Nginx Docker image"
-    needs: cms-build
+    needs: composer-install
     runs-on: "ubuntu-20.04"
     steps:
       - name: Checkout
