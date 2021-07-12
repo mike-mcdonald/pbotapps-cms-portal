@@ -3,13 +3,18 @@ FROM php:7.4-fpm
 ARG INSTALL_XDEBUG="false"
 ARG INSTALL_COMPOSER="true"
 
-# Get the repository set up for postgresql
-# Required to use GPG below
-# Add postgresql repository
-RUN apt-get update && apt-get install -my gnupg2 \
+COPY rootfs /
+
+# Configure certificates, OpenSSL, and apt repository for Postgres
+RUN apt-get update \
+    && apt-get install -my gnupg2 \
+    && update-ca-certificates \
+    && sed -i 's/CipherString = DEFAULT@SECLEVEL=2/CipherString = DEFAULT@SECLEVEL=1/' /etc/ssl/openssl.cnf \
     && echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
     # Add postgresql GPG
-    && curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+    && curl --output /tmp/postgres.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc \
+    && apt-key add /tmp/postgres.asc \
+    && rm /tmp/postgres.asc
 
 RUN apt-get update \
     && apt-get install -y \
@@ -86,8 +91,6 @@ RUN apt-get update \
     && rm -rf /var/lib/cache/* \
     && rm -rf /var/lib/log/* \
     && rm -rf /tmp/*
-
-COPY rootfs /
 
 # when you run bash, this is where you'll start, and where drush will be able to run from.
 WORKDIR /var/www/html
