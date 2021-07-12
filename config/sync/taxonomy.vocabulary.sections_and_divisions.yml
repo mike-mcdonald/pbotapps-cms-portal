@@ -1,8 +1,0 @@
-uuid: 6b5fecce-f07a-45d6-bed6-3c4108ec9225
-langcode: en
-status: true
-dependencies: {  }
-name: 'Sections and Divisions'
-vid: sections_and_divisions
-description: 'An inventory of the sections and divisions that make up PBOT. '
-weight: 0
