@@ -1,8 +1,0 @@
-uuid: aabc6693-8088-45d9-a7e7-53d7ba5d9fd1
-langcode: en
-status: true
-dependencies: {  }
-name: 'Impact Level'
-vid: impact_level
-description: ''
-weight: 0

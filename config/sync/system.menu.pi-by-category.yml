@@ -1,8 +1,0 @@
-uuid: ea1b4c2e-7f16-4f56-b375-279b389c6882
-langcode: en
-status: true
-dependencies: {  }
-id: pi-by-category
-label: 'PI by category'
-description: ''
-locked: false
