@@ -144,7 +144,7 @@ jobs:
           name: fpm-image
           path: ./.docker/images/fpm/full.tar.gz
 
-  cms-nginx-docker-build:
+  nginx-docker-build:
     name: "Build CMS Nginx Docker image"
     needs: composer-install
     runs-on: "ubuntu-20.04"
@@ -234,8 +234,8 @@ jobs:
   push-images:
     name: "Push Docker images"
     needs:
-      - cms-php-docker-build
-      - cms-nginx-docker-build
+      - php-docker-build
+      - nginx-docker-build
     runs-on: "ubuntu-20.04"
     strategy:
       matrix:
