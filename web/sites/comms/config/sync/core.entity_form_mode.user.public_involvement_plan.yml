@@ -5,6 +5,6 @@ dependencies:
   module:
     - user
 id: user.public_involvement_plan
-label: 'Public Involvement Plan Template'
+label: 'Public Involvement Plan'
 targetEntityType: user
 cache: true

@@ -1,24 +1,25 @@
-uuid: 888799b3-856b-4802-a3f5-74deabe89d96
+uuid: 7b1a8a87-98c0-4b9e-acd7-8896ae108f9a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.welcome_page.body
-    - field.field.node.welcome_page.field_hello
-    - node.type.welcome_page
+    - field.field.node.system_page.body
+    - field.field.node.system_page.layout_builder__layout
+    - node.type.system_page
   module:
     - field_layout
-    - layout_discovery
     - path
     - text
+  theme:
+    - rain
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings:
       label: ''
-id: node.welcome_page.default
+id: node.system_page.default
 targetEntityType: node
-bundle: welcome_page
+bundle: system_page
 mode: default
 content:
   body:
@@ -28,6 +29,7 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
     region: content
   created:
@@ -36,14 +38,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_hello:
-    weight: 122
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textarea
-    region: content
   path:
     type: path
     weight: 30
@@ -86,6 +80,8 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true

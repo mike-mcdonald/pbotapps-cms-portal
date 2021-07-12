@@ -8,7 +8,7 @@ id: node.public_involvement_plan.title
 field_name: title
 entity_type: node
 bundle: public_involvement_plan
-label: 'Public Involvement Plan Template'
+label: 'Public Involvement Plan'
 description: ''
 required: true
 translatable: true

@@ -9,8 +9,8 @@ dependencies:
     - gnode
     - node
 id: group_content_type_903ea603eb8c7
-label: 'Team: Group node (Public Involvement Plan Template)'
-description: 'Adds <em class="placeholder">Public Involvement Plan Template</em> content to groups both publicly and privately.'
+label: 'Team: Group node (Public Involvement Plan)'
+description: 'Adds <em class="placeholder">Public Involvement Plan</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:public_involvement_plan'
 plugin_config:
