@@ -13,4 +13,4 @@ group_type: team
 permissions_ui: true
 permissions:
   - 'view group'
-  - 'view group_node:public_involvement_plan_template entity'
+  - 'view group_node:public_involvement_plan entity'

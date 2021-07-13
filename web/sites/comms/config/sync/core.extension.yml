@@ -14,6 +14,7 @@ module:
   config_split: 0
   consumers: 0
   contact: 0
+  content_access: 0
   contextual: 0
   ctools: 0
   ctools_block: 0
@@ -66,7 +67,6 @@ module:
   variationcache: 0
   views_ui: 0
   workflows: 0
-  ds: 1
   forum: 1
   menu_link_content: 1
   pathauto: 1

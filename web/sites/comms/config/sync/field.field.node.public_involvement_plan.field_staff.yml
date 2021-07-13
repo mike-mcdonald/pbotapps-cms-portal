@@ -1,0 +1,19 @@
+uuid: 0dac4eb5-7472-427e-958b-ac3f1bd4490e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_staff
+    - node.type.public_involvement_plan
+id: node.public_involvement_plan.field_staff
+field_name: field_staff
+entity_type: node
+bundle: public_involvement_plan
+label: 'Project Manager/Key Staff'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

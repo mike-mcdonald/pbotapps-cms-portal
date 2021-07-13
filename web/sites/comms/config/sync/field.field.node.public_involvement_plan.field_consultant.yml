@@ -1,0 +1,19 @@
+uuid: 94e59364-b031-4b86-a806-3d7a284ffc6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_consultant
+    - node.type.public_involvement_plan
+id: node.public_involvement_plan.field_consultant
+field_name: field_consultant
+entity_type: node
+bundle: public_involvement_plan
+label: 'Consultant (if applicable)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

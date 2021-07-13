@@ -1,0 +1,106 @@
+uuid: ac032b9d-717a-47ce-a597-bc8fc34915f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.public_involvement_plan.field_benefit
+    - field.field.node.public_involvement_plan.field_budget
+    - field.field.node.public_involvement_plan.field_consultant
+    - field.field.node.public_involvement_plan.field_description
+    - field.field.node.public_involvement_plan.field_div_sect
+    - field.field.node.public_involvement_plan.field_impact_description
+    - field.field.node.public_involvement_plan.field_impact_level
+    - field.field.node.public_involvement_plan.field_intended_outcomes
+    - field.field.node.public_involvement_plan.field_interest_description
+    - field.field.node.public_involvement_plan.field_interest_level
+    - field.field.node.public_involvement_plan.field_key_decision
+    - field.field.node.public_involvement_plan.field_legal_mandate
+    - field.field.node.public_involvement_plan.field_legal_requirements
+    - field.field.node.public_involvement_plan.field_partners
+    - field.field.node.public_involvement_plan.field_promise_description
+    - field.field.node.public_involvement_plan.field_public_promise
+    - field.field.node.public_involvement_plan.field_questions
+    - field.field.node.public_involvement_plan.field_related_documents
+    - field.field.node.public_involvement_plan.field_staff
+    - field.field.node.public_involvement_plan.field_strategy
+    - field.field.node.public_involvement_plan.field_tags
+    - field.field.node.public_involvement_plan.field_timeframe
+    - field.field.node.public_involvement_plan.field_website
+    - node.type.public_involvement_plan
+  module:
+    - user
+id: node.public_involvement_plan.teaser
+targetEntityType: node
+bundle: public_involvement_plan
+mode: teaser
+content:
+  field_description:
+    type: basic_string
+    weight: 7
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_div_sect:
+    type: entity_reference_label
+    weight: 6
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_impact_level:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_interest_level:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_staff:
+    type: basic_string
+    weight: 8
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_label
+    weight: 5
+    region: content
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+  links:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_benefit: true
+  field_budget: true
+  field_consultant: true
+  field_impact_description: true
+  field_intended_outcomes: true
+  field_interest_description: true
+  field_key_decision: true
+  field_legal_mandate: true
+  field_legal_requirements: true
+  field_partners: true
+  field_promise_description: true
+  field_public_promise: true
+  field_questions: true
+  field_related_documents: true
+  field_strategy: true
+  field_timeframe: true
+  field_website: true

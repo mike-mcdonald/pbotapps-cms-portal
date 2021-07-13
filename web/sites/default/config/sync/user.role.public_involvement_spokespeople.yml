@@ -8,6 +8,6 @@ weight: -7
 is_admin: null
 permissions:
   - 'access printer-friendly version'
-  - 'create public_involvement_plan_template content'
-  - 'delete own public_involvement_plan_template content'
-  - 'view public_involvement_plan_template revisions'
+  - 'create public_involvement_plan content'
+  - 'delete own public_involvement_plan content'
+  - 'view public_involvement_plan revisions'

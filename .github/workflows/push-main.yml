@@ -5,11 +5,11 @@ on:
     branches: [main]
 
 env:
-  REPOSITORY: pbotapps.azurecr.io/public-involvement-planning
+  REPOSITORY: pbotapps.azurecr.io/cms-portal
   COMPOSER_MEMORY_LIMIT: -1
 
 jobs:
-  cms-build:
+  composer-install:
     name: "Install CMS dependencies"
     runs-on: "ubuntu-20.04"
     strategy:
@@ -56,9 +56,9 @@ jobs:
       - name: Install dependencies
         run: composer --verbose --no-dev install
 
-  cms-php-docker-build:
+  php-docker-build:
     name: "Build PHP Docker image"
-    needs: cms-build
+    needs: composer-install
     runs-on: "ubuntu-20.04"
     steps:
       - name: Checkout
@@ -130,7 +130,7 @@ jobs:
         run: |
           docker build \
           -t $REPOSITORY/fpm \
-          -f ./.github/docker/Dockerfile \
+          -f ./.github/.docker/Dockerfile \
           --build-arg USER=www-data \
           --build-arg GROUP=www-data \
           .
@@ -144,9 +144,9 @@ jobs:
           name: fpm-image
           path: ./.docker/images/fpm/full.tar.gz
 
-  cms-nginx-docker-build:
+  nginx-docker-build:
     name: "Build CMS Nginx Docker image"
-    needs: cms-build
+    needs: composer-install
     runs-on: "ubuntu-20.04"
     steps:
       - name: Checkout
@@ -217,7 +217,7 @@ jobs:
         run: |
           docker build \
           -t $REPOSITORY/nginx \
-          -f ./.github/docker/Dockerfile \
+          -f ./.github/.docker/Dockerfile \
           --build-arg USER=root \
           --build-arg GROUP=nginx \
           .
@@ -234,8 +234,8 @@ jobs:
   push-images:
     name: "Push Docker images"
     needs:
-      - cms-php-docker-build
-      - cms-nginx-docker-build
+      - php-docker-build
+      - nginx-docker-build
     runs-on: "ubuntu-20.04"
     strategy:
       matrix:

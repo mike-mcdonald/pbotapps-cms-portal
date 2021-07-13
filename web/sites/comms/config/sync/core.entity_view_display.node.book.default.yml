@@ -6,22 +6,8 @@ dependencies:
     - field.field.node.book.body
     - node.type.book
   module:
-    - ds
     - text
     - user
-third_party_settings:
-  ds:
-    layout:
-      id: layout_twocol
-      library: layout_discovery/twocol
-      disable_css: false
-      entity_classes: all_classes
-      settings: {  }
-    regions:
-      top:
-        - links
-      first:
-        - body
 _core:
   default_config_hash: UWTnZUj-u-jp8I_S1C1nUCTlM5iIV2QKdxm37ehFjoI
 id: node.book.default
