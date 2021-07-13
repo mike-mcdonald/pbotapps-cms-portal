@@ -24,7 +24,11 @@
  */
 #}
 {%
-  set body_classes = body_classes|default([])
+  set body_classes = body_classes|default([
+    'min-h-screen',
+    'flex',
+    'flex-col',
+  ])
 %}
 
 <!DOCTYPE html>

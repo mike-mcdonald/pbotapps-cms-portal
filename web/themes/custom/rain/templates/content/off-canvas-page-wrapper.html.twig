@@ -17,8 +17,15 @@
  * - children: Contains the child elements of the page.
  */
 #}
+{% set classes = [
+  'dialog-off-canvas-main-canvas',
+  'flex-grow',
+  'flex',
+  'flex-col',
+] %}
+
 {% if children %}
-  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+  <div{{ create_attribute({ class: classes })}} data-off-canvas-main-canvas>
     {{ children }}
   </div>
 {% endif %}
