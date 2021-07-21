@@ -47,15 +47,15 @@ server {
         return 403;
     }
 
-    location ~ ^/comms(.*) {
+    location ~ ^/(comms)(.*) {
       # sub site, set fastcgi script name to help drupal figure this out
-      set $script_prefix "/comms";
-      try_files $1 @rewrite;
+      set $script_prefix "/$1";
+      try_files $2 @rewrite;
     }
 
     location / {
         set $script_prefix "";
-        try_files $uri /index.php?$query_string; # For Drupal >= 7
+        try_files $uri /index.php?$query_string;
     }
 
     location @rewrite {
