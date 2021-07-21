@@ -1,19 +1,21 @@
-uuid: 11d0aaf3-c8b9-49c7-b20a-8a25d742f80a
+uuid: a2c282a8-f823-4a35-9598-6da380c0ffe5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_description
     - node.type.public_involvement_plan
+  module:
+    - text
 id: node.public_involvement_plan.field_description
 field_name: field_description
 entity_type: node
 bundle: public_involvement_plan
-label: 'Please describe the overall Project, Initiative, or Plan'
-description: '<a href="description-overall-project-initiative-or-plan" target="_blank">Question Strategy</a> '
-required: false
+label: Description
+description: 'In this section, please provide an executive summary of your proposed public involvement process. Please identify the nature of the project or program. For example, is this a construction project or a planning process? You should also provide an overview of the public involvement process and what it is meant to achieve. Identify the key project phases and the key public involvement milestones. You can use this description in future communication about your project and the public involvement process, so please use accessible and inclusive language, avoid jargon and spell out all of your acronyms. Your constituents will thank you!'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: string_long
+field_type: text_long

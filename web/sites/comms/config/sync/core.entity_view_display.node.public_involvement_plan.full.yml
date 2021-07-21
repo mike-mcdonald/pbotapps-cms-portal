@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.public_involvement_plan.field_benefit
     - field.field.node.public_involvement_plan.field_budget
     - field.field.node.public_involvement_plan.field_consultant
+    - field.field.node.public_involvement_plan.field_decision
     - field.field.node.public_involvement_plan.field_description
     - field.field.node.public_involvement_plan.field_div_sect
     - field.field.node.public_involvement_plan.field_impact_description
@@ -14,13 +15,12 @@ dependencies:
     - field.field.node.public_involvement_plan.field_intended_outcomes
     - field.field.node.public_involvement_plan.field_interest_description
     - field.field.node.public_involvement_plan.field_interest_level
-    - field.field.node.public_involvement_plan.field_key_decision
     - field.field.node.public_involvement_plan.field_legal_mandate
-    - field.field.node.public_involvement_plan.field_legal_requirements
-    - field.field.node.public_involvement_plan.field_partners
+    - field.field.node.public_involvement_plan.field_legal_requirement
+    - field.field.node.public_involvement_plan.field_partner
     - field.field.node.public_involvement_plan.field_promise_description
     - field.field.node.public_involvement_plan.field_public_promise
-    - field.field.node.public_involvement_plan.field_questions
+    - field.field.node.public_involvement_plan.field_question
     - field.field.node.public_involvement_plan.field_related_documents
     - field.field.node.public_involvement_plan.field_staff
     - field.field.node.public_involvement_plan.field_strategy
@@ -47,20 +47,6 @@ content:
   field_budget:
     type: paragraph_summary
     weight: 21
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_consultant:
-    type: basic_string
-    weight: 2
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_description:
-    type: basic_string
-    weight: 4
     region: content
     label: above
     settings: {  }
@@ -108,34 +94,6 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-  field_key_decision:
-    type: basic_string
-    weight: 5
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_legal_mandate:
-    type: list_key
-    weight: 6
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_legal_requirements:
-    type: basic_string
-    weight: 7
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_partners:
-    type: basic_string
-    weight: 1
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
   field_promise_description:
     type: basic_string
     weight: 14
@@ -148,20 +106,6 @@ content:
     weight: 13
     region: content
     label: inline
-    settings: {  }
-    third_party_settings: {  }
-  field_questions:
-    type: basic_string
-    weight: 16
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_staff:
-    type: basic_string
-    weight: 0
-    region: content
-    label: above
     settings: {  }
     third_party_settings: {  }
   field_strategy:
@@ -187,14 +131,15 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-  field_website:
-    type: string
-    weight: 17
-    region: content
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
 hidden:
+  field_consultant: true
+  field_decision: true
+  field_description: true
+  field_legal_mandate: true
+  field_legal_requirement: true
+  field_partner: true
+  field_question: true
   field_related_documents: true
+  field_staff: true
+  field_website: true
   links: true

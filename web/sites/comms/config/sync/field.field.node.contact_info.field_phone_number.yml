@@ -1,0 +1,21 @@
+uuid: 7cca049f-8de6-4ed7-9776-cf04b44c3137
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_phone_number
+    - node.type.contact_info
+  module:
+    - telephone
+id: node.contact_info.field_phone_number
+field_name: field_phone_number
+entity_type: node
+bundle: contact_info
+label: 'Telephone number'
+description: 'Enter possible telephone numbers and sort them in order of preference for contact'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

@@ -1,0 +1,19 @@
+uuid: 1e7cab77-9720-4684-88f8-2556007bfe57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_decision
+    - node.type.public_involvement_plan
+id: node.public_involvement_plan.field_decision
+field_name: field_decision
+entity_type: node
+bundle: public_involvement_plan
+label: 'Key decisions'
+description: 'List the key decisions are being made by PBOT, Partner Agencies, Contractors, City Council, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

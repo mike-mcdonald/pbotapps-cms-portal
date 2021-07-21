@@ -1,18 +1,20 @@
-uuid: 792ce59f-7dbc-4816-bb8b-fee5b4c29eba
+uuid: 6211b63f-46b9-49fb-8af2-47cfb3d75385
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_legal_requirements
-field_name: field_legal_requirements
+id: node.field_legal_requirement
+field_name: field_legal_requirement
 entity_type: node
-type: string_long
+type: string
 settings:
+  max_length: 1024
+  is_ascii: false
   case_sensitive: false
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

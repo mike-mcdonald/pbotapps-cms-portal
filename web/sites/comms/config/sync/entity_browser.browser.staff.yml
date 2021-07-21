@@ -1,0 +1,42 @@
+uuid: 7f3492c0-5709-450a-8f1b-a14e0a017e00
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.contact_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: staff
+label: 'Staff browser'
+display: modal
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Select staff'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  f017ce2c-3fd3-438c-b98f-fa99439d6b98:
+    settings:
+      view: contact_browser
+      view_display: entity_browser_4
+      submit_text: 'Select staff'
+      auto_select: false
+    uuid: f017ce2c-3fd3-438c-b98f-fa99439d6b98
+    weight: 1
+    label: Find
+    id: view
+  e8403723-c99b-4195-8c01-077469dd4052:
+    settings:
+      entity_type: node
+      bundle: contact_info
+      form_mode: browser
+      submit_text: 'Save staff'
+    uuid: e8403723-c99b-4195-8c01-077469dd4052
+    weight: 2
+    label: Create
+    id: entity_form

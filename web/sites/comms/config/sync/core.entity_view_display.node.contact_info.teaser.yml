@@ -1,0 +1,26 @@
+uuid: 4f5f5c4a-e196-45eb-9fc8-52ae0f676eb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact_info.field_email_address
+    - field.field.node.contact_info.field_phone_number
+    - field.field.node.contact_info.field_type
+    - node.type.contact_info
+  module:
+    - user
+id: node.contact_info.teaser
+targetEntityType: node
+bundle: contact_info
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_email_address: true
+  field_phone_number: true
+  field_type: true

@@ -12,7 +12,7 @@ field_name: field_public_promise
 entity_type: node
 bundle: public_involvement_plan
 label: 'Promise to the Public'
-description: "<a href=\"what-promise-public\" target=\"_blank\">Promise to the Public</a> \r\nPlease enter the highest promise to the public. "
+description: "<p>Here is a break-down of the different types of promises typically made to the public during public involvement processes. This is based on work done by the International Association for Public Participation and it is also represented in our public involvement spectrum infographic.</p>\r\n<ul>\r\n<li>Promise to inform: PBOT will keep stakeholders well informed from start to finish.</li>\r\n<li>Promise to consult: PBOT will keep stakeholders well informed. In addition, we will listen and acknowledge your input and concerns. Furthermore, we will let stakeholders know if and how your input influenced our decisions.</li>\r\n<li>Promise to involve: PBOT promises to consult with stakeholders and make sure that their needs and concerns are directly reflected in the plans, approaches and/or alternatives that are developed. Furthermore, we will stakeholders know how their input influenced the bureau's decisions.</li>\r\n<li>Promise to partner: PBOT promises to gather the advice and innovative ideas from stakeholders and incorporate them into the bureau's decisions to the maximum extent possible.</li>\r\n<li>Promise to empower: PBOT promises to implement what you decide.</li>\r\n</ul>"
 required: false
 translatable: false
 default_value: {  }

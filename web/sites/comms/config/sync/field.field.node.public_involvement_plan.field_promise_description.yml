@@ -9,8 +9,8 @@ id: node.public_involvement_plan.field_promise_description
 field_name: field_promise_description
 entity_type: node
 bundle: public_involvement_plan
-label: 'What is the promise to the public? If there are multiple, for different stakeholders, why?'
-description: ''
+label: 'Public promise(s) description'
+description: "<p>What is the promise to the public? If there are multiple, for different stakeholders, why?</p>\r\n<p>Be very clear about the level of public input you are promising your constituents. Members of the public get rightly frustrated when a public process promises a specific level of public input, but then delivers something different. It is important to be transparent and authentic with your constituents. Respect their time and do not over-promise.</p>"
 required: false
 translatable: false
 default_value: {  }

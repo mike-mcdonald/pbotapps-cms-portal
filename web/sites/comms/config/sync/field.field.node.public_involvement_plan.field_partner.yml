@@ -1,17 +1,17 @@
-uuid: 95736ab9-4079-47c4-973f-65ba3c430b1a
+uuid: e7a4596f-dc79-452d-8bfa-96f88384f90e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_staff
+    - field.storage.node.field_partner
     - node.type.contact_info
     - node.type.public_involvement_plan
-id: node.public_involvement_plan.field_staff
-field_name: field_staff
+id: node.public_involvement_plan.field_partner
+field_name: field_partner
 entity_type: node
 bundle: public_involvement_plan
-label: 'Project manager(s) and key staff'
-description: 'Use the selection form to add City of Portland staff that are involved with this plan.'
+label: 'Partner(s) (Government agencies or organizations)'
+description: ''
 required: false
 translatable: false
 default_value: {  }

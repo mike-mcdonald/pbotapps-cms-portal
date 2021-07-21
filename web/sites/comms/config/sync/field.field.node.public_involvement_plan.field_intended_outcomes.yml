@@ -10,7 +10,7 @@ field_name: field_intended_outcomes
 entity_type: node
 bundle: public_involvement_plan
 label: 'What are the intended outcomes or objectives of the public engagement?'
-description: '<a href="what-are-intended-outcomes-or-objectives-public-engagement" target="_blank">Intended Outcomes and Objectives of Public Engagement </a> '
+description: 'What do you hope to achieve with your public involvement? Are there specific things you need from your stakeholders? What you hope to achieve with your public involvement should be tied to what you promise your stakeholders. Thus, if your goal is to keep your stakeholders informed about your project, you shouldn''t make any commitments beyond the commitment to inform the public. Depending on the complexity of your project, you may have different goals and different promises at different phases of the project.'
 required: false
 translatable: false
 default_value: {  }

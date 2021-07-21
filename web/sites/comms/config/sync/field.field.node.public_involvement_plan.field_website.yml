@@ -1,19 +1,23 @@
-uuid: 88d3c94a-726f-46c3-8f4a-1789dc4e9428
+uuid: 5e813895-b064-42ad-9028-102ebe13cfac
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_website
     - node.type.public_involvement_plan
+  module:
+    - link
 id: node.public_involvement_plan.field_website
 field_name: field_website
 entity_type: node
 bundle: public_involvement_plan
-label: 'Project Website Link'
+label: Website
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  link_type: 16
+  title: 0
+field_type: link

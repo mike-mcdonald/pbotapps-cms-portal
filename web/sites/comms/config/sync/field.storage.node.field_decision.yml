@@ -1,18 +1,20 @@
-uuid: 977e1fe1-6231-437c-bf1d-f0cc19cbb626
+uuid: 0d7470e8-df8f-4c05-a13a-3db41c6cdbe9
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_key_decision
-field_name: field_key_decision
+id: node.field_decision
+field_name: field_decision
 entity_type: node
-type: string_long
+type: string
 settings:
+  max_length: 255
+  is_ascii: false
   case_sensitive: false
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

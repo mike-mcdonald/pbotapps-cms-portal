@@ -10,7 +10,7 @@ field_name: field_benefit
 entity_type: node
 bundle: public_involvement_plan
 label: 'Public involvement will address these anticipated benefits and possible intended and unintended consequences: '
-description: "<a href=\"public-involvement-will-address-these-anticipated-benefits-and-possible-intended-and-unintended\" target=\"_blank\">Considerations of Benefits and Consequences</a> \r\n\r\n"
+description: 'Addressing the intended and possible unintended consequences of your project is important to understanding your project''s impact. The vision of your project that you communicate to your stakeholders will be built on its intended consequences. Articulating this vision is an important part of inspiring stakeholders during the public involvement process. At the same time, it is important to be realistic about what your project can achieve. Being clear about possible unintended consequences will give your public involvement plan a needed dose of realism. '
 required: false
 translatable: false
 default_value: {  }

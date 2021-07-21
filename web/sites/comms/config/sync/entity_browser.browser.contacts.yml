@@ -1,0 +1,42 @@
+uuid: 098fece2-fd7d-4a0d-9f7f-d32b78c45a3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.contact_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: contacts
+label: Consultants
+display: modal
+display_configuration:
+  width: ''
+  height: '500'
+  link_text: 'Select contacts'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  a3f3e5fa-6532-4601-b9c4-ac6e4535a919:
+    settings:
+      view: contact_browser
+      view_display: entity_browser_1
+      submit_text: 'Select contacts'
+      auto_select: false
+    uuid: a3f3e5fa-6532-4601-b9c4-ac6e4535a919
+    weight: 1
+    label: Find
+    id: view
+  3a5cba4d-f57b-4d34-94e1-a651d8a31218:
+    settings:
+      entity_type: node
+      bundle: contact_info
+      form_mode: browser
+      submit_text: 'Save contact'
+    uuid: 3a5cba4d-f57b-4d34-94e1-a651d8a31218
+    weight: 2
+    label: Create
+    id: entity_form

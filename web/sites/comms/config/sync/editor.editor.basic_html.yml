@@ -15,45 +15,40 @@ settings:
     rows:
       -
         -
+          name: 'Block Formatting'
+          items:
+            - Format
+        -
           name: Formatting
           items:
             - Bold
             - Italic
+            - Underline
+            - RemoveFormat
             - Paste
+            - PasteFromWord
         -
           name: Linking
           items:
             - DrupalLink
             - DrupalUnlink
         -
-          name: Lists
+          name: Media
           items:
             - BulletedList
             - NumberedList
-        -
-          name: Media
-          items:
             - Blockquote
-            - DrupalImage
-        -
-          name: 'Block Formatting'
-          items:
-            - Format
-        -
-          name: Tools
-          items:
-            - Source
-            - Language
         -
           name: Other
           items:
             - Undo
+            - Redo
             - Maximize
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: ''
+    language:
+      language_list: un
 image_upload:
   status: true
   scheme: public

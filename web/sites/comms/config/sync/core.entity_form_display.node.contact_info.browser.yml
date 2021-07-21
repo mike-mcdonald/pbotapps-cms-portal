@@ -1,0 +1,61 @@
+uuid: c293e14b-502a-496d-8dbb-02159c47a8d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.browser
+    - field.field.node.contact_info.field_email_address
+    - field.field.node.contact_info.field_phone_number
+    - field.field.node.contact_info.field_type
+    - node.type.contact_info
+  module:
+    - field_layout
+    - telephone
+  theme:
+    - rain
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: node.contact_info.browser
+targetEntityType: node
+bundle: contact_info
+mode: browser
+content:
+  field_email_address:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_phone_number:
+    weight: 2
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_type:
+    type: options_buttons
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  status: true
+  sticky: true
+  uid: true

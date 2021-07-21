@@ -1,4 +1,4 @@
-uuid: 79117323-e2a0-428a-b0e9-b60c4fd0f624
+uuid: f204f821-09ef-49c3-be28-1509eca25ede
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
 id: node.field_consultant
 field_name: field_consultant
 entity_type: node
-type: string_long
+type: entity_reference
 settings:
-  case_sensitive: false
+  target_type: node
 module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

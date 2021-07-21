@@ -1,9 +1,10 @@
-uuid: 009825ef-6d92-4ad0-9713-77da4cce9468
+uuid: 47626f2f-0b5e-45d7-9351-20fd0b885899
 langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.staff
+    - core.entity_form_mode.node.browser
+    - entity_browser.browser.contacts
     - field.field.node.public_involvement_plan.field_benefit
     - field.field.node.public_involvement_plan.field_budget
     - field.field.node.public_involvement_plan.field_consultant
@@ -32,10 +33,8 @@ dependencies:
     - entity_browser
     - field_layout
     - file
-    - link
     - paragraphs
     - path
-    - text
   theme:
     - rain
 third_party_settings:
@@ -43,75 +42,70 @@ third_party_settings:
     id: layout_onecol
     settings:
       label: ''
-id: node.public_involvement_plan.default
+id: node.public_involvement_plan.browser
 targetEntityType: node
 bundle: public_involvement_plan
-mode: default
+mode: browser
 content:
   created:
     type: datetime_timestamp
-    weight: 26
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   field_benefit:
-    weight: 17
+    weight: 23
     settings:
-      rows: 2
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
   field_budget:
-    type: entity_reference_paragraphs
-    weight: 19
+    type: paragraphs
+    weight: 26
     settings:
       title: budget
       title_plural: Budgets
       edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: public_involvement_budget
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_consultant:
-    weight: 8
+    weight: 30
     settings:
       entity_browser: contacts
       field_widget_display: label
       field_widget_edit: true
       field_widget_remove: true
-      open: true
       selection_mode: selection_append
       field_widget_replace: false
+      open: false
       field_widget_display_settings: {  }
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
-  field_decision:
-    weight: 16
+  field_div_sect:
+    weight: 2
     settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_description:
-    weight: 1
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
-  field_div_sect:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
+    type: entity_reference_autocomplete
     region: content
   field_impact_description:
-    weight: 13
+    weight: 14
     settings:
       rows: 5
       placeholder: ''
@@ -119,21 +113,21 @@ content:
     type: string_textarea
     region: content
   field_impact_level:
-    weight: 12
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_intended_outcomes:
-    weight: 18
+    weight: 24
     settings:
-      rows: 2
+      rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: string_textarea
     region: content
   field_interest_description:
-    weight: 11
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -141,41 +135,13 @@ content:
     type: string_textarea
     region: content
   field_interest_level:
-    weight: 10
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  field_legal_mandate:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-    region: content
-  field_legal_requirement:
-    weight: 3
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_partner:
-    weight: 7
-    settings:
-      entity_browser: partners
-      field_widget_display: label
-      field_widget_edit: true
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
-      field_widget_replace: false
-      field_widget_display_settings: {  }
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   field_promise_description:
-    weight: 15
+    weight: 16
     settings:
       rows: 5
       placeholder: ''
@@ -183,43 +149,21 @@ content:
     type: string_textarea
     region: content
   field_public_promise:
-    weight: 14
+    weight: 15
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
-  field_question:
-    weight: 9
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_related_documents:
-    weight: 23
+    weight: 29
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
-  field_staff:
-    weight: 5
-    settings:
-      entity_browser: staff
-      field_widget_display: label
-      field_widget_edit: true
-      field_widget_remove: true
-      open: true
-      selection_mode: selection_append
-      field_widget_replace: false
-      field_widget_display_settings: {  }
-    third_party_settings: {  }
-    type: entity_browser_entity_reference
-    region: content
   field_strategy:
     type: entity_reference_paragraphs
-    weight: 20
+    weight: 27
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -230,14 +174,18 @@ content:
     third_party_settings: {  }
     region: content
   field_tags:
-    weight: 6
-    settings: {  }
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
-    type: options_buttons
+    type: entity_reference_autocomplete
     region: content
   field_timeframe:
     type: entity_reference_paragraphs
-    weight: 21
+    weight: 28
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -247,17 +195,9 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  field_website:
-    weight: 22
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
   path:
     type: path
-    weight: 27
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -265,21 +205,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 28
+    weight: 20
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 24
+    weight: 7
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 29
+    weight: 21
     region: content
     third_party_settings: {  }
   title:
@@ -292,7 +232,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 25
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
@@ -300,4 +240,12 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_decision: true
+  field_description: true
+  field_legal_mandate: true
+  field_legal_requirement: true
+  field_partner: true
+  field_question: true
+  field_staff: true
+  field_website: true

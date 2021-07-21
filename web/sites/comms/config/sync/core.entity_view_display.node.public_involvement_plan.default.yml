@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.public_involvement_plan.field_benefit
     - field.field.node.public_involvement_plan.field_budget
     - field.field.node.public_involvement_plan.field_consultant
+    - field.field.node.public_involvement_plan.field_decision
     - field.field.node.public_involvement_plan.field_description
     - field.field.node.public_involvement_plan.field_div_sect
     - field.field.node.public_involvement_plan.field_impact_description
@@ -13,13 +14,12 @@ dependencies:
     - field.field.node.public_involvement_plan.field_intended_outcomes
     - field.field.node.public_involvement_plan.field_interest_description
     - field.field.node.public_involvement_plan.field_interest_level
-    - field.field.node.public_involvement_plan.field_key_decision
     - field.field.node.public_involvement_plan.field_legal_mandate
-    - field.field.node.public_involvement_plan.field_legal_requirements
-    - field.field.node.public_involvement_plan.field_partners
+    - field.field.node.public_involvement_plan.field_legal_requirement
+    - field.field.node.public_involvement_plan.field_partner
     - field.field.node.public_involvement_plan.field_promise_description
     - field.field.node.public_involvement_plan.field_public_promise
-    - field.field.node.public_involvement_plan.field_questions
+    - field.field.node.public_involvement_plan.field_question
     - field.field.node.public_involvement_plan.field_related_documents
     - field.field.node.public_involvement_plan.field_staff
     - field.field.node.public_involvement_plan.field_strategy
@@ -30,8 +30,10 @@ dependencies:
   module:
     - entity_reference_revisions
     - file
+    - link
     - options
     - paragraphs
+    - text
     - user
 id: node.public_involvement_plan.default
 targetEntityType: node
@@ -55,18 +57,27 @@ content:
     third_party_settings: {  }
     region: content
   field_consultant:
-    weight: 20
+    weight: 34
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    type: basic_string
+    type: entity_reference_label
+    region: content
+  field_decision:
+    weight: 42
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_description:
-    weight: 23
+    weight: 41
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: text_default
     region: content
   field_div_sect:
     weight: 28
@@ -113,33 +124,31 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_key_decision:
-    type: basic_string
-    weight: 4
-    region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
   field_legal_mandate:
-    weight: 16
+    weight: 37
     label: above
-    settings: {  }
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
     third_party_settings: {  }
-    type: list_default
+    type: boolean
     region: content
-  field_legal_requirements:
-    weight: 15
+  field_legal_requirement:
+    weight: 36
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: basic_string
+    type: string
     region: content
-  field_partners:
-    weight: 21
+  field_partner:
+    weight: 38
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    type: basic_string
+    type: entity_reference_label
     region: content
   field_promise_description:
     weight: 32
@@ -155,12 +164,13 @@ content:
     third_party_settings: {  }
     type: list_default
     region: content
-  field_questions:
-    weight: 3
+  field_question:
+    weight: 40
     label: above
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    type: basic_string
+    type: string
     region: content
   field_related_documents:
     weight: 33
@@ -170,11 +180,12 @@ content:
     type: file_default
     region: content
   field_staff:
-    weight: 24
+    weight: 39
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    type: basic_string
+    type: entity_reference_label
     region: content
   field_strategy:
     type: paragraph_summary
@@ -201,12 +212,16 @@ content:
     third_party_settings: {  }
     region: content
   field_website:
-    weight: 29
+    weight: 35
     label: above
     settings:
-      link_to_entity: false
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    type: string
+    type: link
     region: content
 hidden:
   links: true

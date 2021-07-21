@@ -1,0 +1,21 @@
+uuid: 32bd5265-c339-4d51-8160-ada32264aa27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.contact_info
+  module:
+    - options
+id: node.contact_info.field_type
+field_name: field_type
+entity_type: node
+bundle: contact_info
+label: Type
+description: 'Select all the purposes this contact serves. This determines which selection forms this contact will appear in. For example, selecting ''Contractor or consultant'' will allow the contact to appear in fields for selecting a ''Consultant'' on a project.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
