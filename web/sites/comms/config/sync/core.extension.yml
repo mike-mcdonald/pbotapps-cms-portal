@@ -23,10 +23,12 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  elasticsearch_connector: 0
   entity: 0
   entity_browser: 0
   entity_browser_entity_form: 0
   entity_reference_revisions: 0
+  facets: 0
   field: 0
   field_layout: 0
   field_ui: 0
@@ -55,6 +57,7 @@ module:
   quickedit: 0
   rdf: 0
   search: 0
+  search_api: 0
   serialization: 0
   shortcut: 0
   simple_oauth: 0
