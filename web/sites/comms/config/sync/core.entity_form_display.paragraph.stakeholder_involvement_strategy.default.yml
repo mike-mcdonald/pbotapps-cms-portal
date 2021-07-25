@@ -7,11 +7,6 @@ dependencies:
     - field.field.paragraph.stakeholder_involvement_strategy.field_proposed_level_of_involvem
     - field.field.paragraph.stakeholder_involvement_strategy.field_stakeholders
     - paragraphs.paragraphs_type.stakeholder_involvement_strategy
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: paragraph.stakeholder_involvement_strategy.default
 targetEntityType: paragraph
 bundle: stakeholder_involvement_strategy

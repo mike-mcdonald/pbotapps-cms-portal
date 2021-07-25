@@ -6,11 +6,6 @@ dependencies:
     - field.field.paragraph.public_involvement_budget.field_activity
     - field.field.paragraph.public_involvement_budget.field_budget
     - paragraphs.paragraphs_type.public_involvement_budget
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: paragraph.public_involvement_budget.default
 targetEntityType: paragraph
 bundle: public_involvement_budget

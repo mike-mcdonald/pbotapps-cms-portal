@@ -9,15 +9,7 @@ dependencies:
     - field.field.node.contact_info.field_type
     - node.type.contact_info
   module:
-    - field_layout
     - telephone
-  theme:
-    - rain
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.contact_info.browser
 targetEntityType: node
 bundle: contact_info

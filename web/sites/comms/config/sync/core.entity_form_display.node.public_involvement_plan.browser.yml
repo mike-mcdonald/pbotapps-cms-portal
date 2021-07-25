@@ -31,17 +31,9 @@ dependencies:
     - node.type.public_involvement_plan
   module:
     - entity_browser
-    - field_layout
     - file
     - paragraphs
     - path
-  theme:
-    - rain
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.public_involvement_plan.browser
 targetEntityType: node
 bundle: public_involvement_plan
