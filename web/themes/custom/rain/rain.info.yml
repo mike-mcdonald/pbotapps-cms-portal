@@ -16,6 +16,7 @@ regions:
   local_admin: Local administration
   notification: Notification
   left_sidebar: Left sidebar
+  front_matter: Front matter
   content: Content
   right_sidebar: Right sidebar
   left_footer: Left footer
