@@ -1,0 +1,18 @@
+type Contact {
+  id: Int!
+  uuid: String!
+  name: String!
+  type: [String]
+}
+
+input ContactInput {
+  name: String!
+  type: [String]
+  phoneNumbers: [String]
+  emailAddresses: [String]
+}
+
+type ContactResponse implements Response {
+  errors: [Violation]
+  contact: Contact
+}

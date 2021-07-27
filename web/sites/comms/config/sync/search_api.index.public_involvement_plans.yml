@@ -1,0 +1,100 @@
+uuid: 6f19805e-6b38-4e03-bb9e-68af0f75b015
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_impact_level
+    - field.storage.node.field_interest_level
+    - search_api.server.default
+    - core.entity_view_mode.node.full
+  module:
+    - node
+    - search_api
+id: public_involvement_plans
+name: 'Public involvement plans'
+description: ''
+read_only: false
+field_settings:
+  field_impact_level:
+    label: 'Impact Level'
+    datasource_id: 'entity:node'
+    property_path: field_impact_level
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_impact_level
+  field_interest_level:
+    label: 'Interest Level'
+    datasource_id: 'entity:node'
+    property_path: field_interest_level
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_interest_level
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        authenticated: authenticated
+      view_mode:
+        'entity:node':
+          public_involvement_plan: full
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 21
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - public_involvement_plan
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  html_filter:
+    all_fields: false
+    fields:
+      - rendered_item
+      - title
+      - type
+    title: true
+    alt: true
+    tags:
+      b: 2
+      em: 1
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      u: 1
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: default

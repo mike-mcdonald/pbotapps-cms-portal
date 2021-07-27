@@ -63,10 +63,10 @@
 	</section>
 {% endif %}
 {% if page.header|render is not empty or page.header_menu|render is not empty %}
-	<header{{ create_attribute({ class: header_classes })}} role="banner">
+	<nav{{ create_attribute({ class: header_classes })}} role="banner">
     {{ page.header }}
     {{ page.header_menu }}
-	</header>
+	</nav>
 {% endif %}
 {% if page.local_admin|render is not empty %}
 	<section role="administration">
@@ -79,6 +79,11 @@
 			{{ page.notification }}
 		</span>
 	</section>
+{% endif %}
+{% if page.front_matter|render is not empty %}
+	<header class="{{ container_classes|join(' ') }}">
+		{{ page.front_matter }}
+	</header>
 {% endif %}
 <main{{ create_attribute({ class: container_classes|merge(['lg:flex-row', 'flex-grow', 'mb-24']) })}} role="main">
 	<a class="border-0" id="main-content" tabindex="-1"></a>

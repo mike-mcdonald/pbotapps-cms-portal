@@ -1,0 +1,14 @@
+type Plan {
+  id: Int!
+  uuid: String!
+  name: String!
+  description: String!
+  legalMandate: Boolean!
+  legalRequirements: [String]
+  staff: [Contact]
+  consultants: [Contact]
+  partners: [Contact]
+  region: String
+  questions: [String]
+  impact:
+}

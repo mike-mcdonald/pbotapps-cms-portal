@@ -1,0 +1,13 @@
+extend type Query {
+  contact(id: Int!): Contact
+  contacts(
+    type: String!
+    offset: Int = 0
+    limit: Int = 10
+  ): ContactConnection!
+}
+
+extend type Mutation {
+  createContact(data: ContactInput): ContactResponse
+  updateContact(data: ContactInput): ContactResponse
+}

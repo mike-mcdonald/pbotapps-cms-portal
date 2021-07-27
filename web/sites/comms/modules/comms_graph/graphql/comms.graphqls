@@ -1,0 +1,47 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  forums: [Forum]
+}
+
+type Mutation {
+  createTopic(
+    forum: Int!
+    data: TopicInput!
+  ): TopicResponse
+}
+scalar Violation
+
+interface Response {
+  errors: [Violation]
+}
+
+type Forum {
+  id: Int!
+  uuid: String!
+  name: String!
+  parent: Forum
+  topics: [ForumTopic!]
+}
+
+type ForumTopic {
+  id: Int!
+  uuid: String!
+  forum: Forum!
+  subject: String!
+  body: [String]
+}
+
+type TopicResponse implements Response {
+  errors: [Violation]
+  topic: ForumTopic
+}
+
+input TopicInput {
+  forum: Forum!
+  subject: String!
+  body: [String]
+}

@@ -5,15 +5,8 @@ dependencies:
   config:
     - taxonomy.vocabulary.promise_to_the_public_levels
   module:
-    - field_layout
-    - layout_discovery
     - path
     - text
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: taxonomy_term.promise_to_the_public_levels.default
 targetEntityType: taxonomy_term
 bundle: promise_to_the_public_levels

@@ -6,15 +6,7 @@ dependencies:
     - field.field.group_content.team-group_membership.group_roles
     - group.content_type.team-group_membership
   module:
-    - field_layout
     - path
-  theme:
-    - rain
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: group_content.team-group_membership.default
 targetEntityType: group_content
 bundle: team-group_membership

@@ -6,14 +6,6 @@ dependencies:
     - field.field.paragraph.public_promise.field_promdescription
     - field.field.paragraph.public_promise.field_promparagraph
     - paragraphs.paragraphs_type.public_promise
-  module:
-    - field_layout
-    - layout_discovery
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: paragraph.public_promise.default
 targetEntityType: paragraph
 bundle: public_promise

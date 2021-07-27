@@ -30,19 +30,11 @@ dependencies:
     - node.type.public_involvement_plan
   module:
     - entity_browser
-    - field_layout
     - file
     - link
     - paragraphs
     - path
     - text
-  theme:
-    - rain
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.public_involvement_plan.default
 targetEntityType: node
 bundle: public_involvement_plan
@@ -227,6 +219,12 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_tags:
@@ -245,6 +243,12 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_website:

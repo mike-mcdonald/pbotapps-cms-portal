@@ -19,6 +19,25 @@ services:
     networks:
       - cache-network
 
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch-oss:7.10.2
+    environment:
+      discovery.type: single-node
+    ports:
+      - "9200:9200"
+    volumes:
+      - es:/usr/share/elasticsearch/data
+    networks:
+      - elastic-network
+
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana-oss:7.10.2
+    ports:
+      - "5601:5601"
+    networks:
+      - elastic-network
+
   web:
     build:
       context: .docker/nginx
@@ -48,6 +67,7 @@ services:
       DATABASE_PASSWORD: postgres
       CACHE_HOST: redis
       CACHE_PORT: 6379
+      ELASTICSEARCH_URL: http://elasticsearch:9200
       DRUPAL_ENV: development
       XDEBUG_CONFIG: mode=debug client_host=host.docker.internal start_with_request=yes
       AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
@@ -58,6 +78,7 @@ services:
       - code-network
       - cache-network
       - db-network
+      - elastic-network
 
 networks:
   code-network:
@@ -66,7 +87,10 @@ networks:
     driver: bridge
   cache-network:
     driver: bridge
+  elastic-network:
+    driver: bridge
 
 volumes:
   tmp:
   db:
+  es:

@@ -1,0 +1,14 @@
+uuid: 965eccd0-3b3f-44d0-bddf-d70f43a935c6
+langcode: en
+status: true
+dependencies:
+  config:
+    - elasticsearch_connector.cluster.default
+    - key.key.elasticsearch_url
+id: elasticsearch_url
+label: 'Elasticsearch URL'
+config_type: elasticsearch_cluster
+config_prefix: elasticsearch_connector.cluster
+config_name: default
+config_item: url
+key_id: elasticsearch_url
