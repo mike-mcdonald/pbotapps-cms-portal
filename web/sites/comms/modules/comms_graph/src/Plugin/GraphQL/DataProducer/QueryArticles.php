@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\graphql_example\Plugin\GraphQL\DataProducer;
+namespace Drupal\comms_graph\Plugin\GraphQL\DataProducer;
 
 use Drupal\Core\Cache\RefinableCacheableDependencyInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\graphql\Plugin\GraphQL\DataProducer\DataProducerPluginBase;
-use Drupal\graphql_example\Wrappers\QueryConnection;
+use Drupal\comms_graph\Wrappers\QueryConnection;
 use GraphQL\Error\UserError;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -81,7 +81,7 @@ class QueryArticles extends DataProducerPluginBase implements ContainerFactoryPl
    * @param int $limit
    * @param \Drupal\Core\Cache\RefinableCacheableDependencyInterface $metadata
    *
-   * @return \Drupal\graphql_example\Wrappers\QueryConnection
+   * @return \Drupal\comms_graph\Wrappers\QueryConnection
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */

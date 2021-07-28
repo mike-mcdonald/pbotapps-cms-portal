@@ -5,6 +5,7 @@ schema {
 
 type Query {
   forums: [Forum]
+  forum(id:Int): Forum
 }
 
 type Mutation {
@@ -13,6 +14,7 @@ type Mutation {
     data: TopicInput!
   ): TopicResponse
 }
+
 scalar Violation
 
 interface Response {
@@ -41,7 +43,6 @@ type TopicResponse implements Response {
 }
 
 input TopicInput {
-  forum: Forum!
   subject: String!
   body: [String]
 }
