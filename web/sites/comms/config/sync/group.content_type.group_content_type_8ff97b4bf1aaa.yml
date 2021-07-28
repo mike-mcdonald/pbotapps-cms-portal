@@ -1,4 +1,4 @@
-uuid: 38f1ddc0-89d9-4e50-ae13-f8ab59e31db7
+uuid: 09e30924-d1d0-443f-bd1e-321baff14549
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,9 @@ dependencies:
   module:
     - gnode
     - node
-id: group_content_type_903ea603eb8c7
-label: 'Team: Group node (Public Involvement Plan)'
-description: 'Adds <em class="placeholder">Public Involvement Plan</em> content to groups both publicly and privately.'
+id: group_content_type_8ff97b4bf1aaa
+label: 'Team: Group node (Public involvement plan)'
+description: 'Adds <em class="placeholder">Public involvement plan</em> content to groups both publicly and privately.'
 group_type: team
 content_plugin: 'group_node:public_involvement_plan'
 plugin_config:
