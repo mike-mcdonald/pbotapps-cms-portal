@@ -11,7 +11,8 @@ use Drupal\comms_graph\Wrappers\QueryConnection;
 /**
  * @Schema(
  *   id = "comms",
- *   name = "Comms schema"
+ *   name = "Comms schema",
+ *   extensions = "composable",
  * )
  */
 class CommsSchema extends SdlSchemaPluginBase {
@@ -25,9 +26,6 @@ class CommsSchema extends SdlSchemaPluginBase {
 
     $this->addQueryFields($registry, $builder);
     $this->addArticleFields($registry, $builder);
-
-    // Re-usable connection type fields.
-    $this->addConnectionFields('ArticleConnection', $registry, $builder);
 
     return $registry;
   }
@@ -53,9 +51,14 @@ class CommsSchema extends SdlSchemaPluginBase {
     );
 
     $registry->addFieldResolver('Forum', 'parent',
-      $builder->produce('entity_reference')
-        ->map('entity', $builder->fromParent())
-        ->map('field', $builder->fromValue('parent'))
+      $builder->compose(
+        $builder->produce('entity_reference')
+          ->map('entity', $builder->fromParent())
+          ->map('field', $builder->fromValue('parent')),
+        $builder->callback(function ($value) {
+          return reset($value);
+        })
+      )
     );
 
     $registry->addFieldResolver('Forum', 'topics',
@@ -69,9 +72,17 @@ class CommsSchema extends SdlSchemaPluginBase {
             'taxonomy_forums' => $entity->id()
           ]);
 
-          return reset($nodes);
+          $ids = array_map(function ($node) { return $node->id(); }, $nodes);
+
+          return $ids;
         }),
-        $builder->produce('entity_load')
+        $builder->map(
+          $builder->produce('entity_load')
+            ->map('type', $builder->fromValue('node'))
+            ->map('bundles', $builder->fromValue(['forum']))
+            ->map('id', $builder->fromParent())
+        )
+      )
     );
 
     $registry->addFieldResolver('ForumTopic', 'id',
@@ -84,9 +95,19 @@ class CommsSchema extends SdlSchemaPluginBase {
         ->map('entity', $builder->fromParent())
     );
 
-    $registry->addFieldResolver('ForumTopic', 'name',
+    $registry->addFieldResolver('ForumTopic', 'subject',
       $builder->produce('entity_label')
         ->map('entity', $builder->fromParent())
+    );
+
+    $registry->addFieldResolver('ForumTopic', 'body',
+      $builder->compose(
+        $builder->fromPath('entity:node', 'body'),
+        $builder->map(function ($parent) {
+          return $parent['value'];
+        })
+      )
+
     );
   }
 
@@ -108,24 +129,4 @@ class CommsSchema extends SdlSchemaPluginBase {
         ->map('parent', $builder->fromValue(0))
     );
   }
-
-  /**
-   * @param string $type
-   * @param \Drupal\graphql\GraphQL\ResolverRegistry $registry
-   * @param \Drupal\graphql\GraphQL\ResolverBuilder $builder
-   */
-  protected function addConnectionFields($type, ResolverRegistry $registry, ResolverBuilder $builder): void {
-    $registry->addFieldResolver($type, 'total',
-      $builder->callback(function (QueryConnection $connection) {
-        return $connection->total();
-      })
-    );
-
-    $registry->addFieldResolver($type, 'items',
-      $builder->callback(function (QueryConnection $connection) {
-        return $connection->items();
-      })
-    );
-  }
-
 }

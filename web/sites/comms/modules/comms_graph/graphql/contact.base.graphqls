@@ -3,6 +3,8 @@ type Contact {
   uuid: String!
   name: String!
   type: [String]
+  phoneNumbers: [String]
+  emailAddresses: [String]
 }
 
 input ContactInput {
@@ -15,4 +17,9 @@ input ContactInput {
 type ContactResponse implements Response {
   errors: [Violation]
   contact: Contact
+}
+
+type ContactConnection {
+  total: Int!
+  items: [Contact!]
 }

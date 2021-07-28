@@ -26,7 +26,7 @@ type Forum {
   uuid: String!
   name: String!
   parent: Forum
-  topics: [ForumTopic!]
+  topics: [ForumTopic]
 }
 
 type ForumTopic {
