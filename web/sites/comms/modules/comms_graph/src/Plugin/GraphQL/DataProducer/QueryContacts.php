@@ -12,13 +12,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @DataProducer(
- *   id = "query_articles",
- *   name = @Translation("Load articles"),
- *   description = @Translation("Loads a list of articles."),
+ *   id = "query_contacts",
+ *   name = @Translation("Load contacts"),
+ *   description = @Translation("Loads a list of contacts."),
  *   produces = @ContextDefinition("any",
- *     label = @Translation("Article connection")
+ *     label = @Translation("Contact connection")
  *   ),
  *   consumes = {
+ *     "type" = @ContextDefinition("integer",
+ *       label = @Translation("Type")
+ *     ),
  *     "offset" = @ContextDefinition("integer",
  *       label = @Translation("Offset"),
  *       required = FALSE
@@ -30,7 +33,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   }
  * )
  */
-class QueryArticles extends DataProducerPluginBase implements ContainerFactoryPluginInterface {
+class QueryContacts extends DataProducerPluginBase implements ContainerFactoryPluginInterface {
 
   const MAX_LIMIT = 100;
 
@@ -85,7 +88,7 @@ class QueryArticles extends DataProducerPluginBase implements ContainerFactoryPl
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function resolve($offset, $limit, RefinableCacheableDependencyInterface $metadata) {
+  public function resolve($type, $offset, $limit, RefinableCacheableDependencyInterface $metadata) {
     if ($limit > static::MAX_LIMIT) {
       throw new UserError(sprintf('Exceeded maximum query limit: %s.', static::MAX_LIMIT));
     }
@@ -96,7 +99,8 @@ class QueryArticles extends DataProducerPluginBase implements ContainerFactoryPl
       ->currentRevision()
       ->accessCheck();
 
-    $query->condition($entityType->getKey('bundle'), 'public_involvement_plan_template');
+    $query->condition($entityType->getKey('bundle'), 'contact_info');
+    $query->condition('field_type', $type);
     $query->range($offset, $limit);
 
     $metadata->addCacheTags($entityType->getListCacheTags());

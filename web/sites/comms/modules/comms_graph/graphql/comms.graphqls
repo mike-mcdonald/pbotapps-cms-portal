@@ -6,6 +6,11 @@ schema {
 type Query {
   forums: [Forum]
   forum(id:Int): Forum
+  entityDefinition(
+    entity_type: String!
+    bundle: String
+    field_types: FieldTypes
+  ): EntityDefinition
 }
 
 type Mutation {
@@ -16,6 +21,7 @@ type Mutation {
 }
 
 scalar Violation
+scalar Any
 
 interface Response {
   errors: [Violation]
@@ -45,4 +51,38 @@ type TopicResponse implements Response {
 input TopicInput {
   subject: String!
   body: [String]
+}
+
+type TaxonomyTerm {
+  id: Int!
+  uuid: String!
+  name: String!
+  description: String
+}
+
+type EntityDefinition {
+  label: String
+  fields: [EntityDefinitionField]
+}
+
+type EntityDefinitionField {
+  id: String
+  label: String
+  description: String
+  type: String
+  required: Boolean
+  multiple: Boolean
+  maxNumItems: Int
+  status: Boolean
+  defaultValue: String
+  isReference: Boolean
+  isHidden: Boolean
+  weight: Int
+  settings: Any
+}
+
+enum FieldTypes {
+  ALL
+  BASE_FIELDS
+  FIELD_CONFIG
 }

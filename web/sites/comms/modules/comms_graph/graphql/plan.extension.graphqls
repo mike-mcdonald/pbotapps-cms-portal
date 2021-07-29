@@ -1,3 +1,7 @@
 extend type Query {
-  page(id: Int!): Page
+  plan(id: Int!): Page
+  plans(
+    offset: Int = 0
+    limit: Int = 10
+  ): PageConnection!
 }

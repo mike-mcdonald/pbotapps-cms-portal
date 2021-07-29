@@ -8,6 +8,5 @@ extend type Query {
 }
 
 extend type Mutation {
-  createContact(data: ContactInput): ContactResponse
-  updateContact(data: ContactInput): ContactResponse
+  saveContact(data: ContactInput): ContactResponse
 }

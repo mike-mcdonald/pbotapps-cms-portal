@@ -12,13 +12,13 @@ use Drupal\comms_graph\Wrappers\QueryConnection;
 
 /**
  * @SchemaExtension(
- *   id = "contact",
- *   name = "Contact extension",
- *   description = "Extension to add contacts",
+ *   id = "plan",
+ *   name = "Plan extension",
+ *   description = "Extension to add plans",
  *   schema = "comms"
  * )
  */
-class ContactSchemaExtension extends SdlSchemaExtensionPluginBase {
+class PlanSchemaExtension extends SdlSchemaExtensionPluginBase {
 
   /**
    * {@inheritdoc}
@@ -26,24 +26,94 @@ class ContactSchemaExtension extends SdlSchemaExtensionPluginBase {
   public function registerResolvers(ResolverRegistryInterface $registry): void {
     $builder = new ResolverBuilder();
 
-    $registry->addFieldResolver('Contact', 'id',
+    $registry->addFieldResolver('Plan', 'id',
       $builder->produce('entity_id')
         ->map('entity', $builder->fromParent())
     );
 
-    $registry->addFieldResolver('Contact', 'uuid',
+    $registry->addFieldResolver('Plan', 'uuid',
       $builder->produce('entity_uuid')
         ->map('entity', $builder->fromParent())
     );
 
-    $registry->addFieldResolver('Contact', 'name',
+    $registry->addFieldResolver('Plan', 'name',
       $builder->compose(
         $builder->produce('entity_label')
           ->map('entity', $builder->fromParent())
       )
     );
 
-    $registry->addFieldResolver('Contact', 'type',
+    $registry->addFieldResolver('Plan', 'description',
+      $builder->fromPath('entity:node', 'field_description.value'),
+    );
+
+    $registry->addFieldResolver('Plan', 'legalMandate',
+      $builder->fromPath('entity:node', 'field_legal_mandate.value'),
+    );
+
+    $registry->addFieldResolver('Plan', 'legalRequirements',
+      $builder->compose(
+        $builder->fromPath('entity:node', 'field_legal_requirement'),
+        $builder->map(
+          $builder->callback(function ($parent) {
+            return $parent['value'];
+          })
+        )
+      )
+    );
+
+    $registry->addFieldResolver('Plan', 'staff',
+      $builder->produce('entity_reference')
+        ->map('entity', $builder->fromParent())
+        ->map('field', $builder->fromValue('field_staff'))
+    );
+
+    $registry->addFieldResolver('Plan', 'consultants',
+      $builder->produce('entity_reference')
+        ->map('entity', $builder->fromParent())
+        ->map('field', $builder->fromValue('field_consultant'))
+    );
+
+    $registry->addFieldResolver('Plan', 'partners',
+      $builder->produce('entity_reference')
+        ->map('entity', $builder->fromParent())
+        ->map('field', $builder->fromValue('field_partner'))
+    );
+
+    $registry->addFieldResolver('Plan', 'region',
+      $builder->compose(
+        $builder->produce('entity_reference')
+          ->map('entity', $builder->fromParent())
+          ->map('field', $builder->fromValue('field_partner')),
+        $builder->produce('entity_label')
+          ->map('entity', $builder->fromParent())
+      )
+    );
+
+    $registry->addFieldResolver('Plan', 'questions',
+      $builder->compose(
+        $builder->fromPath('entity:node', 'field_question'),
+        $builder->map(
+          $builder->callback(function ($parent) {
+            return $parent['value'];
+          })
+        )
+      )
+    );
+
+    $registry->addFieldResolver('Plan', 'impactLevel',
+      $builder->produce('entity_reference')
+        ->map('entity', $builder->fromParent())
+        ->map('field', $builder->fromValue('field_impact_level'))
+    );
+
+    $registry->addFieldResolver('Plan', 'interestLevel',
+      $builder->produce('entity_reference')
+        ->map('entity', $builder->fromParent())
+        ->map('field', $builder->fromValue('field_interest_level'))
+    );
+
+    $registry->addFieldResolver('Plan', 'type',
       $builder->compose(
         $builder->fromPath('entity:node', 'field_type'),
         $builder->map(
@@ -56,7 +126,7 @@ class ContactSchemaExtension extends SdlSchemaExtensionPluginBase {
       )
     );
 
-    $registry->addFieldResolver('Contact', 'phoneNumbers',
+    $registry->addFieldResolver('Plan', 'phoneNumbers',
       $builder->compose(
         $builder->fromPath('entity:node', 'field_phone_number'),
         $builder->map(
@@ -67,7 +137,7 @@ class ContactSchemaExtension extends SdlSchemaExtensionPluginBase {
       )
     );
 
-    $registry->addFieldResolver('Contact', 'emailAddresses',
+    $registry->addFieldResolver('Plan', 'emailAddresses',
       $builder->compose(
         $builder->fromPath('entity:node', 'field_email_address'),
         $builder->map(
@@ -100,16 +170,15 @@ class ContactSchemaExtension extends SdlSchemaExtensionPluginBase {
    * @param \Drupal\graphql\GraphQL\ResolverBuilder $builder
    */
   protected function addQueryFields(ResolverRegistryInterface $registry, ResolverBuilder $builder): void {
-    $registry->addFieldResolver('Query', 'contact',
+    $registry->addFieldResolver('Query', 'plan',
       $builder->produce('entity_load')
         ->map('type', $builder->fromValue('node'))
-        ->map('bundles', $builder->fromValue(['contact_info']))
+        ->map('bundles', $builder->fromValue(['public_involvement_plan']))
         ->map('id', $builder->fromArgument('id'))
     );
 
-    $registry->addFieldResolver('Query', 'contacts',
-      $builder->produce('query_contacts')
-        ->map('type', $builder->fromArgument('type'))
+    $registry->addFieldResolver('Query', 'plans',
+      $builder->produce('query_plans')
         ->map('offset', $builder->fromArgument('offset'))
         ->map('limit', $builder->fromArgument('limit'))
     );

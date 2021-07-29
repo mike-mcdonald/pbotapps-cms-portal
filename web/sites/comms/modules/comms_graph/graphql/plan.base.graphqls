@@ -8,7 +8,33 @@ type Plan {
   staff: [Contact]
   consultants: [Contact]
   partners: [Contact]
+  region: [String]
+  questions: [String]
+  impactLevel: TaxonomyTerm
+  impactDescription: String
+  interestLevel: TaxonomyTerm
+  interestDescription: String
+}
+
+input PlanInput {
+  id: Int
+  name: String!
+  description: String!
+  legalMandate: Boolean!
+  legalRequirements: [String]
+  staff: [Int]
+  consultants: [Int]
+  partners: [Int]
   region: String
   questions: [String]
-  impact:
+}
+
+type PlanResponse implements Response {
+  errors: [Violation]
+  contact: Plan
+}
+
+type PlanConnection {
+  total: Int!
+  items: [Plan!]
 }
