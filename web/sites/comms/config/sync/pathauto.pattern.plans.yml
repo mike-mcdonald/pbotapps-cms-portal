@@ -1,0 +1,22 @@
+uuid: 52a049dc-c58e-4997-90fb-91bf887f46f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: plans
+label: Plans
+type: 'canonical_entities:node'
+pattern: '/plans/[node:title]'
+selection_criteria:
+  413125f2-d093-443c-acca-02c0ef41681e:
+    id: node_type
+    bundles:
+      public_involvement_plan: public_involvement_plan
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 413125f2-d093-443c-acca-02c0ef41681e
+selection_logic: and
+weight: -5
+relationships: {  }
