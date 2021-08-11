@@ -1,0 +1,8 @@
+name: Comms Migrations
+type: module
+description: "Migrations for previous Comms sites"
+package: Migrate
+core: 8.x
+dependencies:
+  - migrate:migrate
+core_version_requirement: ^8 || ^9
