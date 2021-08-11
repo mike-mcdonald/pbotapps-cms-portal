@@ -1,0 +1,25 @@
+id: org
+label: "PBOT Organization"
+migration_group: taxonomies
+source:
+  plugin: csv
+  path: sites/comms/modules/migrations/sources/organization.csv
+  header_row_count: 1
+  ids:
+    - TID
+process:
+  name: TITLE
+  vid:
+    plugin: default_value
+    default_value: sections_and_divisions
+  parent:
+    - plugin: migration_lookup
+      migration: org
+      source: PARENT
+    - plugin: default_value
+      default_value: 0
+destination:
+  plugin: entity:taxonomy_term
+  bundle: sections_and_divisions
+  overwrite_properties:
+    - name

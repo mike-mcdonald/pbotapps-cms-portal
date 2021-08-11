@@ -1,0 +1,23 @@
+id: regions
+label: "Regions of Portland"
+migration_group: taxonomies
+source:
+  plugin: csv
+  path: sites/comms/modules/migrations/sources/regions.csv
+  header_row_count: 1
+  ids:
+    - TID
+process:
+  name: TITLE
+  vid:
+    plugin: default_value
+    default_value: part_of_portland
+  parent:
+    - plugin: migration_lookup
+      migration: regions
+      source: PARENT
+    - plugin: default_value
+      default_value: 0
+destination:
+  plugin: entity:taxonomy_term
+  bundle: part_of_portland
