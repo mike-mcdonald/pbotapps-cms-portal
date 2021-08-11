@@ -10,8 +10,8 @@ _core:
   default_config_hash: XMsRP1YhWAcorbrFWZglMYJ_SgWHyF3fyCh5vDXaUN4
 id: rain_breadcrumbs
 theme: rain
-region: content
-weight: -6
+region: front_matter
+weight: -5
 provider: null
 plugin: system_breadcrumb_block
 settings:
