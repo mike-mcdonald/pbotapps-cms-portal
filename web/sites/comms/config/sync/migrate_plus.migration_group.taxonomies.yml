@@ -1,0 +1,10 @@
+uuid: 9c921af3-ee90-4f31-827d-2fcf1663198d
+langcode: en
+status: true
+dependencies: {  }
+id: taxonomies
+label: taxonomies
+description: ''
+source_type: null
+module: null
+shared_configuration: null
