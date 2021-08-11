@@ -1,0 +1,17 @@
+{{- if .Values.airflow.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ include "portal.fullname" . }}-fpm-env"
+  labels:
+    {{- include "portal.labels" . | nindent 4 }}
+    app.kubernetes.io/name: fpm
+data:
+  DATABASE_HOST: {{ .Values.postgresql.host }}
+  DATABASE_USER: {{ .Values.postgresql.user }}
+  CACHE_HOST: {{ .Values.redis.host }}
+  CACHE_PORT: {{ .Values.redis.port }}
+  ELASTICSEARCH_URL: {{ .Values.elasticsearch.url }}
+  AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
+  AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
+{{- end -}}

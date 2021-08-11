@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "portal.fullname" . }}-nginx
+  labels:
+    {{- include "portal.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.nginx.service.type }}
+  ports:
+    - port: {{ .Values.nginx.service.port }}
+      targetPort: nginx
+      protocol: TCP
+      name: nginx
+  selector:
+    {{- include "portal.selectorLabels" . | nindent 4 }}
