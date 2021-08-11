@@ -26,6 +26,7 @@
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
         "drupal/ds": "^3.13",
+        "drupal/easy_breadcrumb": "^2.0",
         "drupal/elasticsearch_connector": "^7.0@alpha",
         "drupal/entity_browser": "^2.6",
         "drupal/facets": "^1.8",
