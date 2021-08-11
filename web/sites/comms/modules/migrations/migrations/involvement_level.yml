@@ -1,0 +1,17 @@
+id: involvement_level
+label: "Impact levels"
+migration_group: taxonomies
+source:
+  plugin: csv
+  path: sites/comms/modules/migrations/sources/involvement_levels.csv
+  header_row_count: 1
+  ids:
+    - TID
+process:
+  name: TITLE
+  vid:
+    plugin: default_value
+    default_value: levels_of_public_involvement
+destination:
+  plugin: entity:taxonomy_term
+  bundle: levels_of_public_involvement
