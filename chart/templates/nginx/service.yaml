@@ -10,9 +10,9 @@ spec:
   type: {{ .Values.nginx.service.type }}
   ports:
     - port: {{ .Values.nginx.service.port }}
-      targetPort: nginx
+      targetPort: http
       protocol: TCP
-      name: nginx
+      name: http
   selector:
     {{- include "portal.selectorLabels" . | nindent 4 }}
     app.kubernetes.io/part-of: {{ .Chart.Name }}
