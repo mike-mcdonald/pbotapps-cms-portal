@@ -280,6 +280,20 @@ jobs:
       RELEASE_NAME: ${{ secrets.HELM_RELEASE_NAME }}-test
     steps:
       - uses: actions/checkout@v2
+      - name: Create Kubernetes secrets
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          OAUTH_PRIVATE_KEY: ${{ secrets.OAUTH_PRIVATE_KEY }}
+          OAUTH_PUBLIC_KEY: ${{ secrets.OAUTH_PUBLIC_KEY }}
+        run: |
+          mkdir -p chart/.secret
+          echo -n "$AZURE_CLIENT_ID" > chart/.secret/AZURE_CLIENT_ID
+          echo -n "$AZURE_CLIENT_SECRET" > chart/.secret/AZURE_CLIENT_SECRET
+          echo -n "$DATABASE_PASSWORD" > chart/.secret/DATABASE_PASSWORD
+          echo -n "$OAUTH_PRIVATE_KEY" > chart/.secret/private.key
+          echo -n "$OAUTH_PUBLIC_KEY" > chart/.secret/public.key
       - uses: azure/setup-kubectl@v1
       - uses: azure/setup-helm@v1
       - name: Login via Az module
