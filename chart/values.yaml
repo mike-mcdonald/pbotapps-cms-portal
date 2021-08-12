@@ -15,6 +15,12 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
+files:
+  storageClass: standard
+  size: 4Gi
+  accessModes:
+    - ReadWriteMany
+
 postgresql:
   host: postgresql-ha-pgpool
   user: portal_admin
@@ -135,8 +141,7 @@ nginx:
   affinity: {}
 
   ingress:
-    enabled: true
-    className: nginx
+    enabled: false
     annotations:
       kubernetes.io/ingress.class: nginx
       cert-manager.io/issuer: letsencrypt-production

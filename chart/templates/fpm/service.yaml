@@ -13,3 +13,5 @@ spec:
       name: fpm
   selector:
     {{- include "portal.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: fpm

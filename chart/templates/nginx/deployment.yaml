@@ -4,6 +4,8 @@ metadata:
   name: {{ include "portal.fullname" . }}-nginx
   labels:
     {{- include "portal.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: nginx
 spec:
   {{- if not .Values.nginx.autoscaling.enabled }}
   replicas: {{ .Values.nginx.replicaCount }}
@@ -11,6 +13,8 @@ spec:
   selector:
     matchLabels:
       {{- include "portal.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/part-of: {{ .Chart.Name }}
+      app.kubernetes.io/component: nginx
   template:
     metadata:
       {{- with .Values.nginx.podAnnotations }}

@@ -4,6 +4,8 @@ metadata:
   name: {{ include "portal.fullname" . }}-fpm
   labels:
     {{- include "portal.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: fpm
 spec:
   {{- if not .Values.fpm.autoscaling.enabled }}
   replicas: {{ .Values.fpm.replicaCount }}
@@ -11,6 +13,8 @@ spec:
   selector:
     matchLabels:
       {{- include "portal.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/part-of: {{ .Chart.Name }}
+      app.kubernetes.io/component: fpm
   template:
     metadata:
       {{- with .Values.fpm.podAnnotations }}
@@ -27,26 +31,82 @@ spec:
       serviceAccountName: {{ include "portal.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.fpm.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: volume-permissions
+          image: busybox
+          imagePullPolicy: IfNotPresent
+          command:
+            - sh
+            - -c
+            - |
+              chown -R "root:www-data" "/var/drupal"
+              chmod 775 "/var/drupal"
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - name: {{ include "portal.fullname" . }}-fpm
+              mountPath: /var/drupal
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.fpm.securityContext | nindent 12 }}
           image: "{{ .Values.fpm.image.repository }}:{{ .Values.fpm.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.fpm.image.pullPolicy }}
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-redis
+                  key: REDIS_PASSWORD
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-fpm
+                  key: DATABASE_PASSWORD
+            - name: AZURE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-fpm
+                  key: AZURE_CLIENT_ID
+            - name: AZURE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-fpm
+                  key: AZURE_CLIENT_SECRET
+          volumeMounts:
+            - name: {{ include "portal.fullname" . }}-fpm
+              mountPath: /var/www/html/web/sites/default/files
+            - name: config
+              mountPath: /var/www/html/web/sites/sites.php
+              subPath: sites.php
+              readOnly: true
+            - name: oauth-keys
+              mountPath: /var/www/html/public.key
+              subPath: public.key
+            - name: oauth-keys
+              mountPath: /var/www/html/private.key
+              subPath: private.key
           ports:
-            - name: http
-              containerPort: 80
+            - name: fpm
+              containerPort: 9000
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             {{- toYaml .Values.fpm.resources | nindent 12 }}
+      volumes:
+        - name: {{ include "portal.fullname" . }}-fpm
+          persistentVolumeClaim:
+            claimName: {{ include "portal.fullname" . }}-files
+        - name: config
+          configMap:
+            name: {{ include "portal.fullname" . }}-fpm
+        - name: oauth-keys
+          secret:
+            secretName: {{ include "portal.fullname" . }}-fpm
+            items:
+              - key: public.key
+                path: public.key
+              - key: private.key
+                path: private.key
       {{- with .Values.fpm.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

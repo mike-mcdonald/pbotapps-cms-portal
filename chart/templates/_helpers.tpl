@@ -60,3 +60,14 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Database password
+*/}}
+{{- define "portal.databasePassword" -}}
+{{- if not (empty .Values.postgres.password) -}}
+  {{- .Values.postgres.password -}}
+{{- else -}}
+  {{- randAlphaNum 10 -}}
+{{- end -}}
+{{- end }}

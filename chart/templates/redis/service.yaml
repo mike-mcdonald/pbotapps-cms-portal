@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "portal.fullname" . }}-redis
+  labels:
+    {{- include "portal.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: redis
+spec:
+  type: ClusterIP
+  selector:
+    {{- include "portal.selectorLabels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: redis
+  ports:
+    - name: {{ include "portal.fullname" . }}-redis
+      protocol: TCP
+      port: {{ .Values.redis.service.port }}
+      targetPort: 6379

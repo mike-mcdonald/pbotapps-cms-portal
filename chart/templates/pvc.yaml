@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "portal.fullname" . }}-files
+  labels:
+    {{- include "portal.labels" . | nindent 4 }}
+    app.kubernetes.io/name: "{{ include "portal.fullname" . }}-files"
+spec:
+  {{- if .Values.files.storageClass }}
+  storageClassName: {{ .Values.files.storageClass }}
+  {{- end }}
+  accessModes:
+  {{- range .Values.files.accessModes }}
+    - {{ . | quote }}
+  {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.files.size }}

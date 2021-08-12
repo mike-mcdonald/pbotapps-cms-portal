@@ -5,13 +5,18 @@ metadata:
   name: "{{ include "portal.fullname" . }}-fpm-env"
   labels:
     {{- include "portal.labels" . | nindent 4 }}
-    app.kubernetes.io/name: fpm
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: fpm
 data:
   DATABASE_HOST: {{ .Values.postgresql.host }}
   DATABASE_USER: {{ .Values.postgresql.user }}
-  CACHE_HOST: {{ .Values.redis.host }}
-  CACHE_PORT: {{ .Values.redis.port }}
   ELASTICSEARCH_URL: {{ .Values.elasticsearch.url }}
-  AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
-  AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
+  CACHE_HOST: {{ include "portal.fullname" . }}-redis
+  CACHE_PORT: "{{ .Values.redis.service.port }}"
+  sites.php: |-
+    <?php
+    $sites['portal.pbotapps.portland.gov.comms'] = 'comms';
+    $sites['portal.pbotapps.portland.gov'] = 'default';
+
+
 {{- end -}}
