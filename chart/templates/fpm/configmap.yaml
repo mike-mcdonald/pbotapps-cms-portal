@@ -1,8 +1,7 @@
-{{- if .Values.airflow.enabled -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: "{{ include "portal.fullname" . }}-fpm-env"
+  name: "{{ include "portal.fullname" . }}-fpm"
   labels:
     {{- include "portal.labels" . | nindent 4 }}
     app.kubernetes.io/part-of: {{ .Chart.Name }}
@@ -13,10 +12,17 @@ data:
   ELASTICSEARCH_URL: {{ .Values.elasticsearch.url }}
   CACHE_HOST: {{ include "portal.fullname" . }}-redis
   CACHE_PORT: "{{ .Values.redis.service.port }}"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "{{ include "portal.fullname" . }}-fpm-sites"
+  labels:
+    {{- include "portal.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: fpm
+data:
   sites.php: |-
     <?php
     $sites['portal.pbotapps.portland.gov.comms'] = 'comms';
     $sites['portal.pbotapps.portland.gov'] = 'default';
-
-
-{{- end -}}

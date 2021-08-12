@@ -65,8 +65,8 @@ Create the name of the service account to use
 Database password
 */}}
 {{- define "portal.databasePassword" -}}
-{{- if not (empty .Values.postgres.password) -}}
-  {{- .Values.postgres.password -}}
+{{- if not (empty .Values.postgresql.password) -}}
+  {{- .Values.postgresql.password -}}
 {{- else -}}
   {{- randAlphaNum 10 -}}
 {{- end -}}

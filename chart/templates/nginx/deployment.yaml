@@ -1,3 +1,4 @@
+{{- $fullName := include "portal.fullname" . -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,6 +24,8 @@ spec:
       {{- end }}
       labels:
         {{- include "portal.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/part-of: {{ .Chart.Name }}
+        app.kubernetes.io/component: nginx
     spec:
       {{- with .Values.nginx.imagePullSecrets }}
       imagePullSecrets:
@@ -41,6 +44,16 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
+          env:
+            - name: FASTCGI_HOST
+              value: {{ include "portal.fullname" . }}-fpm
+            - name: FASTCGI_PORT
+              value: "{{ .Values.fpm.service.port }}"
+          volumeMounts:
+            {{ range $key, $val := .Values.sites -}}
+            - name: files-{{ $key }}
+              mountPath: /var/www/html/web/sites/{{ $key }}/files
+            {{ end }}
           livenessProbe:
             httpGet:
               path: /
@@ -51,6 +64,12 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.nginx.resources | nindent 12 }}
+      volumes:
+        {{ range $key, $val := .Values.sites -}}
+        - name: files-{{ $key }}
+          persistentVolumeClaim:
+            claimName: {{ $fullName }}-{{ $key }}-files
+        {{ end }}
       {{- with .Values.nginx.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

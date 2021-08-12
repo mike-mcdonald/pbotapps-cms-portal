@@ -5,6 +5,8 @@ metadata:
   name: {{ include "chart.fullname" . }}-fpm
   labels:
     {{- include "chart.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: fpm
 spec:
   scaleTargetRef:
     apiVersion: apps/v1

@@ -4,6 +4,8 @@ metadata:
   name: {{ include "portal.fullname" . }}-fpm
   labels:
     {{- include "portal.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: fpm
 spec:
   type: {{ .Values.fpm.service.type }}
   ports:

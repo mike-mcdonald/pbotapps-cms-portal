@@ -1,18 +1,24 @@
+{{- $fullName := include "portal.fullname" . -}}
+{{- $self := . -}}
+{{ range $key, $val := .Values.sites }}
+{{- $files := merge $self.Values.files $val.files -}}
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ include "portal.fullname" . }}-files
+  name: {{ $fullName }}-{{ $key }}-files
   labels:
-    {{- include "portal.labels" . | nindent 4 }}
-    app.kubernetes.io/name: "{{ include "portal.fullname" . }}-files"
+    {{- include "portal.labels" $self | nindent 4 }}
+    app.kubernetes.io/name: "{{ $fullName }}-files"
 spec:
-  {{- if .Values.files.storageClass }}
-  storageClassName: {{ .Values.files.storageClass }}
+  {{- if $files.storageClass }}
+  storageClassName: {{ $files.storageClass }}
   {{- end }}
   accessModes:
-  {{- range .Values.files.accessModes }}
+  {{- range $files.accessModes }}
     - {{ . | quote }}
   {{- end }}
   resources:
     requests:
-      storage: {{ .Values.files.size }}
+      storage: {{ $files.size }}
+{{ end }}

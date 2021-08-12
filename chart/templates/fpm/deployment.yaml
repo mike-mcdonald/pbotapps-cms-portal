@@ -1,3 +1,4 @@
+{{- $fullName := include "portal.fullname" . -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,6 +24,8 @@ spec:
       {{- end }}
       labels:
         {{- include "portal.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/part-of: {{ .Chart.Name }}
+        app.kubernetes.io/component: fpm
     spec:
       {{- with .Values.fpm.imagePullSecrets }}
       imagePullSecrets:
@@ -40,18 +43,23 @@ spec:
             - -c
             - |
               chown -R "root:www-data" "/var/drupal"
-              chmod 775 "/var/drupal"
+              chmod -R 775 "/var/drupal"
           securityContext:
             runAsUser: 0
           volumeMounts:
-            - name: {{ include "portal.fullname" . }}-fpm
-              mountPath: /var/drupal
+            {{ range $key, $val := .Values.sites -}}
+            - name: files-{{ $key }}
+              mountPath: /var/drupal/{{ $key }}
+            {{ end }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: fpm
           securityContext:
             {{- toYaml .Values.fpm.securityContext | nindent 12 }}
           image: "{{ .Values.fpm.image.repository }}:{{ .Values.fpm.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.fpm.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "portal.fullname" . }}-fpm
           env:
             - name: REDIS_PASSWORD
               valueFrom:
@@ -74,9 +82,7 @@ spec:
                   name: {{ include "portal.fullname" . }}-fpm
                   key: AZURE_CLIENT_SECRET
           volumeMounts:
-            - name: {{ include "portal.fullname" . }}-fpm
-              mountPath: /var/www/html/web/sites/default/files
-            - name: config
+            - name: sites
               mountPath: /var/www/html/web/sites/sites.php
               subPath: sites.php
               readOnly: true
@@ -86,6 +92,10 @@ spec:
             - name: oauth-keys
               mountPath: /var/www/html/private.key
               subPath: private.key
+            {{ range $key, $val := .Values.sites -}}
+            - name: files-{{ $key }}
+              mountPath: /var/www/html/web/sites/{{ $key }}/files
+            {{ end }}
           ports:
             - name: fpm
               containerPort: 9000
@@ -93,12 +103,9 @@ spec:
           resources:
             {{- toYaml .Values.fpm.resources | nindent 12 }}
       volumes:
-        - name: {{ include "portal.fullname" . }}-fpm
-          persistentVolumeClaim:
-            claimName: {{ include "portal.fullname" . }}-files
-        - name: config
+        - name: sites
           configMap:
-            name: {{ include "portal.fullname" . }}-fpm
+            name: {{ include "portal.fullname" . }}-fpm-sites
         - name: oauth-keys
           secret:
             secretName: {{ include "portal.fullname" . }}-fpm
@@ -107,6 +114,11 @@ spec:
                 path: public.key
               - key: private.key
                 path: private.key
+        {{ range $key, $val := .Values.sites -}}
+        - name: files-{{ $key }}
+          persistentVolumeClaim:
+            claimName: {{ $fullName }}-{{ $key }}-files
+        {{ end }}
       {{- with .Values.fpm.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
