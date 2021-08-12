@@ -23,6 +23,7 @@ files:
 
 sites:
   default:
+    # Use files map per site to override default files map settings above
     files: {}
   comms:
     files: {}
@@ -75,7 +76,7 @@ fpm:
 
   service:
     type: ClusterIP
-    port: 80
+    port: 9000
 
   resources:
     {}
