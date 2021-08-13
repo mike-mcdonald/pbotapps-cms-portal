@@ -334,7 +334,7 @@ jobs:
       - name: Refresh release
         run: |
           kubectl \
-          --namespace='$K8S_NAMESPACE' \
+          --namespace=$K8S_NAMESPACE \
           delete \
           pod \
           -l app.kubernetes.io/instance=$RELEASE_NAME
