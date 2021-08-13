@@ -1,0 +1,133 @@
+{{- $fullName := include "portal.fullname" . -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "portal.fullname" . }}-fpm
+  labels:
+    {{- include "portal.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: fpm
+spec:
+  {{- if not .Values.fpm.autoscaling.enabled }}
+  replicas: {{ .Values.fpm.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "portal.selectorLabels" . | nindent 6 }}
+      app.kubernetes.io/part-of: {{ .Chart.Name }}
+      app.kubernetes.io/component: fpm
+  template:
+    metadata:
+      {{- with .Values.fpm.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "portal.selectorLabels" . | nindent 8 }}
+        app.kubernetes.io/part-of: {{ .Chart.Name }}
+        app.kubernetes.io/component: fpm
+    spec:
+      {{- with .Values.fpm.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "portal.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.fpm.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: volume-permissions
+          image: busybox
+          imagePullPolicy: IfNotPresent
+          command:
+            - sh
+            - -c
+            - |
+              chown -R "root:www-data" "/var/drupal"
+              chmod -R 775 "/var/drupal"
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            {{ range $key, $val := .Values.sites -}}
+            - name: files-{{ $key }}
+              mountPath: /var/drupal/{{ $key }}
+            {{ end }}
+      containers:
+        - name: fpm
+          securityContext:
+            {{- toYaml .Values.fpm.securityContext | nindent 12 }}
+          image: "{{ .Values.fpm.image.repository }}:{{ .Values.fpm.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.fpm.image.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ include "portal.fullname" . }}-fpm
+          env:
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-redis
+                  key: REDIS_PASSWORD
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-fpm
+                  key: DATABASE_PASSWORD
+            - name: AZURE_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-fpm
+                  key: AZURE_CLIENT_ID
+            - name: AZURE_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-fpm
+                  key: AZURE_CLIENT_SECRET
+          volumeMounts:
+            - name: sites
+              mountPath: /var/www/html/web/sites/sites.php
+              subPath: sites.php
+              readOnly: true
+            - name: oauth-keys
+              mountPath: /var/www/html/public.key
+              subPath: public.key
+            - name: oauth-keys
+              mountPath: /var/www/html/private.key
+              subPath: private.key
+            {{ range $key, $val := .Values.sites -}}
+            - name: files-{{ $key }}
+              mountPath: /var/www/html/web/sites/{{ $key }}/files
+            {{ end }}
+          ports:
+            - name: fpm
+              containerPort: 9000
+              protocol: TCP
+          resources:
+            {{- toYaml .Values.fpm.resources | nindent 12 }}
+      volumes:
+        - name: sites
+          configMap:
+            name: {{ include "portal.fullname" . }}-fpm-sites
+        - name: oauth-keys
+          secret:
+            secretName: {{ include "portal.fullname" . }}-fpm
+            items:
+              - key: public.key
+                path: public.key
+              - key: private.key
+                path: private.key
+        {{ range $key, $val := .Values.sites -}}
+        - name: files-{{ $key }}
+          persistentVolumeClaim:
+            claimName: {{ $fullName }}-{{ $key }}-files
+        {{ end }}
+      {{- with .Values.fpm.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.fpm.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.fpm.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}

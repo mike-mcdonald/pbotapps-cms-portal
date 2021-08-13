@@ -267,3 +267,74 @@ jobs:
 
       - name: Push images to repository
         run: docker push $REPOSITORY/${{ matrix.image }}:main
+
+  deploy:
+    name: Deploy Helm upgrade on test namespace
+    needs:
+      - push-images
+    runs-on: ubuntu-latest
+    env:
+      K8S_CLUSTER_NAME: ${{ secrets.K8S_CLUSTER_NAME }}
+      K8S_CLUSTER_RG: ${{ secrets.K8S_CLUSTER_RG }}
+      K8S_NAMESPACE: test
+      RELEASE_NAME: ${{ secrets.HELM_RELEASE_NAME }}-test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create Kubernetes secrets
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          OAUTH_PRIVATE_KEY: ${{ secrets.OAUTH_PRIVATE_KEY }}
+          OAUTH_PUBLIC_KEY: ${{ secrets.OAUTH_PUBLIC_KEY }}
+        run: |
+          mkdir -p chart/.secret
+          echo -n "$AZURE_CLIENT_ID" > chart/.secret/AZURE_CLIENT_ID
+          echo -n "$AZURE_CLIENT_SECRET" > chart/.secret/AZURE_CLIENT_SECRET
+          echo -n "$DATABASE_PASSWORD" > chart/.secret/DATABASE_PASSWORD
+          echo -n "$OAUTH_PRIVATE_KEY" > chart/.secret/private.key
+          echo -n "$OAUTH_PUBLIC_KEY" > chart/.secret/public.key
+      - uses: azure/setup-kubectl@v1
+      - uses: azure/setup-helm@v1
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Log in to AKS
+        run: az aks get-credentials --name $K8S_CLUSTER_NAME --resource-group $K8S_CLUSTER_RG
+      - name: Deploy release
+        run: |
+          helm \
+          upgrade \
+          --namespace $K8S_NAMESPACE \
+          --install \
+          $RELEASE_NAME \
+          chart/ \
+          -f chart/values-test.yaml
+
+  refresh:
+    name: Refresh pods on test namespace
+    needs:
+      - deploy
+    runs-on: ubuntu-latest
+    env:
+      K8S_CLUSTER_NAME: ${{ secrets.K8S_CLUSTER_NAME }}
+      K8S_CLUSTER_RG: ${{ secrets.K8S_CLUSTER_RG }}
+      K8S_NAMESPACE: test
+      RELEASE_NAME: ${{ secrets.HELM_RELEASE_NAME }}-test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: azure/setup-kubectl@v1
+      - name: Login via Az module
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Log in to AKS
+        run: az aks get-credentials --name $K8S_CLUSTER_NAME --resource-group $K8S_CLUSTER_RG
+      - name: Refresh release
+        run: |
+          kubectl \
+          --namespace='$K8S_NAMESPACE' \
+          delete \
+          pod \
+          -l app.kubernetes.io/instance=$RELEASE_NAME

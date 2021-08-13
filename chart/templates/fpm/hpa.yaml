@@ -1,0 +1,30 @@
+{{- if .Values.fpm.autoscaling.enabled }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "chart.fullname" . }}-fpm
+  labels:
+    {{- include "chart.labels" . | nindent 4 }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+    app.kubernetes.io/component: fpm
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "chart.fullname" . }}-fpm
+  minReplicas: {{ .Values.fpm.autoscaling.minReplicas }}
+  maxReplicas: {{ .Values.fpm.autoscaling.maxReplicas }}
+  metrics:
+    {{- if .Values.fpm.autoscaling.targetCPUUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .Values.fpm.autoscaling.targetCPUUtilizationPercentage }}
+    {{- end }}
+    {{- if .Values.fpm.autoscaling.targetMemoryUtilizationPercentage }}
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageUtilization: {{ .Values.fpm.autoscaling.targetMemoryUtilizationPercentage }}
+    {{- end }}
+{{- end }}

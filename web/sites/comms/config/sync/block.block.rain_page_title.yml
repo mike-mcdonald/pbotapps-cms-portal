@@ -8,8 +8,8 @@ _core:
   default_config_hash: WImvmaBdDpwIqobqbDWebBnyxssRvrNEnZSQbOsvOe4
 id: rain_page_title
 theme: rain
-region: content
-weight: -5
+region: front_matter
+weight: -4
 provider: null
 plugin: page_title_block
 settings:
