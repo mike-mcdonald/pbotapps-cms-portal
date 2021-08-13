@@ -24,5 +24,14 @@ metadata:
 data:
   sites.php: |-
     <?php
-    $sites['portal.pbotapps.portland.gov.comms'] = 'comms';
-    $sites['portal.pbotapps.portland.gov'] = 'default';
+
+    {{ $self := . -}}
+    {{ range $key, $val := .Values.sites -}}
+    {{ range $host := $self.Values.nginx.ingress.hosts -}}
+    {{ if eq $key "default" }}
+    $sites['{{ $host.host }}'] = '{{ $key }}'
+    {{ else -}}
+    $sites['{{ $host.host }}.{{ $key }}'] = '{{ $key }}'
+    {{- end }}
+    {{- end }}
+    {{- end }}
