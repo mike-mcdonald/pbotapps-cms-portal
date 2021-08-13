@@ -54,14 +54,6 @@ spec:
             - name: files-{{ $key }}
               mountPath: /var/www/html/web/sites/{{ $key }}/files
             {{ end }}
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             {{- toYaml .Values.nginx.resources | nindent 12 }}
       volumes:
