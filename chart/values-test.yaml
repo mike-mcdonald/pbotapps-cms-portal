@@ -16,6 +16,7 @@ nginx:
       - host: portal.pbotapps-test.portland.gov
         paths:
           - path: /
+            pathType: ImplementationSpecific
     tls:
       - secretName: portal-pbotapps-test-portland-gov-tls
         hosts:
