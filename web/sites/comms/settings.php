@@ -723,8 +723,8 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  * example.org, with all subdomains included.
  */
 $settings['trusted_host_patterns'] = [
-  '^pbotapps\.portland\.gov$',
-  '^pbotapps-test\.portland\.gov$',
+  'pbotapps\.portland\.gov$',
+  'pbotapps-test\.portland\.gov$',
   '^localhost$'
 ];
 
