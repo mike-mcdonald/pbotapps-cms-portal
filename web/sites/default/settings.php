@@ -724,6 +724,7 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
  */
 $settings['trusted_host_patterns'] = [
   '^pbotapps\.portland\.gov$',
+  '^pbotapps-test\.portland\.gov$',
   '^localhost$'
 ];
 
