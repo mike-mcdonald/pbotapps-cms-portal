@@ -1,12 +1,12 @@
 fpm:
   image:
     tag: main
-    pullPolcy: Always
+    pullPolicy: Always
 
 nginx:
   image:
     tag: main
-    pullPolcy: Always
+    pullPolicy: Always
   ingress:
     enabled: true
     annotations:
