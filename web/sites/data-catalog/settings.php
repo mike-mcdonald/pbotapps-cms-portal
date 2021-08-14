@@ -89,7 +89,7 @@
  * @endcode
  */
 $databases['default']['default'] = array (
-  'database' => 'pbotapps',
+  'database' => 'data_catalog',
   'username' => $_ENV['DATABASE_USER'],
   'password' => $_ENV['DATABASE_PASSWORD'],
   'prefix' => '',
@@ -261,7 +261,7 @@ $databases['default']['default'] = array (
  * directory in the public files path. The setting below allows you to set
  * its location.
  */
-$settings['config_sync_directory'] = './sites/default/config/sync';
+$settings['config_sync_directory'] = './sites/data-catalog/config/sync';
 
 /**
  * Settings:

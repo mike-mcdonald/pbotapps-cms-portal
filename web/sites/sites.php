@@ -56,4 +56,5 @@
  * @see https://www.drupal.org/documentation/install/multi-site
  */
 $sites['8888.localhost.comms'] = 'comms';
+$sites['8888.localhost.data-catalog'] = 'data-catalog';
 $sites['8888.localhost'] = 'default';

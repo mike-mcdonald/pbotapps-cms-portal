@@ -47,7 +47,7 @@ server {
         return 403;
     }
 
-    location ~ ^/(comms)(.*) {
+    location ~ ^/(comms|data-catalog)(.*) {
       # sub site, set fastcgi script name to help drupal figure this out
       set $script_prefix "/$1";
       try_files $2 @rewrite;
