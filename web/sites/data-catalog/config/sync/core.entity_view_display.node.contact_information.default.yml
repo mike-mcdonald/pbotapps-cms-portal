@@ -19,80 +19,81 @@ third_party_settings:
     enabled: true
     allow_custom: false
     sections:
-      - layout_id: layout_onecol
+      -
+        layout_id: layout_onecol
         layout_settings:
-          label: ""
+          label: ''
         components:
           9657de25-4ad7-4380-9479-a9799ffc4d5e:
             uuid: 9657de25-4ad7-4380-9479-a9799ffc4d5e
             region: content
             configuration:
-              id: "views_block:contact_content-block_1"
-              label: ""
+              id: 'views_block:contact_content-block_1'
+              label: ''
               provider: views
               label_display: visible
-              views_label: ""
+              views_label: ''
               items_per_page: none
-              context_mapping: {}
-            additional: {}
+              context_mapping: {  }
+            additional: {  }
             weight: -7
           c8cd60c3-bb26-4aa5-b11b-51f3da965336:
             uuid: c8cd60c3-bb26-4aa5-b11b-51f3da965336
             region: content
             configuration:
-              id: "field_block:node:contact_information:field_email_address"
-              label: "E-mail address"
+              id: 'field_block:node:contact_information:field_email_address'
+              label: 'E-mail address'
               provider: layout_builder
-              label_display: "0"
+              label_display: '0'
               formatter:
                 label: inline
                 type: email_mailto
-                settings: {}
-                third_party_settings: {}
+                settings: {  }
+                third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {}
+            additional: {  }
             weight: -9
           3ae94c6c-a92c-4f26-ac6d-dba8151084d4:
             uuid: 3ae94c6c-a92c-4f26-ac6d-dba8151084d4
             region: content
             configuration:
-              id: "field_block:node:contact_information:field_telephone_number"
-              label: "Telephone number"
+              id: 'field_block:node:contact_information:field_telephone_number'
+              label: 'Telephone number'
               provider: layout_builder
-              label_display: "0"
+              label_display: '0'
               formatter:
                 label: inline
                 type: telephone_link
                 settings:
-                  title: ""
-                third_party_settings: {}
+                  title: ''
+                third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {}
+            additional: {  }
             weight: -8
           51324643-e766-4014-9a09-cb72788c311b:
             uuid: 51324643-e766-4014-9a09-cb72788c311b
             region: content
             configuration:
-              id: "field_block:node:contact_information:uid"
-              label: "Authored by"
+              id: 'field_block:node:contact_information:uid'
+              label: 'Authored by'
               provider: layout_builder
-              label_display: "0"
+              label_display: '0'
               formatter:
                 label: inline
                 type: entity_reference_entity_view
                 settings:
                   view_mode: compact
-                third_party_settings: {}
+                third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {}
+            additional: {  }
             weight: -10
-        third_party_settings: {}
+        third_party_settings: {  }
 id: node.contact_information.default
 targetEntityType: node
 bundle: contact_information
@@ -101,16 +102,16 @@ content:
   field_email_address:
     weight: 0
     label: above
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
     type: basic_string
     region: content
   field_telephone_number:
     weight: 1
     label: above
     settings:
-      title: ""
-    third_party_settings: {}
+      title: ''
+    third_party_settings: {  }
     type: telephone_link
     region: content
 hidden:
