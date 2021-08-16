@@ -1,0 +1,22 @@
+uuid: fcd1b0f7-9c3a-415a-b8a6-a8e7253c621d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - rain
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: rain_content
+theme: rain
+region: content
+weight: -7
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

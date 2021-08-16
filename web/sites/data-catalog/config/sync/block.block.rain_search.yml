@@ -1,0 +1,23 @@
+uuid: e7673fd6-f703-4055-8556-1594e3f50c65
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - rain
+_core:
+  default_config_hash: Q-4EcGAsu26ICu4ejEz0uE1zv4akpiaOsizxgZfAmEw
+id: rain_search
+theme: rain
+region: alert
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: node_search
+visibility: {  }
