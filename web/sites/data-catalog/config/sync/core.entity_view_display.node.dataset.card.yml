@@ -1,0 +1,163 @@
+uuid: 31e7c1ac-c677-439a-972a-d5d699ffa66b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.dataset.title
+    - core.entity_view_mode.node.card
+    - field.field.node.dataset.field_accessibility_level
+    - field.field.node.dataset.field_authority_level
+    - field.field.node.dataset.field_data_custodian
+    - field.field.node.dataset.field_data_group
+    - field.field.node.dataset.field_data_owner
+    - field.field.node.dataset.field_demographic_information
+    - field.field.node.dataset.field_keywords
+    - field.field.node.dataset.field_quality_concerns
+    - field.field.node.dataset.field_security_level
+    - field.field.node.dataset.field_source
+    - field.field.node.dataset.field_spatial_information
+    - field.field.node.dataset.field_subject_areas
+    - node.type.dataset
+  module:
+    - cshs
+    - layout_builder
+    - user
+  theme:
+    - rain
+third_party_settings:
+  layout_builder:
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          cadbd31c-396e-462d-94b2-8af779e4f976:
+            uuid: cadbd31c-396e-462d-94b2-8af779e4f976
+            region: content
+            configuration:
+              id: 'field_block:node:dataset:type'
+              label: 'Content type'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: entity_reference_label
+                settings:
+                  link: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -10
+          cdc2497f-bc6d-42c6-b5e1-ec72dab5fe45:
+            uuid: cdc2497f-bc6d-42c6-b5e1-ec72dab5fe45
+            region: content
+            configuration:
+              id: 'field_block:node:dataset:title'
+              label: 'Dataset name'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+          a838f55d-eee6-4846-b09a-1bdc9e2f9934:
+            uuid: a838f55d-eee6-4846-b09a-1bdc9e2f9934
+            region: content
+            configuration:
+              id: 'field_block:node:dataset:field_keywords'
+              label: Keywords
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: card
+                third_party_settings:
+                  ds:
+                    ds_limit: ''
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: -6
+          bdd1138c-5a53-4277-a4d4-8df12f9c0a79:
+            uuid: bdd1138c-5a53-4277-a4d4-8df12f9c0a79
+            region: content
+            configuration:
+              id: 'field_block:node:dataset:field_data_group'
+              label: Division/Group
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: cshs_full_hierarchy
+                settings:
+                  linked: 1
+                  reverse: 0
+                  separator: ' / '
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+        third_party_settings: {  }
+    allow_custom: false
+id: node.dataset.card
+targetEntityType: node
+bundle: dataset
+mode: card
+content:
+  field_data_group:
+    weight: 1
+    label: visually_hidden
+    settings:
+      linked: '1'
+      separator: ' / '
+      reverse: 0
+    third_party_settings: {  }
+    type: cshs_full_hierarchy
+    region: content
+  field_keywords:
+    weight: 2
+    label: visually_hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_subject_areas:
+    weight: 3
+    label: visually_hidden
+    settings:
+      linked: '1'
+      separator: ' / '
+      reverse: 0
+    third_party_settings: {  }
+    type: cshs_full_hierarchy
+    region: content
+hidden:
+  field_accessibility_level: true
+  field_authority_level: true
+  field_data_custodian: true
+  field_data_owner: true
+  field_demographic_information: true
+  field_description: true
+  field_quality_concerns: true
+  field_security_level: true
+  field_source: true
+  field_spatial_information: true
+  group_content: true
+  links: true
+  search_api_excerpt: true

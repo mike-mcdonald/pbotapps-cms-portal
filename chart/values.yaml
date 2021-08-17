@@ -27,6 +27,8 @@ sites:
     files: {}
   comms:
     files: {}
+  data-catalog:
+    files: {}
 
 postgresql:
   host: postgresql-ha-pgpool

@@ -1,0 +1,20 @@
+uuid: 0f0989c1-aa54-4ed1-aa85-561499254aad
+langcode: en
+status: true
+dependencies:
+  theme:
+    - rain
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: rain_local_actions
+theme: rain
+region: notification
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

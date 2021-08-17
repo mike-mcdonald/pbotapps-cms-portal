@@ -1,0 +1,10 @@
+uuid: 3af71d8d-1135-44a6-b8d7-9e8d882601da
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.public_involvement_plan
+label: 'Public Involvement Plan'
+targetEntityType: user
+cache: true

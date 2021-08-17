@@ -1,0 +1,8 @@
+uuid: f6925f0c-52d6-45c7-a7dc-478daedeb7f9
+langcode: en
+status: true
+dependencies: {  }
+name: 'Data Owner'
+vid: data_owners
+description: ''
+weight: 0
