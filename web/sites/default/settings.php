@@ -89,7 +89,7 @@
  * @endcode
  */
 $databases['default']['default'] = array (
-  'database' => 'data_catalog',
+  'database' => 'pbotapps',
   'username' => $_ENV['DATABASE_USER'],
   'password' => $_ENV['DATABASE_PASSWORD'],
   'prefix' => '',
