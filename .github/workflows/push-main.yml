@@ -75,8 +75,6 @@ jobs:
         with:
           path: ./.docker/images/fpm/base.tar.gz
           key: ${{ runner.os }}-${{ env.cache-name }}-v2-${{ hashFiles('.docker/php/**') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-v2-
 
       - name: Build base image
         if: ${{ !steps.docker-cache-hit.outputs.cache-hit }}
@@ -163,8 +161,6 @@ jobs:
         with:
           path: ./.docker/images/nginx/base.tar.gz
           key: ${{ runner.os }}-${{ env.cache-name }}-v2-${{ hashFiles('.docker/nginx/**') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ env.cache-name }}-v2-
 
       - name: Build base image
         if: ${{ !steps.docker-cache-hit.outputs.cache-hit }}
