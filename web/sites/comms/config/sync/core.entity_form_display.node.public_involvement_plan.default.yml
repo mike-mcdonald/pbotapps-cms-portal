@@ -29,6 +29,7 @@ dependencies:
     - field.field.node.public_involvement_plan.field_website
     - node.type.public_involvement_plan
   module:
+    - cshs
     - entity_browser
     - file
     - link
@@ -98,9 +99,16 @@ content:
     region: content
   field_div_sect:
     weight: 4
-    settings: {  }
+    settings:
+      parent: null
+      force_deepest: true
+      level_labels: ''
+      none_label: '- Please select -'
+      hierarchy_depth: 0
+      required_depth: 0
+      save_lineage: false
     third_party_settings: {  }
-    type: options_buttons
+    type: cshs
     region: content
   field_impact_description:
     weight: 13
@@ -219,12 +227,6 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_tags:
@@ -243,12 +245,6 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
-      closed_mode: summary
-      autocollapse: none
-      closed_mode_threshold: 0
-      features:
-        collapse_edit_all: collapse_edit_all
-        duplicate: duplicate
     third_party_settings: {  }
     region: content
   field_website:

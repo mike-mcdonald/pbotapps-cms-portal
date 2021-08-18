@@ -8,12 +8,12 @@ dependencies:
     - entity_browser_entity_form
     - views
 name: contacts
-label: Consultants
+label: 'Consultants browser'
 display: modal
 display_configuration:
   width: ''
   height: '500'
-  link_text: 'Select contacts'
+  link_text: 'Select consultants'
   auto_open: false
 selection_display: no_display
 selection_display_configuration: {  }

@@ -1,0 +1,41 @@
+uuid: 1aa1cc77-f670-4ad0-a33e-3d0378a37d8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.public_engagement_timeframe.field_date
+    - field.field.paragraph.public_engagement_timeframe.field_engagement_activity
+    - field.field.paragraph.public_engagement_timeframe.field_involvement_strategy_and_t
+    - paragraphs.paragraphs_type.public_engagement_timeframe
+  module:
+    - datetime
+id: paragraph.public_engagement_timeframe.default
+targetEntityType: paragraph
+bundle: public_engagement_timeframe
+mode: default
+content:
+  field_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_engagement_activity:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_involvement_strategy_and_t:
+    type: string_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
