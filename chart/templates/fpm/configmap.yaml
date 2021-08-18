@@ -25,12 +25,12 @@ data:
   sites.php: |-
     <?php
 
-    {{ $self := . -}}
-    {{ range $key, $val := .Values.sites -}}
-    {{ range $host := $self.Values.nginx.ingress.hosts -}}
+    {{- $self := . -}}
+    {{- range $key, $val := .Values.sites -}}
+    {{- range $host := $self.Values.nginx.ingress.hosts -}}
     {{ if eq $key "default" }}
     $sites['{{ $host.host }}'] = '{{ $key }}';
-    {{ else -}}
+    {{ else }}
     $sites['{{ $host.host }}.{{ $key }}'] = '{{ $key }}';
     {{- end }}
     {{- end }}
