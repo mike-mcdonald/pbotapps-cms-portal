@@ -27,10 +27,10 @@ jobs:
         run: az acr login --name $ACR_NAME
       - name: Tag docker image with release tag
         run: |
-          docker pull $REPOSITORY/{{ matrix.image }}:main
-          docker tag $REPOSITORY/{{ matrix.image }}:main $REPOSITORY/{{ matrix.image }}:$IMAGE_TAG
+          docker pull $REPOSITORY/${{ matrix.image }}:main
+          docker tag $REPOSITORY/${{ matrix.image }}:main $REPOSITORY/${{ matrix.image }}:$IMAGE_TAG
       - name: Push image to repository
-        run: docker push $REPOSITORY/{{ matrix.image }}:$IMAGE_TAG
+        run: docker push $REPOSITORY/${{ matrix.image }}:$IMAGE_TAG
 
   deploy-release:
     name: Deploy Helm upgrade on production namespace
