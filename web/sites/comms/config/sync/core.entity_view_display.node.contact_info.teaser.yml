@@ -3,13 +3,84 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.base_field_override.node.contact_info.title
     - core.entity_view_mode.node.teaser
     - field.field.node.contact_info.field_email_address
     - field.field.node.contact_info.field_phone_number
     - field.field.node.contact_info.field_type
     - node.type.contact_info
   module:
+    - layout_builder
     - user
+  theme:
+    - rain
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          d3298352-0b33-4d94-91d0-36ffe601d628:
+            uuid: d3298352-0b33-4d94-91d0-36ffe601d628
+            region: content
+            configuration:
+              id: 'field_block:node:contact_info:title'
+              label: Name
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+          85494274-b074-4ee2-aae8-d646b1faf1b8:
+            uuid: 85494274-b074-4ee2-aae8-d646b1faf1b8
+            region: content
+            configuration:
+              id: 'field_block:node:contact_info:field_type'
+              label: Type
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: list_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          0f0f9084-e6ef-4b47-bf47-f2702cfdc238:
+            uuid: 0f0f9084-e6ef-4b47-bf47-f2702cfdc238
+            region: content
+            configuration:
+              id: 'field_block:node:contact_info:type'
+              label: 'Content type'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: entity_reference_label
+                settings:
+                  link: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+        third_party_settings: {  }
 id: node.contact_info.teaser
 targetEntityType: node
 bundle: contact_info
@@ -24,3 +95,4 @@ hidden:
   field_email_address: true
   field_phone_number: true
   field_type: true
+  search_api_excerpt: true

@@ -62,7 +62,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -10
+            weight: -9
           165177b7-b9c2-427c-b207-f8833b55ad63:
             uuid: 165177b7-b9c2-427c-b207-f8833b55ad63
             region: content
@@ -81,7 +81,26 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: -9
+            weight: -8
+          1833d9ba-2ded-44ae-855c-51ed4be4b544:
+            uuid: 1833d9ba-2ded-44ae-855c-51ed4be4b544
+            region: content
+            configuration:
+              id: 'field_block:node:public_involvement_plan:type'
+              label: 'Content type'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: entity_reference_label
+                settings:
+                  link: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
         third_party_settings: {  }
       -
         layout_id: layout_row

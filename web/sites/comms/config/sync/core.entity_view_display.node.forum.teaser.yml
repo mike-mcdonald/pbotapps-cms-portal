@@ -3,14 +3,102 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.base_field_override.node.forum.title
     - core.entity_view_mode.node.teaser
     - field.field.node.forum.body
     - field.field.node.forum.comment_forum
     - field.field.node.forum.taxonomy_forums
     - node.type.forum
   module:
+    - layout_builder
     - text
     - user
+  theme:
+    - rain
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          7a571310-fdb9-435d-8017-52a9c2731d87:
+            uuid: 7a571310-fdb9-435d-8017-52a9c2731d87
+            region: content
+            configuration:
+              id: 'field_block:node:forum:taxonomy_forums'
+              label: Forums
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -8
+          9f55bdce-4a30-4282-9337-209df8a26f35:
+            uuid: 9f55bdce-4a30-4282-9337-209df8a26f35
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:forum:body'
+              formatter:
+                label: hidden
+                type: text_trimmed
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            additional: {  }
+            weight: -7
+          fcdc129f-9386-41e6-9fa7-f85f66a4b792:
+            uuid: fcdc129f-9386-41e6-9fa7-f85f66a4b792
+            region: content
+            configuration:
+              id: 'field_block:node:forum:type'
+              label: 'Content type'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: entity_reference_label
+                settings:
+                  link: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          5f33f119-9728-49b1-bee6-b56d5f0a5c75:
+            uuid: 5f33f119-9728-49b1-bee6-b56d5f0a5c75
+            region: content
+            configuration:
+              id: 'field_block:node:forum:title'
+              label: Subject
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: string
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -9
+        third_party_settings: {  }
 _core:
   default_config_hash: MK_j248n6esK84n87ulM_yPeqdkndKn94h4vTJC4wjw
 id: node.forum.teaser
@@ -41,3 +129,4 @@ content:
     third_party_settings: {  }
 hidden:
   comment_forum: true
+  search_api_excerpt: true
