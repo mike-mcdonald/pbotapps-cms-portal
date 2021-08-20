@@ -111,7 +111,7 @@ content:
     type: cshs
     region: content
   field_impact_description:
-    weight: 13
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -119,7 +119,7 @@ content:
     type: string_textarea
     region: content
   field_impact_level:
-    weight: 12
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -133,7 +133,7 @@ content:
     type: string_textarea
     region: content
   field_interest_description:
-    weight: 11
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
@@ -141,7 +141,7 @@ content:
     type: string_textarea
     region: content
   field_interest_level:
-    weight: 10
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -175,7 +175,7 @@ content:
     type: entity_browser_entity_reference
     region: content
   field_promise_description:
-    weight: 15
+    weight: 14
     settings:
       rows: 5
       placeholder: ''
@@ -183,13 +183,13 @@ content:
     type: string_textarea
     region: content
   field_public_promise:
-    weight: 14
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_question:
-    weight: 9
+    weight: 15
     settings:
       size: 60
       placeholder: ''
