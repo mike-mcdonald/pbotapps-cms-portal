@@ -1,0 +1,51 @@
+{% embed 'field.html.twig' with {
+  field_classes: [
+    'my-0',
+    'border',
+    'border-current',
+    'rounded-md',
+  ],
+  title_classes: [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+    label_display == 'inline' ? '',
+    'text-gray-500',
+    'font-semibold',
+    'px-4',
+    'py-3',
+    'border-b',
+    'border-current',
+    'flex',
+    'items-center',
+    'justify-between',
+  ],
+} %}
+{% spaceless %}
+  {% block field %}
+    <div{{attributes.addClass(field_classes)}} x-data="{ open: false }">
+      {% block label %}
+        {%- if not label_hidden -%}
+          <label{{title_attributes.addClass(title_classes)}} @click="open = true">
+            <span>{{ label|render }}</span>
+            <i class="transform transition ease-out duration-300 opacity-50" x-bind:class="{ 'rotate-180': !open }">{% include active_theme_path() ~ '/icons/chevron-up.svg' %}</i>
+          </label>
+        {%- endif -%}
+      {% endblock %}
+      {% block content %}
+        <div{{content_attribute.addClass(content_classes)}} x-show="open" @click.away="open = false">
+          {%- for item in items -%}
+            {% set item_classes = [
+              'truncate',
+              'whitespace-normal',
+              loop.last ? '' : 'border-b',
+              loop.last ? '' : 'border-current',
+            ] %}
+            <div{{item.attributes.addClass(item_classes)}}>
+              {{ item.content }}
+            </div>
+          {%- endfor -%}
+        </div>
+      {% endblock %}
+    </div>
+  {% endblock %}
+{% endspaceless %}
+{% endembed %}
