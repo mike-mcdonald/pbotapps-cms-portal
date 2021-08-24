@@ -59,7 +59,10 @@
 {% set content_classes = content_classes|default([])|merge([
    label_display == 'inline' ? 'lg:col-span-2'
 ]) %}
-{% set item_classes = item_classes|default([]) %}
+{% set item_classes = item_classes|default([
+  'truncate',
+  'whitespace-normal',
+]) %}
 
 {% spaceless %}
 	{% block field %}

@@ -5,6 +5,13 @@ dependencies:
   enforced:
     module:
       - forum
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
 _core:
   default_config_hash: ERCHDVB33lub-cz7DSYR7HuBlYJjmVUdPw0IIYa3ZXc
 name: 'Forum topic'
@@ -13,4 +20,4 @@ description: 'A <em>forum topic</em> starts a new discussion thread within a for
 help: ''
 new_revision: false
 preview_mode: 1
-display_submitted: true
+display_submitted: false

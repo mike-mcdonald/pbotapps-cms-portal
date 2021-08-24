@@ -15,4 +15,4 @@ description: 'Contact information is for managing avenues for contacting an enti
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

@@ -17,14 +17,14 @@ bundle: contact_info
 mode: default
 content:
   field_email_address:
-    weight: 103
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: email_mailto
     region: content
   field_phone_number:
-    weight: 102
+    weight: 2
     label: above
     settings:
       title: ''
@@ -32,15 +32,16 @@ content:
     type: telephone_link
     region: content
   field_type:
-    weight: 104
+    weight: 1
     label: above
     settings: {  }
     third_party_settings: {  }
     type: list_default
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  search_api_excerpt: true
