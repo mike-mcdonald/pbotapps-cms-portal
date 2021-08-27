@@ -1,0 +1,12 @@
+uuid: 213112f3-e557-4706-9809-98c3ffa58141
+langcode: en
+status: true
+dependencies: {  }
+id: plans
+label: Plans
+description: ''
+use_admin_theme: false
+path: /plans
+access_logic: and
+access_conditions: {  }
+parameters: {  }

@@ -3,7 +3,7 @@ name: Communications
 mail: PBOTApplicationSupport@portlandoregon.gov
 slogan: 'Engage early and often'
 page:
-  403: ''
+  403: /access-denied
   404: ''
   front: /node
 admin_compact_mode: false

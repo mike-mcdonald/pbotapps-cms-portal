@@ -21,6 +21,11 @@
 {%
   set region_classes = region_classes|default([
     'mx-2',
+    'flex',
+    'flex-col',
+    'space-y-3',
+    'truncate',
+    'whitespace-normal',
   ])
 %}
 {% if content %}
@@ -29,12 +34,12 @@
 
   <div{{attributes.addClass(layout_classes)}}>
     {% if content_first is not empty %}
-      <div{{ region_attributes.first.addClass(region_classes) }}>
+      <div{{ region_attributes.first.addClass(region_classes).addClass(['md:w-2/3']) }}>
         {{ content_first }}
       </div>
     {% endif %}
     {% if content_second is not empty %}
-      <div{{ region_attributes.second.addClass(region_classes) }}>
+      <div{{ region_attributes.second.addClass(region_classes).addClass(['flex-grow', 'md:max-w-xs']) }}>
         {{ content_second }}
       </div>
     {% endif %}
