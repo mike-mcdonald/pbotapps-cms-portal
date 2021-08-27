@@ -1,0 +1,12 @@
+uuid: 5adbbe46-19d0-40c9-b5d5-c2c1a044aa7a
+langcode: en
+status: true
+dependencies: {  }
+id: access_denied
+label: 'Access denied'
+description: ''
+use_admin_theme: false
+path: /access-denied
+access_logic: and
+access_conditions: {  }
+parameters: {  }
