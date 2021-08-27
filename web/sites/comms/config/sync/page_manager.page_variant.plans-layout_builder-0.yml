@@ -1,0 +1,84 @@
+uuid: 219c2565-c882-46ee-8dea-2615f4627728
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.plans
+id: plans-layout_builder-0
+label: 'Layout builder'
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  uuid: dceb4186-9456-4a68-83c5-bf8c529f27b9
+  label: null
+  weight: 0
+  sections:
+    -
+      layout_id: layout_twocol_flex
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        d1327848-7c2c-4234-968c-20aa096ca81c:
+          uuid: d1327848-7c2c-4234-968c-20aa096ca81c
+          region: first
+          configuration:
+            id: 'views_block:index_plans-block_1'
+            label: ''
+            provider: views
+            label_display: '0'
+            views_label: ''
+            items_per_page: none
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+        aba7ac7a-27f4-46ed-b597-174da8f1bd22:
+          uuid: aba7ac7a-27f4-46ed-b597-174da8f1bd22
+          region: second
+          configuration:
+            id: 'facet_block:impact_level'
+            label: 'Filter by impact level'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 0
+        e78e5370-93bd-4a3e-b00f-7addf50cee9e:
+          uuid: e78e5370-93bd-4a3e-b00f-7addf50cee9e
+          region: second
+          configuration:
+            id: 'facet_block:plans_interest_level'
+            label: 'Filter by interest level'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 1
+        8f41fa88-3ec3-42ab-bb0b-58a374e01f8f:
+          uuid: 8f41fa88-3ec3-42ab-bb0b-58a374e01f8f
+          region: second
+          configuration:
+            id: 'facet_block:plans_region'
+            label: 'Filter by region'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 2
+        726f5bc5-1294-4159-999f-46fbfa5bc601:
+          uuid: 726f5bc5-1294-4159-999f-46fbfa5bc601
+          region: second
+          configuration:
+            id: 'facet_block:plans_organization'
+            label: 'Filter by Division/Section'
+            provider: facets
+            label_display: visible
+            context_mapping: {  }
+          additional: {  }
+          weight: 3
+      third_party_settings: {  }
+page: plans
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
