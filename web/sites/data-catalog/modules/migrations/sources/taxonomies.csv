@@ -1,0 +1,953 @@
+﻿name,vid,description,tid,parent
+Level 1,accessibility_levels,,6,
+Authoritative,authority_levels,,7,
+PBOT,data_owners,,9,
+As needed,frequency,,10,
+asset,keywords,,11,
+pedestrian,keywords,,12,
+Windows,operating_system,,13,
+Server 2008,operating_system,,14,13
+Server 2008 R2,operating_system,,15,13
+Server 2012,operating_system,,16,13
+Server 2012 R2,operating_system,,17,13
+Server 2016,operating_system,,18,13
+stuff,keywords,,20,
+assets,keywords,,21,
+GIS,keywords,,22,
+active transportation,keywords,,24,
+safety,keywords,,26,
+crash,keywords,,27,
+accident,keywords,,28,
+complaints,keywords,,29,
+trip,keywords,,30,
+distance,keywords,,31,
+duration,keywords,,32,
+Derivative,authority_levels,,33,
+prohibited parking,keywords,,35,
+VIT,keywords,,36,
+derelict RV,keywords,,37,
+tow,keywords,,38,
+Parking Citations,keywords,,39,
+Parking,keywords,,40,
+Parking Service Requests,keywords,,41,
+Title 16,keywords,,42,
+Tow Warrants,keywords,,43,
+Level 2,accessibility_levels,,45,
+Level 3,accessibility_levels,,46,
+construction,keywords,,482,
+traffic signals,keywords,,457,
+traffic control devices,keywords,,458,
+budget,keywords,,483,
+schedule,keywords,,484,
+scope,keywords,,485,
+staff,keywords,,486,
+Plans,keywords,,508,
+Specifications,keywords,,509,
+APPP,keywords,,66,
+Zone Parking,keywords,,67,
+Area,keywords,,68,
+Zone Parking Permit,keywords,,69,
+Resident Permit,keywords,,70,
+Business Permit,keywords,,71,
+Guest Parking,keywords,,72,
+Zone M Restrictions,keywords,,73,
+Limited Permit,keywords,,74,
+MFR,keywords,,75,
+Zone M Parking,keywords,,76,
+Carpool Check,keywords,,77,
+Carpool Voucher,keywords,,78,
+COP Carpool Voucher,keywords,,79,
+Customer Service,keywords,,81,
+Parking Meters,keywords,,82,
+On-street parking,keywords,,83,
+Parking Transactions,keywords,,84,
+Meter Details,keywords,,85,
+parking zones,keywords,,86,
+Banking,keywords,,87,
+transactions,keywords,,88,
+Calculations,keywords,,510,
+None,information_security_levels,,90,
+Unknown,accessibility_levels,,91,
+location,keywords,,93,
+Paystation parts,keywords,,94,
+Paystation,keywords,,95,
+streetcar,keywords,,97,
+Paystation Keys,keywords,,98,
+Access,keywords,,99,
+Paystation Locks,keywords,,100,
+Estimate,keywords,,511,
+Design Data,keywords,,512,
+Funds Management,keywords,,535,
+Heliport landings,keywords,,101,
+SmartPark,keywords,,102,
+employee complaints,keywords,,103,
+refunds,keywords,,104,
+Fleet Parking,keywords,,105,
+SmartPark transactions,keywords,,106,
+SmartPark financial and operational reports,keywords,,107,
+Smart Park access cards,keywords,,108,
+EV Charging,keywords,,109,
+Other bureau,data_owners,,110,
+Outside organization,data_owners,,111,
+SmartPark Major Maintenance,keywords,,112,
+SmartPark Facility Contents,keywords,,113,
+Tracking,keywords,,115,
+Parking Operations,keywords,,116,
+Constituent Contacts,keywords,,117,
+Special Use Permits,keywords,,118,
+Angle Loading Permits,keywords,,119,
+Work Order,keywords,,120,
+RV Parking,keywords,,121,
+Abandoned Auto,keywords,,122,
+Parking Enforcement,keywords,,123,
+Homeless Displacement,keywords,,124,
+Carshare parking,keywords,,125,
+Parking data,keywords,,126,
+Electric Vehicle,keywords,,127,
+non-motorized transport,keywords,,128,
+Business Services Group,data_group_levels,,129,
+Development Permitting and Transit Group,data_group_levels,,130,
+Adminstrative Services Division,data_group_levels,,131,129
+Business Technology Services,data_group_levels,,132,129
+Employee Services,data_group_levels,,133,129
+Financial Services,data_group_levels,,134,129
+car share parking,keywords,,602,
+Illuminated Signs,keywords,,459,
+Beacons,keywords,,460,
+Bicycle Network,keywords,,487,
+free floating,keywords,,603,
+Safe Ride Home,keywords,,561,
+"Utility, Construction, Inspections Division",data_group_levels,,142,130
+Daily,frequency,,59,
+Bike Network,keywords,,488,
+Bikeway,keywords,,489,
+Bridges and Structures,data_group_levels,,146,145
+Everbridge,keywords,,575,
+Quaterly,frequency,,62,
+Annually,frequency,,114,
+Survey Division,data_group_levels,,150,145
+Traffic Design Division,data_group_levels,,151,145
+Traffic Operations Division,data_group_levels,,152,145
+Maintenance Operations Group,data_group_levels,,153,
+Real time,frequency,,60,
+Unknown,frequency,,65,
+Environmental Systems Division,data_group_levels,,156,153
+NA,frequency,,64,
+Street Systems Division,data_group_levels,,158,153
+Parking Enforcement Division,data_group_levels,,160,159
+Parking Operations Division,data_group_levels,,161,159
+Regulatory Operations Division,data_group_levels,,162,159
+Contingency,keywords,,536,
+Active Transportation and Safety Division,data_group_levels,,164,163
+Notification,keywords,,576,
+Alert,keywords,,577,
+PFHT,keywords,,545,
+Emergency,keywords,,578,
+beacon,keywords,,171,
+capital projects,keywords,,172,
+Excel,file_type,,173,
+CSV,file_type,,174,
+De-Icing,keywords,,589,
+Graffiti,keywords,,595,
+one way,keywords,,604,
+Contact List,keywords,,610,
+Taxi,keywords,,546,
+NEMT,keywords,,547,
+Shapefile,file_type,,176,
+communication,keywords,,461,
+fiber optic,keywords,,462,
+interconnect,keywords,,463,
+twisted pair,keywords,,464,
+Coin Collection,keywords,,181,
+On-street Parking Complaints,keywords,,182,
+Bridge,keywords,,490,
+Structures,keywords,,491,
+Transportation System Plan,keywords,,185,
+outreach,keywords,,186,
+tabling events,keywords,,187,
+volunteers,keywords,,188,
+Ambassadors,keywords,,189,
+community engagement,keywords,,190,
+Bicycle,keywords,,191,
+Bike,keywords,,192,
+SURVEY,keywords,,193,
+BES,keywords,,194,
+Monumentation,keywords,,195,
+Property,keywords,,196,
+Control,keywords,,197,
+Elevation,keywords,,198,
+Fixing Our Streets,keywords,,199,
+Gas Tax,keywords,,200,
+Revenue,keywords,,201,
+Heavy Vehicle Use Tax,keywords,,202,
+Forecast,keywords,,203,
+Inflation,keywords,,204,
+CSL,keywords,,205,
+Escalation,keywords,,206,
+permit,keywords,,207,
+street opening,keywords,,208,
+design exception,keywords,,209,
+UVE,keywords,,210,
+vault,keywords,,211,
+lease,keywords,,212,
+monitoring well,keywords,,213,
+permit,keywords,,214,
+fee,keywords,,215,
+Temporary street use,keywords,,216,
+permit,keywords,,217,
+insurance,keywords,,218,
+public works,keywords,,219,
+Online Report,file_type,,220,
+Weekly,frequency,,63,
+ridership,keywords,,222,
+performance,keywords,,223,
+ridership,keywords,,224,
+performance,keywords,,225,
+streetcar,keywords,,226,
+inventory,keywords,,227,
+maintenance,keywords,,228,
+streetcar,keywords,,229,
+ridership,keywords,,230,
+ADA ramp,keywords,,231,
+Dilax APC,keywords,,232,
+Cubic,keywords,,233,
+Nexbus,keywords,,234,
+arrival information,keywords,,235,
+streetcar,keywords,,236,
+HOP pass,keywords,,237,
+online permit,keywords,,238,
+permit,keywords,,239,
+timeline tracking,keywords,,240,
+Portland in the Streets,keywords,,241,
+attendance,keywords,,242,
+alcohol,keywords,,243,
+location,keywords,,244,
+neighborhood event,keywords,,245,
+Portland in the Streets,keywords,,246,
+Trip data,keywords,,247,
+destinations,keywords,,248,
+behaviors,keywords,,249,
+processing time,keywords,,250,
+late permits,keywords,,251,
+temporary street use permit,keywords,,252,
+online,keywords,,253,
+counter,keywords,,254,
+standard permits,keywords,,255,
+notification permits,keywords,,256,
+commercial building plan permit,keywords,,257,
+residential building,keywords,,258,
+Monthly,frequency,,61,
+Advertise,keywords,,514,
+addition,keywords,,259,
+alteration,keywords,,260,
+timelines,keywords,,261,
+land use,keywords,,262,
+volume,keywords,,263,
+adjustment,keywords,,264,
+land division,keywords,,265,
+sidewalk permits,keywords,,266,
+minor improvement,keywords,,267,
+encroachments,keywords,,268,
+shoring,keywords,,269,
+retaining walls,keywords,,270,
+fences,keywords,,271,
+bollards,keywords,,272,
+LDP,keywords,,273,
+LPS,keywords,,274,
+driveway,keywords,,275,
+status,keywords,,276,
+early assistance,keywords,,277,
+permits recieved,keywords,,278,
+public works plans,keywords,,279,
+final plans,keywords,,280,
+submitted plans,keywords,,281,
+public works permits,keywords,,282,
+master lease agreements,keywords,,283,
+MLA,keywords,,284,
+long term lease,keywords,,285,
+short term lease,keywords,,286,
+lease administrative activity,keywords,,287,
+street vacation,keywords,,288,
+administrative activity,keywords,,289,
+CIP acquisitions,keywords,,290,
+easement releases,keywords,,291,
+dedications,keywords,,292,
+development review,keywords,,293,
+Conjestion,keywords,,294,
+Traffic Jam,keywords,,295,
+Traffic Delay,keywords,,296,
+Vehicle Registration,keywords,,297,
+DMV,keywords,,298,
+ODOT,keywords,,299,
+Car Type,keywords,,300,
+Trimet,keywords,,301,
+Bus,keywords,,302,
+Travel Time Reliability,keywords,,303,
+Travel Time Delay,keywords,,304,
+Trasit,keywords,,305,
+Scooter,keywords,,306,
+Dockless,keywords,,307,
+New Mobility,keywords,,308,
+BIKETOWN,keywords,,309,
+Bike Share,keywords,,310,
+Transit,keywords,,311,
+Congestion,keywords,,312,
+Communications,keywords,,449,
+Fleet,keywords,,465,
+travel options,keywords,,703,
+request information,keywords,,704,
+tram,keywords,,722,
+transit performance,keywords,,723,
+Efficiency,performance_measure_type,,747,
+Output,performance_measure_type,,746,
+Geographic,spatial_information,A location that is described by something other than a listing of coordinates.,328,
+Geometric,spatial_information,A specific location described by coordinates forming a geometric object.,329,
+Age,demographic_information,,330,
+Disability,demographic_information,,331,
+Gender,demographic_information,,332,
+Income,demographic_information,,333,
+Language,demographic_information,,334,
+Race,demographic_information,,335,
+Transportation Planning Division,data_group_levels,,166,163
+Capital Projects Delivery Division,data_group_levels,,167,163
+Travel Demand,subject_area,,427,327
+Engineering Services Group,data_group_levels,,145,
+Outcome,performance_measure_type,,748,
+Key Workload,performance_measure_type,,751,
+Streetcar Division,data_group_levels,,140,130
+Program Development A,data_group_levels,,336,130
+Program Development B,data_group_levels,,337,130
+Development Review Division,data_group_levels,,137,130
+Right of Way Management & Permitting Division,data_group_levels,,139,130
+Operations Division,data_group_levels,,338,153
+Construction Division,data_group_levels,,339,153
+Project Delivery & Technical Support Division,data_group_levels,,340,153
+Civil Design & Construction Mgmt Division,data_group_levels,,147,145
+"Construction, Insp & Pavement Division",data_group_levels,,148,145
+Sig & Str Light Division,data_group_levels,,149,145
+Office of the Director,data_group_levels,,143,
+CY2022,reporting_period,,1013,1012
+Asset Management,data_group_levels,,343,143
+Intergovernmental Affairs,data_group_levels,,346,143
+Bridge Inspection,keywords,,492,
+Bidding,keywords,,515,
+Regulatory,performance_metric_purpose,,744,
+Bid,keywords,,516,
+Amanda (formerly Tracs),database,,437,180
+ArcGIS Online,database,,601,
+Enterprise Geodatabase,database,,599,
+Enterprise Portal,database,,600,
+Fast Track Gov,database,,544,
+BOBJ,database,,444,443
+PDX ePlans (Electronic Plan Review),database,The City is transitioning in phases from paper to digital plan review using ProjectDox software. ,439,180
+Access Applications,database,"Barricade Reports, BOMDrive, Heliport Log, I-9, IMSQuery, Local Improvement Districts (LID), OpLog Viewer, Over-dimensional Insurance Log, Tickler Card, Utility Permit Tracking",179,
+Vendor Hosted,database,,450,
+Emma,keywords,,705,
+email marketing,keywords,,706,
+campaign,keywords,,707,
+encouragement,keywords,,708,
+Key Efficiency,performance_measure_type,,749,
+Key Output,performance_measure_type,,752,
+Key Outcome,performance_measure_type,,750,
+Vehicle,keywords,,466,
+Equipment,keywords,,467,
+"Policy, Planning, and Projects Group",data_group_levels,,163,
+CityFleet,keywords,,468,
+Contract,keywords,,517,
+Sensitive Location Information,information_security_levels,"location data is that might be linked back to an individual, or might be used to reveal sensitive personal data (includes data revealing a person’s ethnicity; political, religious or philosophical beliefs; and data concerning health or sexual orientation) ",184,
+,,Patterns of accumulated geospatial information (http://digg.com/2018/strava-secret-military-bases-soldier-names),,
+,,Homeland Security/sensitive infrastructure data (https://www.dhs.gov/policy),,
+Fees,keywords,,537,
+Training,keywords,,548,
+Media,audience,,757,
+Learning,keywords,,549,
+Workforce Development,keywords,,550,
+Accounting,subject_area,,348,313
+Administration and Finance,subject_area,,313,
+Socio-Economic,subject_area,,433,324
+Road Weather,subject_area,,402,322
+Contract,performance_metric_purpose,,767,
+Geodatabase File,file_type,,175,
+Census,keywords,,446,
+TRIM (Content Manager),database,"An electronic records management application administered by the Archives and Records Management Division of the City Auditor’s office.  TRIM is used for both enterprise-wide and bureau-specific functions requiring document management, fulfilling legal requirements for retention and access, and for improving workflows.",452,
+,,,,
+,,,,
+,,,,
+,,"TRIM is a State of Oregon-certified records management application that functions much like a physical records center.  TRIM stores electronic records, manages security and access for those records, and applies retention schedules so that all public records are professionally maintained according to applicable State and City laws.  Archives and Records Management has managed this system since 2001.  Used by a wide-range of industries and institutions, including the State of Oregon, US Department of the Navy, and the Australian Government, TRIM continues to be a leader in electronic records management solutions.",,
+,,,,
+,,"TRIM integrates with Office 365, individual or shared folders on network drives, and with specific business applications, such as TRACS. TRIM accepts records created from any application including e-mail, Word, Excel, PowerPoint, CAD drawings, TIFs, JPEGs, PDFs, MP3s, MPGs, etc..",,
+StreetSaver,database,Pavement Management Software,447,
+Fuel,keywords,,469,
+Maintenance,keywords,,470,
+Operating Costs,keywords,,471,
+Vehicles,keywords,,472,
+Centura SQL Windows Applications,database,"Utility Permits, Sidewalk/Driveway Permits, Sidewalk Posting, Right-of-Way Contracts",441,
+marketing,keywords,,493,
+TCE,keywords,,518,
+Easement,keywords,,519,
+Acquisition,keywords,,520,
+Personally Identifiable Information (PII),information_security_levels,"Personal Information:  As defined in the Oregon Consumer Identity Theft Protection Act, ORS 646A.602(11) listed as follows:",50,
+,,,,
+,,(11) “Personal information”:,,
+,,,,
+,,"(a) Means a consumer’s first name or first initial and last name in combination with any one or more of the following data elements, when the data elements are not rendered unusable through encryption, redaction or other methods, or when the data elements are encrypted and the encryption key has also been acquired:",,
+,,,,
+,,(A) Social Security number;,,
+,,,,
+,,(B) Driver license number or state identification card number issued by the Department of Transportation;,,
+,,,,
+,,(C) Passport number or other United States issued identification number; or,,
+,,,,
+,,"(D) Financial account number, credit or debit card number, in combination with any required security code, access code or password that would permit access to a consumer’s financial account.",,
+,,,,
+,,"(b) Means any of the data elements or any combination of the data elements described in paragraph (a) of this subsection when not combined with the consumer’s first name or first initial and last name and when the data elements are not rendered unusable through encryption, redaction or other methods, if the information obtained would be sufficient to permit a person to commit identity theft against the consumer whose information was compromised.",,
+,,,,
+,,"(c) Does not include information, other than a Social Security number, in a federal, state or local government record that is lawfully made available to the public.",,
+records request,keywords,,538,
+GovQA,keywords,,539,
+Public Records,keywords,,540,
+Risk,keywords,,551,
+Risk management,keywords,,552,
+Claim,keywords,,553,
+Loss,keywords,,554,
+workers compensation,keywords,,555,
+liability,keywords,,556,
+Permits,subject_area,,388,319
+Maximo,database,"Maximo is an enterprise asset management system used for work order management, asset management, inventory, and purchasing. It interfaces with PBOT GIS through the Asset Manager application which manages Maximo asset data and relates work orders to assets.",177,
+Fence,keywords,,654,
+repair,keywords,,473,
+modeling,keywords,,476,
+traffic,keywords,,477,
+program,keywords,,494,
+finance,keywords,,495,
+Pavement Inspection,keywords,,521,
+PCI,keywords,,522,
+Pavement Condition Index,keywords,,523,
+Distress,keywords,,524,
+StreetSaver,keywords,,525,
+Street Cleaning,keywords,,541,
+Street Sweeping,keywords,,542,
+guided rides,keywords,,709,
+Dock,keywords,,655,
+Water Bureau,keywords,,656,
+Requests,keywords,,657,
+PDX WAV,keywords,,562,
+Accessible Service,keywords,,563,
+Magnesium,keywords,,579,
+Chloride,keywords,,580,
+deicer,keywords,,581,
+anti-icing,keywords,,582,
+brine,keywords,,583,
+Sidewalk,keywords,,590,
+Corner,keywords,,591,
+Inlet Cleaning,keywords,,596,
+Catch Basins Cleaning,keywords,,597,
+Electric Avenue,keywords,,605,
+EV,keywords,,606,
+EV Parking,keywords,,607,
+Press,keywords,,611,
+Sign Mount,keywords,,614,
+Customer Complaints,keywords,,616,
+Camping,keywords,,618,
+Illegal Camping,keywords,,619,
+accounting,keywords,,622,
+Word,keywords,,624,
+Symbol,keywords,,625,
+Mobile Pay,keywords,,627,
+Parking Kitty,keywords,,628,
+Disputes,keywords,,630,
+ZenDesk,keywords,,631,
+Delineator,keywords,,636,
+speed reader board,keywords,,638,
+radar,keywords,,639,
+traffic speed,keywords,,640,
+Island,keywords,,641,
+flashing,keywords,,642,
+Landscaping,keywords,,643,
+Impact Attenuator,keywords,,644,
+Vendor,keywords,,645,
+Employee Reimbursement,keywords,,646,
+Petty Cash,keywords,,647,
+purchase,keywords,,648,
+cardholder,keywords,,649,
+pcard,keywords,,650,
+bank,keywords,,651,
+Ramp,keywords,,652,
+Model,keywords,,653,
+Central City,keywords,,658,
+Transportation Demand Management,keywords,,659,
+Policy,keywords,,660,
+GIS,keywords,,661,
+GIS,keywords,,662,
+Transportation System Plan,keywords,,663,
+TSP,keywords,,664,
+Transporation System Plan,keywords,,665,
+Shoulder,keywords,,666,
+Parking Block,keywords,,667,
+Circle,keywords,,668,
+stairs,keywords,,669,
+stairway,keywords,,670,
+furniture,keywords,,671,
+art,keywords,,672,
+trash,keywords,,673,
+bench,keywords,,674,
+planter,keywords,,675,
+Meters,keywords,,676,
+slots,keywords,,677,
+spaces,keywords,,678,
+on-street,keywords,,679,
+vending,keywords,,680,
+ticket,keywords,,681,
+Planned and Current Lane Closures,subject_area,,401,322
+traffic signal,keywords,,474,
+inspection,keywords,,475,
+Maximo,keywords,,478,
+Hourly Rate,keywords,,479,
+stakeholders,keywords,,496,
+digital marketing,keywords,,497,
+internal communications,keywords,,498,
+Protected Health Information (HIPAA),information_security_levels,,49,
+Protected Business Information/Trade Secrets,information_security_levels,Under the Oregon Uniform Trade Secrets Act (ORS 646.461) a Trade Secret is defined as:  ,169,
+,,,,
+,,"Trade secret means information, including a drawing, cost data, customer list, formula, pattern, compilation, program, device, method, technique or process that:   ",,
+,,"Derives independent economic value, actual or potential, from not being generally known to the public or to other persons who can obtain economic value from its disclosure or use; and  ",,
+,,Is the subject of efforts that are reasonable under the circumstances to maintain its secrecy.  ,,
+Mobile Equipment Location,subject_area,,408,322
+Personnel,keywords,,564,
+Employee,keywords,,565,
+Appointment,keywords,,566,
+Sign Maintenance,keywords,,584,
+Pavement Markings,keywords,,592,
+.GPS/.GPX,file_type,,598,
+Microsoft Visual Studio Applications,database,"Applications developed in Visual Studio (Visual Basic 6, C#, ASP.Net):",442,
+,,,,
+,,Visual Basic 6: Parking Enforcement Service Requests,,
+,,,,
+,,"C#: PRESS, Parking Coin Reconciliation, Coin Collection List",,
+,,,,
+,,"ASP.Net: Abandoned Autos, Mobile Timekeeping, Sidewalk Posting Permits, Signlib, SmartPark Access Cards",,
+,,,,
+,,"Visio/C#: Maximo Work Order Toolbar, Sidewalk Posting Toolbar, and Sidewalk Cafes Permits",,
+Portland Online Permitting System (POPS),database,"The Portland Online Permitting (POPS) Program is modernizing the City of Portland's current permitting system into an online, enhanced customer service delivery system. Currently, permit technicians input all permit application information into TRACS, a system the City has used to track and manage permits since 1999. This technology supports the development permit process, but it is antiquated and relies heavily on inefficient, paper-based transactions.",180,
+RoadRunner (e-Builder),database,RoadRunner is a hosted software solution for managing capital construction projects and associated budgets. Tech Services team members assist with building workflows in RoadRunner and developing and supporting the SAP to RoadRunner interface.,436,
+SAP,database,,347,
+SQL Server Reporting Services,database,"The PBOT Reporting SQL Server hosts databases containing data extracted from Maximo, GIS, Parking Enforcement Service Requests, and Politess. BTS vertical applications staff develops reports (BOBJ) for applications and in response to requests from users. The BOBJ server is administered by the EBS Support staff.",443,
+TrackIT / Zendesk,database,,178,
+*Other,database,,451,
+maps,keywords,,710,
+routes,keywords,,711,
+Activity Budget,performance_metric_purpose,,739,
+rail,keywords,,826,
+Workload,performance_measure_type,,745,
+High,quality,,753,
+Internal (PBOT),audience,,758,
+Other Government,audience,,763,
+Employer of Choice,performance_metric_purpose,,768,
+In Use,status,,798,
+Q2 Oct.-Dec.,reporting_quarter,,802,
+ATS,keywords,,817,
+travel survey,keywords,,818,
+school travel,keywords,,819,
+trip to school,keywords,,820,
+trip,keywords,,821,
+tunnel,keywords,,831,
+2023,strategic_year,,849,
+ATS,keywords,,861,
+Transportation Wallet,subject_area,,691,682
+tabling,keywords,,712,
+street fair,keywords,,713,
+neighborhood,keywords,,714,
+community event,keywords,,715,
+festival,keywords,,716,
+Portland Urban Data Lake (PUDL),database,,724,
+Parking,subject_area,,318,
+Project Costs and Funding,subject_area,,357,314
+COVID19,keywords,,729,
+Integer,data_type,,732,
+Strategic Plan,performance_metric_purpose,,740,
+FY23: 7/22-6/23,reporting_period,,1014,1012
+Traffic Control Devices,subject_area,,421,326
+2019,reporting_period,,843,
+2020,reporting_period,,842,
+2021,reporting_period,,844,
+Structures and Bridges,subject_area,,420,326
+Roadway Lighting,subject_area,,418,326
+curb ramp,keywords,,822,
+Streetcar,subject_area,,419,326
+street light,keywords,,453,
+lighting,keywords,,454,
+roadway lighting,keywords,,455,
+FA,keywords,,480,
+Asphalt,keywords,,499,
+Concrete,keywords,,500,
+Testing,keywords,,501,
+data,keywords,,502,
+Pavement,keywords,,503,
+Compaction,keywords,,504,
+Aggregate,keywords,,505,
+Franchise Utilities,keywords,,526,
+Conflict,keywords,,527,
+Relocation,keywords,,528,
+Progress Payments,keywords,,529,
+Daily Reports,keywords,,530,
+Submittals,keywords,,531,
+RFIs,keywords,,532,
+Construction Documents,keywords,,533,
+Notices,keywords,,534,
+Carpool,keywords,,543,
+2022,reporting_period,,895,
+Other Bureau,audience,,759,
+2023,reporting_period,,1012,
+Medium,quality,,754,
+Low,quality,,755,
+Retired,status,,799,
+Q3 Jan.-Mar.,reporting_quarter,,803,
+ADA,keywords,,823,
+annotation,keywords,,827,
+wall,keywords,,832,
+work zone permits,keywords,,850,
+run routes,keywords,,851,
+parade routes,keywords,,852,
+community events,keywords,,853,
+Parking and Regulatory Services Group,data_group_levels,,159,
+Roadway Assets,subject_area,,416,326
+Equity & Inclusion,data_group_levels,,342,143
+youth,keywords,,862,
+Parking Assets,subject_area,,415,326
+outreach,keywords,,863,
+Vision Zero,keywords,,559,
+Payroll,keywords,,567,
+Timekeeping,keywords,,568,
+Quotas,keywords,,569,
+Overtime,keywords,,570,
+Vacation,keywords,,571,
+Street Tree,keywords,,585,
+AGOL,keywords,,586,
+Paint,keywords,,593,
+community organization,keywords,,864,
+ATS,keywords,,870,
+email,keywords,,871,
+govdelivery,keywords,,872,
+contacts,keywords,,873,
+Politess,database,"Politess is a field-based software package used to issue and manage parking citations. Vertical Applications staff administer the database and support the transfer of citation data, citation images, and photo files to the court.",440,443
+Development Hub PDX,database,"Introducing a more efficient public portal that allows customers to apply, pay, and schedule inspections for trade permits online. Development Hub PDX replaces Permits Online, a legacy customer portal that limited our ability to upgrade and enhance site functionality. Available now. Additional functionality will be added in the future.",438,180
+street job,keywords,,828,
+street structure,keywords,,833,
+Employee Trip Reduction Incentive Program,subject_area,,692,682
+commute data,keywords,,717,
+employee data,keywords,,718,
+bike and walk bucks,keywords,,719,
+GIS,keywords,,608,
+Location Hierarchy,keywords,,609,
+Public Survey,keywords,,612,
+Citywide survey,keywords,,613,
+City Fleet,keywords,,615,
+Sign Face,keywords,,617,
+Sign Code,keywords,,620,
+Towing,keywords,,560,
+BOLD,keywords,,572,
+COOP,keywords,,573,
+Continuity,keywords,,574,
+Trimming,keywords,,587,
+Pruning,keywords,,588,
+Curb,keywords,,594,
+Demographic,keywords,,1015,
+Rating,keywords,,725,
+Sign,keywords,,726,
+Crosswalk,keywords,,727,
+Project or Plan,performance_metric_purpose,,765,
+pole,keywords,,456,
+Mode Split,keywords,,481,
+project,keywords,,506,
+capital,keywords,,507,
+Payment Card Industry,information_security_levels,For information like credit card payments,48,
+,,,,
+,,FIN-2.17 - Payment Card Industry Compliance Information:,,
+,,,,
+,,https://www.portlandoregon.gov/citycode/index.cfm?&a=584923 ,,
+Critical Infrastructure (Homeland Security Protected),information_security_levels,,513,
+Unknown,information_security_levels,,89,
+Guardrail,keywords,,730,
+Maximo,keywords,,731,
+Percent,data_type,,733,
+Grant,performance_metric_purpose,,741,
+In Development,status,,796,
+On Hold,status,,800,
+Q4 Apr.-Jun.,reporting_quarter,,804,
+path,keywords,,824,
+shelter,keywords,,834,
+gate,keywords,,835,
+2030,strategic_year,,847,
+Capitol Projects,keywords,,854,
+Performance,data_group_levels,,135,129
+Communications,data_group_levels,,341,143
+ATS,keywords,,865,
+facebook,keywords,,866,
+social media,keywords,,867,
+SRTS,keywords,,868,
+Sign Library,keywords,,621,
+Expenses,keywords,,623,
+Citation Dismissals,keywords,,626,
+Coin Vendor,keywords,,629,
+Traffic Lines,keywords,,632,
+Parking Lines,keywords,,633,
+Crosswalk Lines,keywords,,634,
+Bike Lanes,keywords,,635,
+speed,keywords,,637,
+social media,keywords,,693,
+online engagement,keywords,,694,
+Facebook,keywords,,695,
+webinar,keywords,,696,
+ATS,keywords,,697,
+transit fare,keywords,,720,
+GIS,keywords,,728,
+Enterprise Level,performance_measure_level,"Key, Bureau-wide performance measure",734,
+,,Used to assess progess against PBOT's short (strategic) and Long (TSP) term goals,,
+Work Accomplishments and Costs,subject_area,,381,317
+Community Program Data,subject_area,,682,
+Electronic Sign Status,subject_area,,405,322
+Construction Work Zones,subject_area,,400,322
+Real Time Conditions,subject_area,,322,
+TSP Classifications,subject_area,,393,320
+Streets 2035,subject_area,,389,320
+Network Data,subject_area,,392,320
+Citywide Plans,subject_area,,390,320
+Traffic Signal Status,subject_area,,404,322
+Plan Data,subject_area,,320,
+Licenses/Franchises,subject_area,,387,319
+Leases,subject_area,,386,319
+Charges,subject_area,,385,319
+Acquisitions,subject_area,,384,319
+Permitting,subject_area,,319,
+Enforcement,subject_area,,382,318
+School Beacon Status,subject_area,,406,322
+Traffic Surveillance Video,subject_area,,407,322
+"Traffic Volumes, VMT",subject_area,,429,327
+Speeds and Travel Time,subject_area,,426,327
+Public Transit Ridership and Performance,subject_area,,425,327
+Non-Motorized Travel,subject_area,,424,327
+Mobile Time,subject_area,,380,317
+Construction Programs and Projects,subject_area,,314,
+Needs for project Scoping,subject_area,,356,314
+Materials Testing,subject_area,,355,314
+Local Programs budget,subject_area,,354,314
+Contractor Claims,subject_area,,353,314
+Traffic Monitoring Equipment,subject_area,,422,326
+Website Utilization,subject_area,,368,315
+Training and Safety,subject_area,,374,316
+Operations,subject_area,,383,318
+"New Mobility- Scooters, Bikeshare",subject_area,,430,327
+"New Mobility- car share, TNC",subject_area,,428,327
+Freight Movement,subject_area,,423,327
+Travel Patterns and Trends,subject_area,,327,
+High Crash Locations,subject_area,,412,325
+Travel Time,subject_area,,403,322
+Enforcement and Compliance,subject_area,,411,325
+Crashes and Fatalities,subject_area,,410,325
+Countermeasure Application and Evaluation,subject_area,,409,325
+Road Safety,subject_area,,325,
+Public Transit,subject_area,,558,324
+Property,subject_area,,434,324
+Business Term,subject_area,,448,324
+Base Maps,subject_area,,435,324
+Reference Data,subject_area,,324,
+Project Letting,subject_area,,359,314
+Roadside Assets,subject_area,,417,326
+Drainage Assets,subject_area,,414,326
+Aerial Tram,subject_area,,557,326
+Public service requests,subject_area,,365,315
+Internal communication,subject_area,,364,315
+External communication,subject_area,,369,315
+Injury Surveillance,subject_area,,413,325
+Complaints,subject_area,,363,315
+Customers and Stakeholders,subject_area,,315,
+Work Tracking and Payments,subject_area,,362,314
+Long Range Plans,subject_area,,391,320
+Unknown,subject_area,,170,
+Assets,subject_area,,326,
+"Office buildings, building security, fleet, equipment utilization",subject_area,,352,313
+Finance,subject_area,,351,313
+Facilities and Equipment,subject_area,,350,313
+Contracts and Procurement,subject_area,,349,313
+Project Engineering,subject_area,,358,314
+Project Status and Schedules,subject_area,,360,314
+Landscape Adoption,subject_area,,379,317
+Human Resources,subject_area,,316,
+Inventory,subject_area,,378,317
+Incident Response,subject_area,,377,317
+Fleet and Equipment,subject_area,,376,317
+Crew logs,subject_area,,375,317
+Maintenance and Operations,subject_area,,317,
+"Skills, Training and Certification",subject_area,,373,316
+Positions and Hiring,subject_area,,372,316
+Employees,subject_area,,371,316
+Equity/Transportation Justice,subject_area,,431,
+Right of Way and Utilities,subject_area,,361,314
+Surveys,subject_area,,370,315
+Stakeholder Lists,subject_area,,367,315
+Social media analytics,subject_area,,366,315
+Sunday Parkways,subject_area,,683,682
+Program Events,subject_area,,684,682
+Ambassadors,subject_area,,685,682
+Hop Cards,subject_area,,686,682
+Smarttrips,subject_area,,687,682
+Program Outreach,subject_area,,688,682
+Portland By Cycle,subject_area,,689,682
+Program Maps,subject_area,,690,682
+mode shift,keywords,,698,
+attitudes,keywords,,699,
+Stages of Change,keywords,,700,
+residential,keywords,,701,
+TDM,keywords,,702,
+conditions assessment,keywords,,721,
+Safe Routes to School,keywords,,869,
+traffic deaths,keywords,,874,
+The Public,audience,,756,
+City Council,audience,,761,
+Equity,performance_metric_purpose,,766,
+Testing,status,,797,
+Q1 Jul.-Sept.,reporting_quarter,,801,
+Jan.,reporting_month,,805,
+Program Level,performance_measure_level,Informed by program goals and objectives,735,
+,,Map to organizational measurement priorities,,
+Project Level,performance_measure_level,Project specific measures,736,
+,,Map to organizational/program measurement priorities,,
+People Level,performance_measure_level,Staff level objectives,737,
+,,Map to organizational/Group priorities,,
+posts,keywords,,825,
+traffic calming,keywords,,829,
+speed bump,keywords,,830,
+Grantor,audience,,836,
+2035,strategic_year,,848,
+City Budget Office (CBO),performance_metric_purpose,,738,
+Strategy,data_group_levels,,855,143
+ATS,keywords,,856,
+incentives,keywords,,857,
+SmartTrips to School,keywords,,858,
+encouragement,keywords,,859,
+TDM,keywords,,860,
+fatal,keywords,,875,
+fatalities,keywords,,876,
+crashes,keywords,,877,
+High Crash Intersections,keywords,,878,
+HCI,keywords,,879,
+High Crash Network,keywords,,880,
+HCN,keywords,,881,
+fixed speed safety camera,keywords,,882,
+automated enforcement,keywords,,883,
+photo enforcement,keywords,,884,
+speeding,keywords,,885,
+Feb.,reporting_month,,806,
+Mar.,reporting_month,,807,
+Apr.,reporting_month,,808,
+May.,reporting_month,,809,
+Jun.,reporting_month,,810,
+Jul.,reporting_month,,811,
+Aug.,reporting_month,,812,
+Sept.,reporting_month,,813,
+Oct.,reporting_month,,814,
+Nov.,reporting_month,,815,
+Dec.,reporting_month,,816,
+Right of way closure,keywords,,886,
+In Use - Change Proposed,status,,887,
+CY2018,reporting_period,,841,843
+CY2019,reporting_period,,840,842
+CY2020,reporting_period,,845,844
+FY19: 7/18-6/19,reporting_period,,846,843
+FY20: 7/19-6/20,reporting_period,,838,842
+FY21: 7/20-6/21,reporting_period,,839,844
+CY2021,reporting_period,,896,895
+FY22: 7/21-6/22,reporting_period,,897,895
+Safety,strategic_plan,,771,
+Moving People & Goods,strategic_plan,Mobility,770,
+Asset Management,strategic_plan,,772,
+Funds Management,program_area,,898,789
+Administration and Support,program_area,,789,
+Equity,strategic_plan,,1016,
+Climate,strategic_plan,,1022,
+Transportation Safety,program_area,,901,790
+Organizational Development,strategic_plan,,992,
+Up,direction,,1026,
+Service Request SQL Database,database,The Service Request system stores all data in the Service Request SQL Database. Data for this metric is derived from the Service Request UI which interfaces with the Service Request SQL Database.,1028,
+Streets and Signs,program_area,,906,791
+Parking Garages,program_area,,909,792
+Project Development,program_area,,911,793
+Parking Enforcement,program_area,,910,792
+On-Street Parking,program_area,,908,792
+Streetlights and Signals,program_area,,904,791
+"Sidewalks, Bridges and Structures",program_area,,905,791
+Environmental Systems,program_area,,907,791
+Emergency Prep and Response,program_area,,903,791
+Active or Shared Transportation Options,program_area,,900,790
+Support Services,program_area,,899,789
+Asset Management,program_area,,914,794
+Utility Permitting,program_area,,919,795
+Funds Management,program_area,,921,898
+Employee Support,program_area,,922,899
+Portland Aerial Tram,program_area,,923,900
+Safety Infrastructure and Programs,program_area,,925,901
+Community Response Efforts,program_area,,934,903
+Sidewalks and Ramps,program_area,,935,905
+"SSL Design, Operations, Maintenance, and Inspections",program_area,,936,904
+Sewer Repair,program_area,,941,907
+Street Cleaning,program_area,,942,906
+Parking Permit Operations,program_area,,948,908
+Parking Garage - Operations,program_area,,950,909
+Derelict RV,program_area,,952,910
+Project Development and Delivery,program_area,,957,911
+Sidewalk Posting & Repair,program_area,,958,912
+Program Development: Policy to Operations,program_area,,959,913
+"Driveway and Sidewalk Permitting, Engineering, Inspection & Construction",program_area,,961,914
+Construction Engineering & Inspection (Development),program_area,,963,915
+Temporary Street Use Permitting,program_area,,964,916
+Temporary Traffic Control,program_area,,966,965
+Acquisition of Right of Way,program_area,,967,917
+Coordination and Compliance,program_area,,969,918
+Utility Permitting & Inspection,program_area,,971,919
+New Mobility Innovation and Implementation,program_area,,927,900
+Bikeshare Operations,program_area,,924,900
+Emergency Preparedness and Response,program_area,,933,903
+RV Demolition Program,program_area,,930,900
+Sewer Preventative Maintenance,program_area,,940,907
+Green Spaces,program_area,,938,905
+Bridges and Structures,program_area,,932,905
+Private for Hire Transportation,program_area,,929,900
+Streetcar Service,program_area,,928,900
+Temporary Traffic Control,program_area,,965,795
+Temporary Street Use Permitting,program_area,,916,795
+"Leasing, Vacation, and Property Management",program_area,,970,918
+Community Activation and Use,program_area,,968,918
+TDM Policy and Programs,program_area,,926,900
+Right of Way Use,program_area,,918,795
+Construction Engineering & Inspection (Development),program_area,,915,795
+Asset Management,program_area,,917,795
+Towing Administration: Agency Tow Services & Private Property Impound,program_area,,931,900
+Street Maintenance and Repair,program_area,,945,906
+Street Pavement Preservation,program_area,,943,906
+Signs,program_area,,944,906
+Parking Meter Districts,program_area,,947,908
+Parking Management Plans,program_area,,946,908
+Parking Enforcement & Towing,program_area,,953,910
+Abandoned Auto,program_area,,951,910
+Private Project Development and Permit Delivery,program_area,,960,914
+Parking Garage - Maintenance,program_area,,949,909
+Business Support,program_area,,920,899
+Pavement Markings,program_area,,939,906
+Land Development: Review & Impact Mitigation,program_area,,962,914
+Sidewalk Posting & Repair,program_area,,912,794
+Policy Planning,program_area,,956,911
+Complete Streets,program_area,,955,911
+Area and Project Planning,program_area,,954,911
+Program Development: Policy to Operations,program_area,,913,794
+Parking,program_area,,792,
+Regulatory and Permitting,program_area,,794,
+Planning and Engineering,program_area,,793,
+Operations and Maintenance,program_area,,791,
+Mobility,program_area,,790,
+Right of Way Management,program_area,,795,
+VMT,keywords,Vehicle Miles Traveled,985,
+Right-of-way,keywords,,987,
+serious injuries,keywords,,988,
+walk,keywords,,989,
+work from home,keywords,,990,
+Down,direction,,1027,
