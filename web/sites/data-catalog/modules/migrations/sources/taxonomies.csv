@@ -354,9 +354,9 @@ Equipment,keywords,,467,
 "Policy, Planning, and Projects Group",data_group_levels,,163,
 CityFleet,keywords,,468,
 Contract,keywords,,517,
-Sensitive Location Information,information_security_levels,"location data is that might be linked back to an individual, or might be used to reveal sensitive personal data (includes data revealing a person’s ethnicity; political, religious or philosophical beliefs; and data concerning health or sexual orientation) ",184,
-,,Patterns of accumulated geospatial information (http://digg.com/2018/strava-secret-military-bases-soldier-names),,
-,,Homeland Security/sensitive infrastructure data (https://www.dhs.gov/policy),,
+Sensitive Location Information,information_security_levels,"location data is that might be linked back to an individual, or might be used to reveal sensitive personal data (includes data revealing a person’s ethnicity; political, religious or philosophical beliefs; and data concerning health or sexual orientation) 
+Patterns of accumulated geospatial information (http://digg.com/2018/strava-secret-military-bases-soldier-names)
+Homeland Security/sensitive infrastructure data (https://www.dhs.gov/policy)",184,
 Fees,keywords,,537,
 Training,keywords,,548,
 Media,audience,,757,
@@ -369,13 +369,9 @@ Road Weather,subject_area,,402,322
 Contract,performance_metric_purpose,,767,
 Geodatabase File,file_type,,175,
 Census,keywords,,446,
-TRIM (Content Manager),database,"An electronic records management application administered by the Archives and Records Management Division of the City Auditor’s office.  TRIM is used for both enterprise-wide and bureau-specific functions requiring document management, fulfilling legal requirements for retention and access, and for improving workflows.",452,
-,,,,
-,,,,
-,,,,
-,,"TRIM is a State of Oregon-certified records management application that functions much like a physical records center.  TRIM stores electronic records, manages security and access for those records, and applies retention schedules so that all public records are professionally maintained according to applicable State and City laws.  Archives and Records Management has managed this system since 2001.  Used by a wide-range of industries and institutions, including the State of Oregon, US Department of the Navy, and the Australian Government, TRIM continues to be a leader in electronic records management solutions.",,
-,,,,
-,,"TRIM integrates with Office 365, individual or shared folders on network drives, and with specific business applications, such as TRACS. TRIM accepts records created from any application including e-mail, Word, Excel, PowerPoint, CAD drawings, TIFs, JPEGs, PDFs, MP3s, MPGs, etc..",,
+TRIM (Content Manager),database,"An electronic records management application administered by the Archives and Records Management Division of the City Auditor’s office.  TRIM is used for both enterprise-wide and bureau-specific functions requiring document management, fulfilling legal requirements for retention and access, and for improving workflows.
+TRIM is a State of Oregon-certified records management application that functions much like a physical records center.  TRIM stores electronic records, manages security and access for those records, and applies retention schedules so that all public records are professionally maintained according to applicable State and City laws.  Archives and Records Management has managed this system since 2001.  Used by a wide-range of industries and institutions, including the State of Oregon, US Department of the Navy, and the Australian Government, TRIM continues to be a leader in electronic records management solutions.
+TRIM integrates with Office 365, individual or shared folders on network drives, and with specific business applications, such as TRACS. TRIM accepts records created from any application including e-mail, Word, Excel, PowerPoint, CAD drawings, TIFs, JPEGs, PDFs, MP3s, MPGs, etc..",452,
 StreetSaver,database,Pavement Management Software,447,
 Fuel,keywords,,469,
 Maintenance,keywords,,470,
@@ -386,23 +382,16 @@ marketing,keywords,,493,
 TCE,keywords,,518,
 Easement,keywords,,519,
 Acquisition,keywords,,520,
-Personally Identifiable Information (PII),information_security_levels,"Personal Information:  As defined in the Oregon Consumer Identity Theft Protection Act, ORS 646A.602(11) listed as follows:",50,
-,,,,
-,,(11) “Personal information”:,,
-,,,,
-,,"(a) Means a consumer’s first name or first initial and last name in combination with any one or more of the following data elements, when the data elements are not rendered unusable through encryption, redaction or other methods, or when the data elements are encrypted and the encryption key has also been acquired:",,
-,,,,
-,,(A) Social Security number;,,
-,,,,
-,,(B) Driver license number or state identification card number issued by the Department of Transportation;,,
-,,,,
-,,(C) Passport number or other United States issued identification number; or,,
-,,,,
-,,"(D) Financial account number, credit or debit card number, in combination with any required security code, access code or password that would permit access to a consumer’s financial account.",,
-,,,,
-,,"(b) Means any of the data elements or any combination of the data elements described in paragraph (a) of this subsection when not combined with the consumer’s first name or first initial and last name and when the data elements are not rendered unusable through encryption, redaction or other methods, if the information obtained would be sufficient to permit a person to commit identity theft against the consumer whose information was compromised.",,
-,,,,
-,,"(c) Does not include information, other than a Social Security number, in a federal, state or local government record that is lawfully made available to the public.",,
+Personally Identifiable Information (PII),information_security_levels,"Personal Information:  As defined in the Oregon Consumer Identity Theft Protection Act, ORS 646A.602(11) listed as follows:
+(11) “Personal information”:
+(a) Means a consumer’s first name or first initial and last name in combination with any one or more of the following data elements, when the data elements are not rendered unusable through encryption, redaction or other methods, or when the data elements are encrypted and the encryption key has also been acquired:
+(A) Social Security number;
+(B) Driver license number or state identification card number issued by the Department of Transportation;
+(C) Passport number or other United States issued identification number; or
+(D) Financial account number, credit or debit card number, in combination with any required security code, access code or password that would permit access to a consumer’s financial account.
+(b) Means any of the data elements or any combination of the data elements described in paragraph (a) of this subsection when not combined with the consumer’s first name or first initial and last name and when the data elements are not rendered unusable through encryption, redaction or other methods, if the information obtained would be sufficient to permit a person to commit identity theft against the consumer whose information was compromised.
+(c) Does not include information, other than a Social Security number, in a federal, state or local government record that is lawfully made available to the public.
+",50,
 records request,keywords,,538,
 GovQA,keywords,,539,
 Public Records,keywords,,540,
@@ -507,11 +496,10 @@ stakeholders,keywords,,496,
 digital marketing,keywords,,497,
 internal communications,keywords,,498,
 Protected Health Information (HIPAA),information_security_levels,,49,
-Protected Business Information/Trade Secrets,information_security_levels,Under the Oregon Uniform Trade Secrets Act (ORS 646.461) a Trade Secret is defined as:  ,169,
-,,,,
-,,"Trade secret means information, including a drawing, cost data, customer list, formula, pattern, compilation, program, device, method, technique or process that:   ",,
-,,"Derives independent economic value, actual or potential, from not being generally known to the public or to other persons who can obtain economic value from its disclosure or use; and  ",,
-,,Is the subject of efforts that are reasonable under the circumstances to maintain its secrecy.  ,,
+Protected Business Information/Trade Secrets,information_security_levels,"Under the Oregon Uniform Trade Secrets Act (ORS 646.461) a Trade Secret is defined as:  
+Trade secret means information, including a drawing, cost data, customer list, formula, pattern, compilation, program, device, method, technique or process that:   
+Derives independent economic value, actual or potential, from not being generally known to the public or to other persons who can obtain economic value from its disclosure or use; and  
+Is the subject of efforts that are reasonable under the circumstances to maintain its secrecy. ",169,
 Mobile Equipment Location,subject_area,,408,322
 Personnel,keywords,,564,
 Employee,keywords,,565,
@@ -519,15 +507,11 @@ Appointment,keywords,,566,
 Sign Maintenance,keywords,,584,
 Pavement Markings,keywords,,592,
 .GPS/.GPX,file_type,,598,
-Microsoft Visual Studio Applications,database,"Applications developed in Visual Studio (Visual Basic 6, C#, ASP.Net):",442,
-,,,,
-,,Visual Basic 6: Parking Enforcement Service Requests,,
-,,,,
-,,"C#: PRESS, Parking Coin Reconciliation, Coin Collection List",,
-,,,,
-,,"ASP.Net: Abandoned Autos, Mobile Timekeeping, Sidewalk Posting Permits, Signlib, SmartPark Access Cards",,
-,,,,
-,,"Visio/C#: Maximo Work Order Toolbar, Sidewalk Posting Toolbar, and Sidewalk Cafes Permits",,
+Microsoft Visual Studio Applications,database,"Applications developed in Visual Studio (Visual Basic 6, C#, ASP.Net):
+Visual Basic 6: Parking Enforcement Service Requests
+C#: PRESS, Parking Coin Reconciliation, Coin Collection List
+ASP.Net: Abandoned Autos, Mobile Timekeeping, Sidewalk Posting Permits, Signlib, SmartPark Access Cards
+Visio/C#: Maximo Work Order Toolbar, Sidewalk Posting Toolbar, and Sidewalk Cafes Permits",442,
 Portland Online Permitting System (POPS),database,"The Portland Online Permitting (POPS) Program is modernizing the City of Portland's current permitting system into an online, enhanced customer service delivery system. Currently, permit technicians input all permit application information into TRACS, a system the City has used to track and manage permits since 1999. This technology supports the development permit process, but it is antiquated and relies heavily on inefficient, paper-based transactions.",180,
 RoadRunner (e-Builder),database,RoadRunner is a hosted software solution for managing capital construction projects and associated budgets. Tech Services team members assist with building workflows in RoadRunner and developing and supporting the SAP to RoadRunner interface.,436,
 SAP,database,,347,
@@ -660,11 +644,9 @@ pole,keywords,,456,
 Mode Split,keywords,,481,
 project,keywords,,506,
 capital,keywords,,507,
-Payment Card Industry,information_security_levels,For information like credit card payments,48,
-,,,,
-,,FIN-2.17 - Payment Card Industry Compliance Information:,,
-,,,,
-,,https://www.portlandoregon.gov/citycode/index.cfm?&a=584923 ,,
+Payment Card Industry,information_security_levels,"For information like credit card payments
+FIN-2.17 - Payment Card Industry Compliance Information:
+https://www.portlandoregon.gov/citycode/index.cfm?&a=584923 ",48,
 Critical Infrastructure (Homeland Security Protected),information_security_levels,,513,
 Unknown,information_security_levels,,89,
 Guardrail,keywords,,730,
@@ -701,8 +683,8 @@ webinar,keywords,,696,
 ATS,keywords,,697,
 transit fare,keywords,,720,
 GIS,keywords,,728,
-Enterprise Level,performance_measure_level,"Key, Bureau-wide performance measure",734,
-,,Used to assess progess against PBOT's short (strategic) and Long (TSP) term goals,,
+Enterprise Level,performance_measure_level,"Key, Bureau-wide performance measure
+Used to assess progess against PBOT's short (strategic) and Long (TSP) term goals",734,
 Work Accomplishments and Costs,subject_area,,381,317
 Community Program Data,subject_area,,682,
 Electronic Sign Status,subject_area,,405,322
@@ -808,12 +790,12 @@ Equity,performance_metric_purpose,,766,
 Testing,status,,797,
 Q1 Jul.-Sept.,reporting_quarter,,801,
 Jan.,reporting_month,,805,
-Program Level,performance_measure_level,Informed by program goals and objectives,735,
-,,Map to organizational measurement priorities,,
-Project Level,performance_measure_level,Project specific measures,736,
-,,Map to organizational/program measurement priorities,,
-People Level,performance_measure_level,Staff level objectives,737,
-,,Map to organizational/Group priorities,,
+Program Level,performance_measure_level,"Informed by program goals and objectives
+Map to organizational measurement priorities",735,
+Project Level,performance_measure_level,"Project specific measures
+Map to organizational/program measurement priorities",736,
+People Level,performance_measure_level,"Staff level objectives
+Map to organizational/Group priorities",737,
 posts,keywords,,825,
 traffic calming,keywords,,829,
 speed bump,keywords,,830,
