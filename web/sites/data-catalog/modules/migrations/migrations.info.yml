@@ -1,0 +1,8 @@
+name: Data Catalog Migrations
+type: module
+description: "Migrations for previous data catalog site"
+package: Migrate
+core: 8.x
+dependencies:
+  - migrate:migrate
+core_version_requirement: ^8 || ^9
