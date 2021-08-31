@@ -10,7 +10,7 @@ RUN apt-get update \
     && apt-get install -my gnupg2 \
     && update-ca-certificates \
     && sed -i 's/CipherString = DEFAULT@SECLEVEL=2/CipherString = DEFAULT@SECLEVEL=1/' /etc/ssl/openssl.cnf \
-    && echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
+    && echo 'deb http://apt.postgresql.org/pub/repos/apt/ bullseye-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
     # Add postgresql GPG
     && curl --output /tmp/postgres.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc \
     && apt-key add /tmp/postgres.asc \
