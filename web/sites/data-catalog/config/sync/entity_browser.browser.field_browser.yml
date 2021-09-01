@@ -1,0 +1,29 @@
+uuid: 80f8adb5-bfbf-4486-aef9-09d56788eb4d
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_browser_entity_form
+name: field_browser
+label: 'Field browser'
+display: modal
+display_configuration:
+  width: ''
+  height: '500'
+  link_text: 'Create field'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: single
+widget_selector_configuration: {  }
+widgets:
+  98edee00-5e06-4555-acc2-1053d47ed812:
+    settings:
+      entity_type: node
+      bundle: field
+      form_mode: default
+      submit_text: 'Save field'
+    uuid: 98edee00-5e06-4555-acc2-1053d47ed812
+    weight: 2
+    label: Create
+    id: entity_form
