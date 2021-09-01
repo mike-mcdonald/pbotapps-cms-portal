@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - entity_browser.browser.field_browser
+    - entity_browser.browser.contact_browser
     - field.field.node.dataset.field_accessibility_level
     - field.field.node.dataset.field_authority_level
     - field.field.node.dataset.field_data_custodian
@@ -22,14 +22,17 @@ dependencies:
   module:
     - cshs
     - entity_browser
+    - entity_browser_entity_form
+    - inline_entity_form
     - select2
+    - text
 id: node.dataset.default
 targetEntityType: node
 bundle: dataset
 mode: default
 content:
   field_accessibility_level:
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -41,7 +44,7 @@ content:
     type: options_select
     region: content
   field_data_custodian:
-    weight: 2
+    weight: 3
     settings:
       entity_browser: contact_browser
       field_widget_display: rendered_entity
@@ -75,25 +78,37 @@ content:
     type: options_select
     region: content
   field_demographic_information:
-    weight: 14
+    weight: 13
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
     region: content
-  field_field:
-    weight: 26
+  field_description:
+    type: text_textarea
+    weight: 1
+    region: content
     settings:
-      entity_browser: field_browser
-      field_widget_display: rendered_entity
-      field_widget_display_settings:
-        view_mode: teaser
-      field_widget_edit: true
-      field_widget_remove: true
-      field_widget_replace: true
-      open: true
-      selection_mode: selection_append
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
-    type: entity_browser_entity_reference
+  field_field:
+    weight: 16
+    settings:
+      form_mode: default
+      revision: true
+      override_labels: true
+      label_singular: field
+      label_plural: Fields
+      allow_new: true
+      match_operator: CONTAINS
+      collapsible: false
+      collapsed: false
+      allow_existing: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: field_browser
+    type: inline_entity_form_complex
     region: content
   field_keywords:
     weight: 9
@@ -106,7 +121,7 @@ content:
     type: select2_entity_reference
     region: content
   field_quality_concerns:
-    weight: 12
+    weight: 11
     settings:
       rows: 5
       placeholder: ''
@@ -114,7 +129,7 @@ content:
     type: string_textarea
     region: content
   field_security_level:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -133,7 +148,7 @@ content:
     third_party_settings: {  }
     region: content
   field_spatial_information:
-    weight: 13
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -153,7 +168,7 @@ content:
     region: content
   status:
     type: boolean_checkbox
-    weight: 17
+    weight: 15
     region: content
     settings:
       display_label: true
@@ -168,7 +183,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 16
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -178,7 +193,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_description: true
   path: true
   promote: true
   sticky: true
