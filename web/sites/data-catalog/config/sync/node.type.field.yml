@@ -1,0 +1,17 @@
+uuid: 162c4872-b9cf-43ca-84c4-cd9a64de1517
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Field
+type: field
+description: 'Fields are used in datasets to denote types of data within that dataset, and relate datasets together by shared fields.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
