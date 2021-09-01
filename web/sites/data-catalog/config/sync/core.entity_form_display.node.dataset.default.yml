@@ -22,13 +22,7 @@ dependencies:
   module:
     - cshs
     - entity_browser
-    - field_layout
     - select2
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings:
-      label: ''
 id: node.dataset.default
 targetEntityType: node
 bundle: dataset
@@ -96,8 +90,8 @@ content:
       field_widget_edit: true
       field_widget_remove: true
       field_widget_replace: true
+      open: true
       selection_mode: selection_append
-      open: false
     third_party_settings: {  }
     type: entity_browser_entity_reference
     region: content
