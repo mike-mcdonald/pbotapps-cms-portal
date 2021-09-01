@@ -1,0 +1,41 @@
+uuid: dc32367b-dae0-46c0-8b53-70e42af5d074
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact_information.field_email_address
+    - field.field.node.contact_information.field_telephone_number
+    - node.type.contact_information
+  module:
+    - layout_builder
+    - telephone
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.contact_information.teaser
+targetEntityType: node
+bundle: contact_information
+mode: teaser
+content:
+  field_email_address:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_telephone_number:
+    weight: 1
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+hidden:
+  group_content: true
+  links: true
+  search_api_excerpt: true
