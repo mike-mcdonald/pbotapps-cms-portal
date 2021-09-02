@@ -5,7 +5,7 @@ dependencies:
   config:
     - entity_browser.browser.field_browser
     - field.field.node.field.field_description
-    - field.field.node.field.field_reference
+    - field.field.node.field.field_lineage
     - node.type.field
   module:
     - entity_browser
@@ -23,7 +23,7 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
-  field_reference:
+  field_lineage:
     weight: 2
     settings:
       entity_browser: field_browser

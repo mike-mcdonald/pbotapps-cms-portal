@@ -233,7 +233,7 @@ display:
           id: title_1
           table: node_field_data
           field: title
-          relationship: field_reference
+          relationship: field_lineage
           group_type: group
           admin_label: ''
           label: 'Refers to field'
@@ -301,7 +301,7 @@ display:
           relationship: reverse__node__field_field_1
           group_type: group
           admin_label: ''
-          label: 'Refers to'
+          label: Sources
           exclude: false
           alter:
             alter_text: true
@@ -363,7 +363,7 @@ display:
           id: title_4
           table: node_field_data
           field: title
-          relationship: reverse__node__field_reference
+          relationship: reverse__node__field_lineage
           group_type: group
           admin_label: ''
           label: ''
@@ -431,7 +431,7 @@ display:
           relationship: reverse__node__field_field_2
           group_type: group
           admin_label: ''
-          label: 'Referenced by'
+          label: Derivations
           exclude: false
           alter:
             alter_text: true
@@ -531,10 +531,10 @@ display:
           required: true
           entity_type: node
           plugin_id: entity_reverse
-        field_reference:
-          id: field_reference
-          table: node__field_reference
-          field: field_reference
+        field_lineage:
+          id: field_lineage
+          table: node__field_lineage
+          field: field_lineage
           relationship: none
           group_type: group
           admin_label: 'Referenced field'
@@ -544,16 +544,16 @@ display:
           id: reverse__node__field_field_1
           table: node_field_data
           field: reverse__node__field_field
-          relationship: field_reference
+          relationship: field_lineage
           group_type: group
           admin_label: 'Referenced field dataset'
           required: false
           entity_type: node
           plugin_id: entity_reverse
-        reverse__node__field_reference:
-          id: reverse__node__field_reference
+        reverse__node__field_lineage:
+          id: reverse__node__field_lineage
           table: node_field_data
-          field: reverse__node__field_reference
+          field: reverse__node__field_lineage
           relationship: none
           group_type: group
           admin_label: 'Referring field'
@@ -564,7 +564,7 @@ display:
           id: reverse__node__field_field_2
           table: node_field_data
           field: reverse__node__field_field
-          relationship: reverse__node__field_reference
+          relationship: reverse__node__field_lineage
           group_type: group
           admin_label: 'Referring field dataset'
           required: false

@@ -3,14 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_reference
+    - field.storage.node.field_lineage
     - node.type.field
-id: node.field.field_reference
-field_name: field_reference
+id: node.field.field_lineage
+field_name: field_lineage
 entity_type: node
 bundle: field
-label: Reference
-description: 'Select the field in a different dataset that this field "references" where reference means this field''s value is a copy of a value in the field selected here.'
+label: Lineage
+description: 'Select the fields that are the source for this field''s values. Use the description field to describe how values are derived from the fields referenced here.'
 required: false
 translatable: false
 default_value: {  }
