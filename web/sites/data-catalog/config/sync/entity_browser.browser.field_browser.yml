@@ -12,7 +12,7 @@ display: modal
 display_configuration:
   width: ''
   height: '500'
-  link_text: 'Select field'
+  link_text: 'Select field(s)'
   auto_open: false
 selection_display: no_display
 selection_display_configuration: {  }
