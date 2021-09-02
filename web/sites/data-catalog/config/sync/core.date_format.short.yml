@@ -1,4 +1,4 @@
-uuid: bda2b15c-dc07-48d2-b22b-1d8147b563b0
+uuid: 4da30e8d-d3d9-43dd-b446-974263f1c1fa
 langcode: en
 status: true
 dependencies: {  }
@@ -7,4 +7,4 @@ _core:
 id: short
 label: 'Default short date'
 locked: false
-pattern: 'm/d/Y - H:i'
+pattern: 'F d, Y g:i a'

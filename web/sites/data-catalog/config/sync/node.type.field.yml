@@ -1,4 +1,4 @@
-uuid: 331c5417-0a60-452e-be4b-cd9bc1eac4cf
+uuid: 162c4872-b9cf-43ca-84c4-cd9a64de1517
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,9 @@ third_party_settings:
   menu_ui:
     available_menus: {  }
     parent: ''
-name: Dataset
-type: dataset
-description: 'Use this content type to create a new dataset that exists in a database or server'
+name: Field
+type: field
+description: 'Fields are used in datasets to denote types of data within that dataset, and relate datasets together by shared fields.'
 help: ''
 new_revision: true
 preview_mode: 1
