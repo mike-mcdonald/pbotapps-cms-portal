@@ -8,8 +8,8 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: rain_local_actions
 theme: rain
-region: notification
-weight: -3
+region: local_admin
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:
