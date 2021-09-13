@@ -418,15 +418,19 @@ third_party_settings:
             uuid: 43523d1a-d6ca-4a83-8b79-6aea48057112
             region: first
             configuration:
+              id: 'field_block:node:public_involvement_plan:field_strategy'
+              label: 'Stakeholder Involvement Strategy'
+              provider: layout_builder
               label_display: '0'
+              formatter:
+                label: above
+                type: entity_reference_revisions_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:public_involvement_plan:field_strategy'
-              formatter:
-                type: paragraph_summary
-                label: above
-                settings: {  }
-                third_party_settings: {  }
+                view_mode: view_mode
             additional: {  }
             weight: 8
           e1b73625-6b58-4727-8a46-e564569dd263:
