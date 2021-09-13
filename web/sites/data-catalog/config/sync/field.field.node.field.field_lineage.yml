@@ -1,0 +1,28 @@
+uuid: 32b04b5a-281f-42e0-9028-dc0ad742d9ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lineage
+    - node.type.field
+id: node.field.field_lineage
+field_name: field_lineage
+entity_type: node
+bundle: field
+label: Lineage
+description: 'Select the fields that are the source for this field''s values. Use the description field to describe how values are derived from the fields referenced here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      field: field
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,37 @@
+uuid: b24ede0e-e848-4bf1-b78d-c088b2612bad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.field.field_description
+    - field.field.node.field.field_lineage
+    - node.type.field
+  module:
+    - text
+    - user
+id: node.field.default
+targetEntityType: node
+bundle: field
+mode: default
+content:
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_lineage:
+    weight: 102
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

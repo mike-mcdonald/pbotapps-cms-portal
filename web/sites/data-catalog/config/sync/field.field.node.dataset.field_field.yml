@@ -1,0 +1,29 @@
+uuid: 98224ad3-a575-4ea6-85dc-df358b7b722f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field
+    - node.type.dataset
+    - node.type.field
+id: node.dataset.field_field
+field_name: field_field
+entity_type: node
+bundle: dataset
+label: Fields
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      field: field
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
