@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.field.field_lineage
     - node.type.field
   module:
+    - cshs
     - text
     - user
 id: node.field.teaser
@@ -16,15 +17,24 @@ targetEntityType: node
 bundle: field
 mode: teaser
 content:
+  field_data_type:
+    type: cshs_full_hierarchy
+    weight: 0
+    region: content
+    label: visually_hidden
+    settings:
+      separator: ' » '
+      linked: 0
+      reverse: 0
+    third_party_settings: {  }
   field_description:
     type: text_trimmed
-    weight: 0
+    weight: 1
     region: content
     label: visually_hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
 hidden:
-  field_data_type: true
   field_lineage: true
   links: true

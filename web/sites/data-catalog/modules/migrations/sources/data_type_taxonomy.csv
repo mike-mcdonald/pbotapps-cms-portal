@@ -1,10 +1,19 @@
-﻿"Boolean (e.g. True, False, 1, 0)",data_type,It represents the values true(1) and false(0).,5,
-Point ( e.g. POINT (30 10) ),data_type,,13,12
-Timestamp (e.g. 1632782567),data_type,"The Unix time stamp is a way to track time as a running total of seconds. This count starts at the Unix Epoch on January 1st, 1970 at UTC.",11,
-MultiPolygon ( collection of polygons),data_type,,18,12
-"Multipoint ( e.g. MULTIPOINT (10 40, 40 30, 20 20, 30 10) )",data_type,,16,12
-"MultiLineString (e.g. MULTILINESTRING ((10 10, 20 20, 10 40), (40 40, 30 30, 40 20, 30 10)) )",data_type,,17,12
-"LineString ( LINESTRING (30 10, 10 30, 40 40) )",data_type,,14,12
+﻿name,vid,description,tid,parent
+Multipoint,data_type,"e.g. MULTIPOINT (10 40, 40 30, 20 20, 30 10) ",16,12
+Timestamp,data_type,"The Unix time stamp is a way to track time as a running total of seconds. This count starts at the Unix Epoch on January 1st, 1970 at UTC. e.g. 1632782567",11,
 WKT (Geometry data),data_type,"Well-known text (WKT) is a text markup language for representing vector geometry objects. A binary equivalent, known as well-known binary (WKB).",12,
 Time,data_type,,9,
-"Character (e.g. a, 1, #)",data_type,"It is used to store a single letter, digit, punctuation mark, symbol, or blank space.",,
+Character,data_type,"It is used to store a single letter, digit, punctuation mark, symbol, or blank space. e.g. a, 1, #",3,
+String,data_type,"It is a sequence of characters and the most commonly used data type to store text e.g. ""this is a string"", ""so is this"" .",4,
+List,data_type,"Stores a number of elements in a specific order e.g. [1, 2, ""array""] .",7,
+Integer,data_type,"Numeric data without floating points (fractional components) e.g. 1, 22, 309 .",1,
+Float,data_type,"Numbers with fractional components e.g. 1.2, 0.70, 10.22 .",2,
+Dictionary,data_type,"Used to store data in Key:Value pairs e.g. {""key"" : ""value""} .",6,
+Datetime,data_type,e.g. 2-20-2018 18:00:00,10,
+Date,data_type,,8,
+LineString,data_type,"LINESTRING (30 10, 10 30, 40 40)",14,12
+Boolean,data_type,"It represents the values true(1) and false(0) e.g. True, False, 1, 0 .",5,
+MultiPolygon ( collection of polygons),data_type,,18,12
+MultiLineString,data_type,"e.g. MULTILINESTRING ((10 10, 20 20, 10 40), (40 40, 30 30, 40 20, 30 10)) ",17,12
+Polygon,data_type,"e.g. POLYGON (30 10, 40 40, 20 40, 10 20, 30 10)",15,12
+Point,data_type,e.g. POINT (30 10) ,13,12
