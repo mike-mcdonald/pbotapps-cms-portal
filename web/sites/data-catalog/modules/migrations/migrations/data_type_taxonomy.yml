@@ -1,0 +1,22 @@
+id: data_type_taxonomy
+label: "Data Type Taxonomy"
+migration_group: data_type_taxonomy
+source:
+  plugin: csv
+  path: sites/data-catalog/modules/migrations/sources/data_type_taxonomy.csv
+  header_row_count: 1
+  ids:
+    - tid
+process:
+  name: name
+  vid: vid
+  description: description
+  parent:
+    - plugin: migration_lookup
+      migration: data_type_taxonomy
+      source: parent
+    - plugin: default_value
+      default_value: 0
+destination:
+  plugin: entity:taxonomy_term
+  bundle: vid

@@ -1,0 +1,10 @@
+﻿"Boolean (e.g. True, False, 1, 0)",data_type,It represents the values true(1) and false(0).,5,
+Point ( e.g. POINT (30 10) ),data_type,,13,12
+Timestamp (e.g. 1632782567),data_type,"The Unix time stamp is a way to track time as a running total of seconds. This count starts at the Unix Epoch on January 1st, 1970 at UTC.",11,
+MultiPolygon ( collection of polygons),data_type,,18,12
+"Multipoint ( e.g. MULTIPOINT (10 40, 40 30, 20 20, 30 10) )",data_type,,16,12
+"MultiLineString (e.g. MULTILINESTRING ((10 10, 20 20, 10 40), (40 40, 30 30, 40 20, 30 10)) )",data_type,,17,12
+"LineString ( LINESTRING (30 10, 10 30, 40 40) )",data_type,,14,12
+WKT (Geometry data),data_type,"Well-known text (WKT) is a text markup language for representing vector geometry objects. A binary equivalent, known as well-known binary (WKB).",12,
+Time,data_type,,9,
+"Character (e.g. a, 1, #)",data_type,"It is used to store a single letter, digit, punctuation mark, symbol, or blank space.",,
