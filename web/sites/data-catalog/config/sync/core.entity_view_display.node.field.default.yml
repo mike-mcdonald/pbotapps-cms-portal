@@ -3,10 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.field.field_data_type
     - field.field.node.field.field_description
     - field.field.node.field.field_lineage
     - node.type.field
   module:
+    - cshs
     - text
     - user
 id: node.field.default
@@ -14,6 +16,16 @@ targetEntityType: node
 bundle: field
 mode: default
 content:
+  field_data_type:
+    weight: 103
+    label: above
+    settings:
+      linked: false
+      reverse: false
+      separator: ' » '
+    third_party_settings: {  }
+    type: cshs_full_hierarchy
+    region: content
   field_description:
     weight: 101
     label: above
@@ -31,7 +43,7 @@ content:
     region: content
   links:
     weight: 100
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }

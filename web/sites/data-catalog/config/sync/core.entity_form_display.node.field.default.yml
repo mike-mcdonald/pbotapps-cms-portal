@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.field_browser
+    - field.field.node.field.field_data_type
     - field.field.node.field.field_description
     - field.field.node.field.field_lineage
     - node.type.field
   module:
+    - cshs
     - entity_browser
     - text
 id: node.field.default
@@ -15,6 +17,19 @@ targetEntityType: node
 bundle: field
 mode: default
 content:
+  field_data_type:
+    weight: 26
+    settings:
+      parent: ''
+      level_labels: ''
+      force_deepest: false
+      save_lineage: false
+      hierarchy_depth: 0
+      required_depth: 0
+      none_label: '- Please select -'
+    third_party_settings: {  }
+    type: cshs
+    region: content
   field_description:
     weight: 1
     settings:
