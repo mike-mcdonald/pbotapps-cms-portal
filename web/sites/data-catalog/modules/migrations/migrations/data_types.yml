@@ -1,9 +1,9 @@
-id: data_type_taxonomy
+id: data_types
 label: "Data Type Taxonomy"
-migration_group: data_type_taxonomy
+migration_group: taxonomies
 source:
   plugin: csv
-  path: sites/data-catalog/modules/migrations/sources/data_type_taxonomy.csv
+  path: sites/data-catalog/modules/migrations/sources/data_types.csv
   header_row_count: 1
   ids:
     - tid
@@ -13,7 +13,7 @@ process:
   description: description
   parent:
     - plugin: migration_lookup
-      migration: data_type_taxonomy
+      migration: data_type
       source: parent
     - plugin: default_value
       default_value: 0
