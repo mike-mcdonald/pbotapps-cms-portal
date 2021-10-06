@@ -14,7 +14,11 @@ RUN apt-get update \
     # Add postgresql GPG
     && curl --output /tmp/postgres.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc \
     && apt-key add /tmp/postgres.asc \
-    && rm /tmp/postgres.asc
+    && rm /tmp/postgres.asc \
+    && if [ "${INSTALL_XDEBUG}" = "false" ]; \
+    then \
+    rm -rf /usr/local/etc/php/conf.d/xdebug.ini; \
+    fi
 
 RUN apt-get update \
     && apt-get install -y \
