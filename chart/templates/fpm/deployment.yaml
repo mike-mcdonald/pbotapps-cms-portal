@@ -114,6 +114,7 @@ spec:
         - name: oauth-keys
           secret:
             secretName: {{ include "portal.fullname" . }}-fpm
+            defaultMode: 0660
             items:
               - key: public.key
                 path: public.key
