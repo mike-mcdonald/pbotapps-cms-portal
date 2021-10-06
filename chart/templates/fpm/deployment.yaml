@@ -81,6 +81,11 @@ spec:
                 secretKeyRef:
                   name: {{ include "portal.fullname" . }}-fpm
                   key: AZURE_CLIENT_SECRET
+            - name: SENDGRID_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "portal.fullname" . }}-fpm
+                  key: SENDGRID_API_KEY
           volumeMounts:
             - name: sites
               mountPath: /var/www/html/web/sites/sites.php
