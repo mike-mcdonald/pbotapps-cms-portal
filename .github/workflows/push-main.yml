@@ -280,6 +280,7 @@ jobs:
         env:
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
           DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
           OAUTH_PRIVATE_KEY: ${{ secrets.OAUTH_PRIVATE_KEY }}
           OAUTH_PUBLIC_KEY: ${{ secrets.OAUTH_PUBLIC_KEY }}
@@ -287,6 +288,7 @@ jobs:
           mkdir -p chart/.secret
           echo -n "$AZURE_CLIENT_ID" > chart/.secret/AZURE_CLIENT_ID
           echo -n "$AZURE_CLIENT_SECRET" > chart/.secret/AZURE_CLIENT_SECRET
+          echo -n "$SENDGRID_API_KEY" > chart/.secret/SENDGRID_API_KEY
           echo -n "$DATABASE_PASSWORD" > chart/.secret/DATABASE_PASSWORD
           echo -n "$OAUTH_PRIVATE_KEY" > chart/.secret/private.key
           echo -n "$OAUTH_PUBLIC_KEY" > chart/.secret/public.key
