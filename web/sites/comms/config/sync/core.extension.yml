@@ -46,6 +46,7 @@ module:
   layout_builder: 0
   layout_discovery: 0
   link: 0
+  mailsystem: 0
   menu_link_content: 0
   menu_ui: 0
   migrate: 0
@@ -66,6 +67,7 @@ module:
   rdf: 0
   search: 0
   search_api: 0
+  sendgrid_integration: 0
   serialization: 0
   shortcut: 0
   simple_oauth: 0
