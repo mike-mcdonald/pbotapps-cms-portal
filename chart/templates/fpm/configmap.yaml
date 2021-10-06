@@ -22,15 +22,15 @@ metadata:
     app.kubernetes.io/part-of: {{ .Chart.Name }}
     app.kubernetes.io/component: fpm
 data:
-  sites.php: |-
+  sites.php: |
     <?php
 
     {{- $self := . -}}
     {{- range $key, $val := .Values.sites -}}
     {{- range $host := $self.Values.nginx.ingress.hosts -}}
-    {{ if eq $key "default" }}
+    {{- if eq $key "default" }}
     $sites['{{ $host.host }}'] = '{{ $key }}';
-    {{ else }}
+    {{- else }}
     $sites['{{ $host.host }}.{{ $key }}'] = '{{ $key }}';
     {{- end }}
     {{- end }}
