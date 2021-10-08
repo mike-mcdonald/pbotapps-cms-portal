@@ -136,6 +136,9 @@
             ]
         },
         "patches": {
+            "drupal/content_access": {
+                "Remove per node role based options": "patches/content_access_no_per_node_role.patch"
+            },
             "drupal/key": {
                 "3212374 - Drupal 9 missing 'config_export' definition": "https://www.drupal.org/files/issues/2021-05-05/3212374-4.patch"
             },
