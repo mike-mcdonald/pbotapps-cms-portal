@@ -10,7 +10,7 @@ field_name: field_question
 entity_type: node
 bundle: public_involvement_plan
 label: 'Key question(s)'
-description: 'Please list some key questions that you believe public engagement will help answer.'
+description: 'Please list some key questions that you believe public engagement will help answer. What do you need from the public to ensure that your project will be successful? How you answer this question will help to determine the type of public involvement strategies that you adopt. If for example, you need your stakeholders to be informed about the key aspects of your project, you will want to make sure that you choose tools that will help you do that. By contrast, if you need your stakeholders to give you ideas about key elements of the project, you will to plan for a more intensive public engagement process. '
 required: false
 translatable: false
 default_value: {  }
