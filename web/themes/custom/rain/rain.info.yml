@@ -42,6 +42,14 @@ libraries-override:
     css:
       theme:
         css/gcontent-field.admin.css: false
+  paragraphs/drupal.paragraphs.admin:
+    css:
+      theme:
+        css/paragraphs.admin.css: false
+  paragraphs/drupal.paragraphs.widget:
+    css:
+      theme:
+        css/paragraphs.widget.css: false
 
 ckeditor_stylesheets:
   - css/style.bundle.css

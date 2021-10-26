@@ -1,0 +1,21 @@
+{% include 'input.html.twig' with {
+  'input_classes' : [
+    required ? 'bg-red-100' : 'bg-gray-100',
+    required ? 'text-red-900' : 'text-current',
+    'appearance-none',
+    'block',
+    'border',
+    required ? 'border-red-500' : 'border-gray-500',
+    'rounded',
+    'px-3',
+    'py-2',
+    'focus:outline-none',
+    'focus:shadow-outline',
+    'focus:bg-white',
+    'focus:text-black',
+    'focus:border-gray-900',
+    'transition',
+    'ease-in-out',
+    'duration-150',
+  ]
+} %}

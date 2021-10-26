@@ -15,17 +15,19 @@
 {%
   set wrapper_classes = wrapper_classes|default([
     'relative',
+    'inline-flex',
+    'border',
+    required ? 'border-red-600' : 'border-gray-500',
+    'rounded',
   ])
 %}
 
 {%
   set select_classes = select_classes|default([
+    'appearance-none',
     required ? 'bg-red-100' : 'bg-gray-100',
     required ? 'text-red-900' : 'text-current',
-    'appearance-none',
     'block',
-    'border',
-    required ? 'border-red-600' : 'border-gray-500',
     'rounded',
     'w-full',
     'px-3',
