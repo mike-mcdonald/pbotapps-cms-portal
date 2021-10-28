@@ -23,3 +23,4 @@ content:
     label: above
 hidden:
   forum_container: true
+  search_api_excerpt: true
