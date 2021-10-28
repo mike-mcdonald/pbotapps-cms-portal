@@ -1,0 +1,8 @@
+uuid: 1f3c65f0-ea48-4c6a-8111-81365c596ab9
+langcode: en
+status: true
+dependencies: {  }
+id: plan-search
+label: 'Plan search'
+description: 'Menu displayed on the /plans search page'
+locked: false
