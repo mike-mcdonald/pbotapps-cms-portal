@@ -136,6 +136,9 @@
             ]
         },
         "patches": {
+            "drupal/core": {
+                "2490294 - User email should not be case sensitive": "https://www.drupal.org/files/issues/2021-09-29/drupal-case_sensitive_email-2490294-45-d92.patch"
+            },
             "drupal/content_access": {
                 "Remove per node role based options": "patches/content_access_no_per_node_role.patch"
             },
