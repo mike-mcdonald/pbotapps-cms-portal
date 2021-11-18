@@ -1,4 +1,5 @@
 const Color = require('color');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const TINTS = {
   100: 0.9,
@@ -69,6 +70,10 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
+        serif: ['Merriweather', ...defaultTheme.fontFamily.serif],
+      },
       colors: {
         transparent: 'transparent',
         inherit: 'inherit',
@@ -85,7 +90,7 @@ module.exports = {
         tangerine: generateColors('#FCB040'),
         fog: generateColors('#E7E8EA'),
         purple: generateColors(mix('#FF6666', '#005CB9', 0.5).hex())
-      }
+      },
     }
   },
   variants: {

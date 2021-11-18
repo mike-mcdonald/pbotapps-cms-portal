@@ -117,6 +117,10 @@ import chevronDown from '../../icons/chevron-down.svg';
       const wrapperClasses = [
         'select-wrapper',
         'relative',
+        'inline-flex',
+        'border',
+        required ? 'border-red-600' : 'border-gray-500',
+        'rounded',
       ];
 
       const chevronClasses = [
@@ -139,7 +143,23 @@ import chevronDown from '../../icons/chevron-down.svg';
 
       const selectClasses = [
         'simpler-select',
+        'appearance-none',
+        required ? 'bg-red-100' : 'bg-gray-100',
+        required ? 'text-red-900' : 'text-current',
+        'block',
+        'rounded',
         'w-full',
+        'px-3',
+        'pr-8',
+        'py-2',
+        'focus:outline-none',
+        'focus:shadow-outline',
+        'focus:bg-white',
+        'focus:text-black',
+        'focus:border-gray-900',
+        'transition',
+        'ease-in-out',
+        'duration-150',
       ];
 
       const selectElement = `<select class="${selectClasses.join(' ')}">`
