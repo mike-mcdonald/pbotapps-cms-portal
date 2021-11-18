@@ -13,7 +13,7 @@ field_name: field_budget
 entity_type: node
 bundle: public_involvement_plan
 label: Budget
-description: '<a href="involvement-budget" target="_blank">Budget Considerations</a> '
+description: 'This element delineates where spending will occur to carry out the Public Involvement Plan. As considerations of impact, interest, and equity increase so too should the budget allocated to the public engagement plan. For estimates on various activities, please see PI Strategy with Estimated Timeframe and Cost.'
 required: false
 translatable: false
 default_value: {  }

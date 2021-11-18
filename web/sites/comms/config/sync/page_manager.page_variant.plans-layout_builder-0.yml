@@ -31,7 +31,7 @@ variant_settings:
             items_per_page: none
             context_mapping: {  }
           additional: {  }
-          weight: 0
+          weight: -9
         aba7ac7a-27f4-46ed-b597-174da8f1bd22:
           uuid: aba7ac7a-27f4-46ed-b597-174da8f1bd22
           region: second
@@ -76,6 +76,20 @@ variant_settings:
             context_mapping: {  }
           additional: {  }
           weight: 3
+        6c7e1afb-6e32-43c4-a041-a87003f5b257:
+          uuid: 6c7e1afb-6e32-43c4-a041-a87003f5b257
+          region: first
+          configuration:
+            id: 'system_menu_block:plan-search'
+            label: 'Plan search'
+            provider: system
+            label_display: '0'
+            level: 1
+            depth: 0
+            expand_all_items: false
+            context_mapping: {  }
+          additional: {  }
+          weight: -10
       third_party_settings: {  }
 page: plans
 weight: 0

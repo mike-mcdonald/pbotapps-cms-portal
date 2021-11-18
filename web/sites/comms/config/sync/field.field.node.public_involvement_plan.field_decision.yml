@@ -10,7 +10,7 @@ field_name: field_decision
 entity_type: node
 bundle: public_involvement_plan
 label: 'Key decisions'
-description: 'List the key decisions are being made by PBOT, Partner Agencies, Contractors, City Council, etc.'
+description: 'Public decision makers are one of the key stakeholders in any public involvement process. Being clear about who is making key decisions and what they are deciding will affect what you will need to include in your public involvement plan. For example, if City Council will be making decisions about aspects of your project, you may need to plan for formal public hearings. It is also important to inform your constituents who the key public decision makers are. This will help them set their expectations about their input. Who the decisions makers are will vary with the different phases of your project. You should identify the key decisions and decision makers for each phase of your project.'
 required: false
 translatable: false
 default_value: {  }

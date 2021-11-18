@@ -10,7 +10,7 @@ field_name: field_impact_description
 entity_type: node
 bundle: public_involvement_plan
 label: 'What is the impact of this project?'
-description: '<a href="what-impact-project" target="_blank">Determining Impact </a> '
+description: 'As you are considering the impacts of your project, you should think about the positive and negative impacts, the direct and indirect impacts and the short- and long-term impacts. It is important to also consider which group of stakeholders will experience which types of impacts. You will find that projects, especially complex ones, will have multiple different types of impacts on multiple different types of groups. Also, different types of impacts will necessitate different public involvement tactics and strategies. For example, during an infrastructure project the businesses that will be negatively and directly affected in the short-term by construction noise and traffic diversion will need to be engaged more directly and more consistently. A good public involvement plan will recognize the need for a multi-pronged approach based on a project''s different impacts.'
 required: false
 translatable: false
 default_value: {  }

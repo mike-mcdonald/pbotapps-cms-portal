@@ -13,7 +13,7 @@ field_name: field_timeframe
 entity_type: node
 bundle: public_involvement_plan
 label: 'Public Involvement Timeframe'
-description: '<a href="timeframe-public-engagement-activities" target="_blank">Timeframe Considerations</a> '
+description: 'You should match your public involvement process with key decisions and other milestones. Be sure that you provide adequate time for public input and to update your constituents on how their feedback influenced the project.'
 required: false
 translatable: false
 default_value: {  }
