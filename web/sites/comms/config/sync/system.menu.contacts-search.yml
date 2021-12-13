@@ -1,0 +1,8 @@
+uuid: 80c8cf51-81f7-473f-ad8b-14f12e526cc0
+langcode: en
+status: true
+dependencies: {  }
+id: contacts-search
+label: 'Contacts search'
+description: 'Menu displayed on the /contacts search page'
+locked: false
