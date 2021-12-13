@@ -1,0 +1,28 @@
+uuid: eb04b219-e365-4e15-8a6d-0952da448123
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent
+    - node.type.contact_info
+id: node.contact_info.field_parent
+field_name: field_parent
+entity_type: node
+bundle: contact_info
+label: 'Parent contact'
+description: 'Select the contacts whose organization that this contact belongs to or is otherwise related to in order to create a contact hierarchy.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contact_info: contact_info
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

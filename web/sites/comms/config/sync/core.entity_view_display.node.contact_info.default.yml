@@ -4,13 +4,115 @@ status: true
 dependencies:
   config:
     - field.field.node.contact_info.field_email_address
+    - field.field.node.contact_info.field_parent
     - field.field.node.contact_info.field_phone_number
     - field.field.node.contact_info.field_type
     - node.type.contact_info
+    - views.view.contacts_hierarchy
   module:
+    - layout_builder
     - options
     - telephone
     - user
+    - views
+  theme:
+    - rain
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          59643964-253c-4125-be36-6befadbc8223:
+            uuid: 59643964-253c-4125-be36-6befadbc8223
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:contact_info:links'
+            additional: {  }
+            weight: 0
+          057b79f7-f2d2-4f6e-a772-3bc52845a0b7:
+            uuid: 057b79f7-f2d2-4f6e-a772-3bc52845a0b7
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:contact_info:field_type'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: list_default
+            additional: {  }
+            weight: 1
+          1b42e881-e51f-41a7-9af4-b5d22f666fdd:
+            uuid: 1b42e881-e51f-41a7-9af4-b5d22f666fdd
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:contact_info:field_phone_number'
+              formatter:
+                label: above
+                settings:
+                  title: ''
+                third_party_settings: {  }
+                type: telephone_link
+            additional: {  }
+            weight: 2
+          c92cf6ac-c1b8-4488-9f30-cae6732047be:
+            uuid: c92cf6ac-c1b8-4488-9f30-cae6732047be
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:contact_info:field_email_address'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: email_mailto
+            additional: {  }
+            weight: 3
+          ce36cc9b-71de-45c2-b4f5-045fdb53c1a7:
+            uuid: ce36cc9b-71de-45c2-b4f5-045fdb53c1a7
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:contact_info:field_parent'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 4
+          95beff20-a6eb-47b1-97ab-191e813c70c1:
+            uuid: 95beff20-a6eb-47b1-97ab-191e813c70c1
+            region: content
+            configuration:
+              id: 'views_block:contacts_hierarchy-block_1'
+              label: 'Associated contacts'
+              provider: views
+              label_display: visible
+              views_label: 'Associated contacts'
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 5
+        third_party_settings: {  }
 id: node.contact_info.default
 targetEntityType: node
 bundle: contact_info
@@ -22,6 +124,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: email_mailto
+    region: content
+  field_parent:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_phone_number:
     weight: 2

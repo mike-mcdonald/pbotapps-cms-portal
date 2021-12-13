@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_form_mode.node.browser
     - field.field.node.contact_info.field_email_address
+    - field.field.node.contact_info.field_parent
     - field.field.node.contact_info.field_phone_number
     - field.field.node.contact_info.field_type
     - node.type.contact_info
@@ -46,6 +47,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_parent: true
   path: true
   promote: true
   status: true
