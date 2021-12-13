@@ -6,6 +6,7 @@ dependencies:
     - core.base_field_override.node.contact_info.title
     - core.entity_view_mode.node.teaser
     - field.field.node.contact_info.field_email_address
+    - field.field.node.contact_info.field_parent
     - field.field.node.contact_info.field_phone_number
     - field.field.node.contact_info.field_type
     - node.type.contact_info
@@ -93,6 +94,7 @@ content:
     region: content
 hidden:
   field_email_address: true
+  field_parent: true
   field_phone_number: true
   field_type: true
   search_api_excerpt: true
