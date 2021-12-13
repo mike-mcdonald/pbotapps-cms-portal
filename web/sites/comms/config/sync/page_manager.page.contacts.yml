@@ -1,0 +1,12 @@
+uuid: 56351b9c-6bd7-4262-84bd-e74984517d7b
+langcode: en
+status: true
+dependencies: {  }
+id: contacts
+label: Contacts
+description: ''
+use_admin_theme: false
+path: /contacts
+access_logic: and
+access_conditions: {  }
+parameters: {  }

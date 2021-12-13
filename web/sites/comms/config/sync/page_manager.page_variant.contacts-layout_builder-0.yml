@@ -1,0 +1,62 @@
+uuid: 220a402a-8426-4c00-bc53-af8c6117d19c
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.contacts
+id: contacts-layout_builder-0
+label: 'Layout Builder'
+weight: 0
+variant: layout_builder
+variant_settings:
+  id: layout_builder
+  label: null
+  weight: 0
+  uuid: d7acc091-ba89-4712-a474-6a57d41980bf
+  sections:
+    -
+      layout_id: layout_twocol_flex
+      layout_settings:
+        label: ''
+        context_mapping: {  }
+      components:
+        63393cfe-93b1-439d-8e3f-0780042bce63:
+          uuid: 63393cfe-93b1-439d-8e3f-0780042bce63
+          region: first
+          configuration:
+            id: 'views_block:index_contacts-block_1'
+            label: ''
+            label_display: '0'
+            provider: views
+            context_mapping: {  }
+            views_label: ''
+            items_per_page: none
+          weight: 0
+          additional: {  }
+        6da11a9b-0949-463a-b43d-6dcf01dd425d:
+          uuid: 6da11a9b-0949-463a-b43d-6dcf01dd425d
+          region: second
+          configuration:
+            id: 'facet_block:contact_type'
+            label: 'Filter by contact type'
+            label_display: visible
+            provider: facets
+            context_mapping: {  }
+          weight: 0
+          additional: {  }
+        4c0b688d-d17a-47d9-99a3-9e757b34adc7:
+          uuid: 4c0b688d-d17a-47d9-99a3-9e757b34adc7
+          region: second
+          configuration:
+            id: 'facet_block:parent_contact'
+            label: 'Filter by parent contact'
+            label_display: visible
+            provider: facets
+            context_mapping: {  }
+          weight: 1
+          additional: {  }
+      third_party_settings: {  }
+page: contacts
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

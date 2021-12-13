@@ -1,0 +1,9 @@
+uuid: 8086aaaa-6d34-4aa3-9d01-322f94671c5e
+langcode: en
+status: true
+dependencies: {  }
+id: search_api__views_block__index_contacts__block_1
+name: 'search_api:views_block__index_contacts__block_1'
+filter_key: null
+url_processor: query_string
+breadcrumb: {  }

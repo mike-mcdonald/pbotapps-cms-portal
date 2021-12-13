@@ -1,0 +1,62 @@
+uuid: ebf99147-e8fa-4217-b227-abc3384161b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent
+    - field.storage.node.field_type
+    - search_api.server.default
+  module:
+    - node
+    - search_api
+id: contacts
+name: Contacts
+description: ''
+read_only: false
+field_settings:
+  field_parent:
+    label: 'Parent contact'
+    datasource_id: 'entity:node'
+    property_path: field_parent
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_parent
+  field_type:
+    label: Type
+    datasource_id: 'entity:node'
+    property_path: field_type
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_type
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - contact_info
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: default

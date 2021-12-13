@@ -69,6 +69,8 @@ module:
   rdf: 0
   search: 0
   search_api: 0
+  select2: 0
+  select2_facets: 0
   sendgrid_integration: 0
   serialization: 0
   shortcut: 0
