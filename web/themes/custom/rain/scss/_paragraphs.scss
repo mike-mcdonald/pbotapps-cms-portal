@@ -1,6 +1,11 @@
 /*! purgecss start ignore */
-.paragraphs-dropdown-toggle {
-  background: none;
+.paragraph-type-top,
+.paragraph-top {
+  @apply flex items-center justify-between;
+}
+
+.paragraphs-subform {
+  @apply grid grid-cols-1 gap-3;
 }
 
 ul.paragraphs-add-dialog-list {
@@ -10,6 +15,19 @@ ul.paragraphs-add-dialog-list {
     background-size: 1.5rem;
     padding-left: 3rem;
     text-align: left;
+  }
+}
+
+.js {
+  .field--widget-paragraphs {
+    th {
+      .label {
+        @apply inline;
+      }
+      .paragraphs-actions {
+        @apply inline float-right;
+      }
+    }
   }
 }
 /*! purgecss end ignore */

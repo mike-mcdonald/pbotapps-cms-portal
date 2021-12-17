@@ -558,6 +558,12 @@ video {
   }
 }
 
+.space-y-1 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+
 .space-x-1 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
   margin-right: calc(0.25rem * var(--tw-space-x-reverse));
@@ -1497,6 +1503,10 @@ video {
   transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.origin-top-right{
+  transform-origin: top right;
+}
+
 .rotate-180{
   --tw-rotate: 180deg;
 }
@@ -1935,14 +1945,16 @@ header nav .is-active{
   color: rgba(31, 31, 31, var(--tw-text-opacity))
 }
 
+.paragraph-type-top, .paragraph-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .paragraphs-subform{
   display: grid;
   gap: 0.75rem;
   grid-template-columns: repeat(1, minmax(0, 1fr))
-}
-
-.paragraphs-dropdown-toggle{
-  background:none
 }
 
 ul.paragraphs-add-dialog-list input.field-add-more-submit{
@@ -1951,6 +1963,15 @@ ul.paragraphs-add-dialog-list input.field-add-more-submit{
   background-size:1.5rem;
   padding-left:3rem;
   text-align:left
+}
+
+.js .field--widget-paragraphs th .label{
+  display: inline
+}
+
+.js .field--widget-paragraphs th .paragraphs-actions{
+  display: inline;
+  float: right
 }
 
 .views-display-columns{

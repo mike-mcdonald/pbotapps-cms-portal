@@ -50,6 +50,10 @@ libraries-override:
     css:
       theme:
         css/paragraphs.widget.css: false
+  paragraphs/drupal.paragraphs.actions:
+    css:
+      theme:
+        css/paragraphs.actions.css: false
 
 ckeditor_stylesheets:
   - css/style.bundle.css
