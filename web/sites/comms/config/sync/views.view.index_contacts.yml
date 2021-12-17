@@ -179,6 +179,7 @@ display:
           parse_mode: terms
           min_length: null
           fields:
+            - aggregated_field
             - title
       style:
         type: default
