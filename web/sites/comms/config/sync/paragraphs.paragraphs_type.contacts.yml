@@ -1,0 +1,10 @@
+uuid: 93c07590-cb0f-4c63-b6cc-705c7cc8e745
+langcode: en
+status: true
+dependencies: {  }
+id: contacts
+label: Contacts
+icon_uuid: null
+icon_default: null
+description: 'Defines how contacts are related to a parent entity.'
+behavior_plugins: {  }

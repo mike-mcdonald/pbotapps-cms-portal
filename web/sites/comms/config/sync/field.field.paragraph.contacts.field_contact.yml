@@ -1,18 +1,18 @@
-uuid: e7a4596f-dc79-452d-8bfa-96f88384f90e
+uuid: 62323b76-1eaf-4617-b939-b84d6712354a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_partner
+    - field.storage.paragraph.field_contact
     - node.type.contact_info
-    - node.type.public_involvement_plan
-id: node.public_involvement_plan.field_partner
-field_name: field_partner
-entity_type: node
-bundle: public_involvement_plan
-label: 'Partner(s) (Government agencies or organizations)'
-description: ''
-required: false
+    - paragraphs.paragraphs_type.contacts
+id: paragraph.contacts.field_contact
+field_name: field_contact
+entity_type: paragraph
+bundle: contacts
+label: Contact(s)
+description: 'Use the button to select one or more contacts that will fill this role'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

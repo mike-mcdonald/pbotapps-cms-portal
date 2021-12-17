@@ -1,0 +1,21 @@
+uuid: 08fabc80-1817-4171-957a-eaf435fda331
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_role
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - options
+id: paragraph.contacts.field_role
+field_name: field_role
+entity_type: paragraph
+bundle: contacts
+label: Role
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

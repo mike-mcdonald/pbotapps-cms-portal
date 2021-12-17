@@ -1,0 +1,33 @@
+uuid: 77362682-72de-4f8e-81cc-861a273610c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_role
+field_name: field_role
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: mgr
+      label: 'Project manager'
+    -
+      value: staff
+      label: 'Key staff'
+    -
+      value: ptnr
+      label: 'Partner (Government agency or organization)'
+    -
+      value: cns
+      label: Consultant
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

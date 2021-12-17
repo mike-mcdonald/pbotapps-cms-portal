@@ -7,7 +7,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.public_involvement_plan.field_benefit
     - field.field.node.public_involvement_plan.field_budget
-    - field.field.node.public_involvement_plan.field_consultant
+    - field.field.node.public_involvement_plan.field_contact
     - field.field.node.public_involvement_plan.field_decision
     - field.field.node.public_involvement_plan.field_description
     - field.field.node.public_involvement_plan.field_div_sect
@@ -18,12 +18,10 @@ dependencies:
     - field.field.node.public_involvement_plan.field_interest_level
     - field.field.node.public_involvement_plan.field_legal_mandate
     - field.field.node.public_involvement_plan.field_legal_requirement
-    - field.field.node.public_involvement_plan.field_partner
     - field.field.node.public_involvement_plan.field_promise_description
     - field.field.node.public_involvement_plan.field_public_promise
     - field.field.node.public_involvement_plan.field_question
     - field.field.node.public_involvement_plan.field_related_documents
-    - field.field.node.public_involvement_plan.field_staff
     - field.field.node.public_involvement_plan.field_strategy
     - field.field.node.public_involvement_plan.field_tags
     - field.field.node.public_involvement_plan.field_timeframe
@@ -36,8 +34,8 @@ dependencies:
     - rain
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -50,57 +48,57 @@ third_party_settings:
             configuration:
               id: 'field_block:node:public_involvement_plan:title'
               label: Name
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: true
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
             weight: -9
+            additional: {  }
           165177b7-b9c2-427c-b207-f8833b55ad63:
             uuid: 165177b7-b9c2-427c-b207-f8833b55ad63
             region: content
             configuration:
               id: 'field_block:node:public_involvement_plan:field_description'
               label: Description
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: visually_hidden
-                type: text_trimmed
-                settings:
-                  trim_length: 600
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: text_trimmed
+                label: visually_hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
             weight: -8
+            additional: {  }
           1833d9ba-2ded-44ae-855c-51ed4be4b544:
             uuid: 1833d9ba-2ded-44ae-855c-51ed4be4b544
             region: content
             configuration:
               id: 'field_block:node:public_involvement_plan:type'
               label: 'Content type'
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: visually_hidden
-                type: entity_reference_label
-                settings:
-                  link: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
             weight: -10
+            additional: {  }
         third_party_settings: {  }
       -
         layout_id: layout_row
@@ -114,38 +112,38 @@ third_party_settings:
             configuration:
               id: 'field_block:node:public_involvement_plan:field_impact_level'
               label: 'Impact Level'
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: above
-                type: entity_reference_label
-                settings:
-                  link: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
             weight: 0
+            additional: {  }
           7a49d935-f31e-473a-a5ff-cdadfc3996c3:
             uuid: 7a49d935-f31e-473a-a5ff-cdadfc3996c3
             region: content
             configuration:
               id: 'field_block:node:public_involvement_plan:field_interest_level'
               label: 'Interest Level'
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: above
-                type: entity_reference_label
-                settings:
-                  link: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: false
+                third_party_settings: {  }
             weight: 1
+            additional: {  }
         third_party_settings: {  }
 id: node.public_involvement_plan.teaser
 targetEntityType: node
@@ -154,45 +152,45 @@ mode: teaser
 content:
   field_div_sect:
     type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 6
     region: content
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
   field_impact_level:
     type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 3
     region: content
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
   field_interest_level:
     type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
     weight: 4
     region: content
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
   field_tags:
     type: entity_reference_label
-    weight: 5
-    region: content
     label: inline
     settings:
       link: true
     third_party_settings: {  }
-  links:
-    weight: 9
+    weight: 5
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 9
+    region: content
 hidden:
   field_benefit: true
   field_budget: true
-  field_consultant: true
+  field_contact: true
   field_decision: true
   field_description: true
   field_impact_description: true
@@ -200,12 +198,10 @@ hidden:
   field_interest_description: true
   field_legal_mandate: true
   field_legal_requirement: true
-  field_partner: true
   field_promise_description: true
   field_public_promise: true
   field_question: true
   field_related_documents: true
-  field_staff: true
   field_strategy: true
   field_timeframe: true
   field_website: true

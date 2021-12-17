@@ -1,0 +1,32 @@
+uuid: f8d54d5f-b042-46ab-8c30-3b4a00f68b42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contacts.field_contact
+    - field.field.paragraph.contacts.field_role
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - options
+id: paragraph.contacts.default
+targetEntityType: paragraph
+bundle: contacts
+mode: default
+content:
+  field_contact:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_role:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
