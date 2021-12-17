@@ -43,7 +43,7 @@
  */
 #}
 {% set container_classes = [
-  is_admin ? '' : 'container',
+  'container',
   'mx-auto',
   'px-2',
   'flex',
@@ -63,9 +63,9 @@
 	</section>
 {% endif %}
 {% if page.header|render is not empty or page.header_menu|render is not empty %}
-	<nav{{ create_attribute({ class: header_classes })}} role="banner">
-    {{ page.header }}
-    {{ page.header_menu }}
+	<nav{{create_attribute({class:header_classes})}} role="banner">
+		{{ page.header }}
+		{{ page.header_menu }}
 	</nav>
 {% endif %}
 {% if page.local_admin|render is not empty %}
@@ -85,7 +85,7 @@
 		{{ page.front_matter }}
 	</header>
 {% endif %}
-<main{{ create_attribute({ class: container_classes|merge(['lg:flex-row', 'flex-grow', 'mb-24']) })}} role="main">
+<main{{create_attribute({class:container_classes|merge(['lg:flex-row','flex-grow','mb-24'])})}} role="main">
 	<a class="border-0" id="main-content" tabindex="-1"></a>
 	{# link is in html.html.twig #}
 	{% if page.left_sidebar is not empty %}
