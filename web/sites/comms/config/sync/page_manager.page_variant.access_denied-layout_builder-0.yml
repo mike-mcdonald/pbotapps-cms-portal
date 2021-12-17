@@ -6,12 +6,13 @@ dependencies:
     - page_manager.page.access_denied
 id: access_denied-layout_builder-0
 label: 'Layout Builder'
+weight: 0
 variant: layout_builder
 variant_settings:
   id: layout_builder
-  uuid: b6384248-385b-4812-80f7-f7bc81b15bc2
   label: null
   weight: 0
+  uuid: b6384248-385b-4812-80f7-f7bc81b15bc2
   sections:
     -
       layout_id: layout_onecol
@@ -25,28 +26,27 @@ variant_settings:
           configuration:
             id: 'inline_block:basic'
             label: 'Login instructions'
-            provider: layout_builder
             label_display: '0'
+            provider: layout_builder
             view_mode: full
+            context_mapping: {  }
             block_revision_id: 1
             block_serialized: null
-            context_mapping: {  }
-          additional: {  }
           weight: 0
+          additional: {  }
         1f84b465-ecfb-4bd0-988f-bb5c5ea3a81c:
           uuid: 1f84b465-ecfb-4bd0-988f-bb5c5ea3a81c
           region: content
           configuration:
             id: openid_connect_login
             label: 'OpenID Connect login'
-            provider: openid_connect
             label_display: '0'
+            provider: openid_connect
             context_mapping: {  }
-          additional: {  }
           weight: 1
+          additional: {  }
       third_party_settings: {  }
 page: access_denied
-weight: 0
 selection_criteria: {  }
 selection_logic: and
 static_context: {  }

@@ -21,9 +21,9 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       stakeholder_involvement_strategy: stakeholder_involvement_strategy
+    negate: 0
     target_bundles_drag_drop:
       public_engagement_timeframe:
         weight: 3
@@ -35,6 +35,6 @@ settings:
         weight: 7
         enabled: false
       stakeholder_involvement_strategy:
-        enabled: true
         weight: 2
+        enabled: true
 field_type: entity_reference_revisions

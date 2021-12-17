@@ -7,11 +7,12 @@ metadata:
     app.kubernetes.io/part-of: {{ .Chart.Name }}
     app.kubernetes.io/component: fpm
 data:
-  DATABASE_HOST: {{ .Values.postgresql.host }}
-  DATABASE_USER: {{ .Values.postgresql.user }}
-  ELASTICSEARCH_URL: {{ .Values.elasticsearch.url }}
   CACHE_HOST: {{ include "portal.fullname" . }}-redis
   CACHE_PORT: "{{ .Values.redis.service.port }}"
+  DATABASE_HOST: {{ .Values.postgresql.host }}
+  DATABASE_USER: {{ .Values.postgresql.user }}
+  DRUPAL_ENV: production
+  ELASTICSEARCH_URL: {{ .Values.elasticsearch.url }}
 ---
 apiVersion: v1
 kind: ConfigMap

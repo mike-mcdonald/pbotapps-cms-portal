@@ -17,8 +17,8 @@ dependencies:
     - rain
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -31,73 +31,73 @@ third_party_settings:
             configuration:
               id: 'field_block:node:forum:taxonomy_forums'
               label: Forums
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: above
-                type: entity_reference_label
-                settings:
-                  link: true
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
             weight: -8
+            additional: {  }
           9f55bdce-4a30-4282-9337-209df8a26f35:
             uuid: 9f55bdce-4a30-4282-9337-209df8a26f35
             region: content
             configuration:
+              id: 'field_block:node:forum:body'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:forum:body'
               formatter:
-                label: hidden
                 type: text_trimmed
+                label: hidden
                 settings:
                   trim_length: 600
                 third_party_settings: {  }
-            additional: {  }
             weight: -7
+            additional: {  }
           fcdc129f-9386-41e6-9fa7-f85f66a4b792:
             uuid: fcdc129f-9386-41e6-9fa7-f85f66a4b792
             region: content
             configuration:
               id: 'field_block:node:forum:type'
               label: 'Content type'
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: visually_hidden
-                type: entity_reference_label
-                settings:
-                  link: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
             weight: -10
+            additional: {  }
           5f33f119-9728-49b1-bee6-b56d5f0a5c75:
             uuid: 5f33f119-9728-49b1-bee6-b56d5f0a5c75
             region: content
             configuration:
               id: 'field_block:node:forum:title'
               label: Subject
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: true
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
             weight: -9
+            additional: {  }
         third_party_settings: {  }
 _core:
   default_config_hash: MK_j248n6esK84n87ulM_yPeqdkndKn94h4vTJC4wjw
@@ -107,26 +107,26 @@ bundle: forum
 mode: teaser
 content:
   body:
-    label: hidden
     type: text_trimmed
-    weight: 4
-    region: content
+    label: hidden
     settings:
       trim_length: 600
     third_party_settings: {  }
-  links:
-    weight: 5
+    weight: 4
     region: content
+  links:
     settings: {  }
     third_party_settings: {  }
+    weight: 5
+    region: content
   taxonomy_forums:
     type: entity_reference_label
-    weight: 3
-    region: content
     label: above
     settings:
       link: true
     third_party_settings: {  }
+    weight: 3
+    region: content
 hidden:
   comment_forum: true
   search_api_excerpt: true

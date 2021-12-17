@@ -17,8 +17,8 @@ dependencies:
     - rain
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -31,56 +31,56 @@ third_party_settings:
             configuration:
               id: 'field_block:node:contact_info:title'
               label: Name
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: true
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: true
+                third_party_settings: {  }
             weight: -9
+            additional: {  }
           85494274-b074-4ee2-aae8-d646b1faf1b8:
             uuid: 85494274-b074-4ee2-aae8-d646b1faf1b8
             region: content
             configuration:
               id: 'field_block:node:contact_info:field_type'
               label: Type
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: above
-                type: list_default
-                settings: {  }
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
             weight: -8
+            additional: {  }
           0f0f9084-e6ef-4b47-bf47-f2702cfdc238:
             uuid: 0f0f9084-e6ef-4b47-bf47-f2702cfdc238
             region: content
             configuration:
               id: 'field_block:node:contact_info:type'
               label: 'Content type'
-              provider: layout_builder
               label_display: '0'
-              formatter:
-                label: visually_hidden
-                type: entity_reference_label
-                settings:
-                  link: false
-                third_party_settings: {  }
+              provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
-            additional: {  }
+              formatter:
+                type: entity_reference_label
+                label: visually_hidden
+                settings:
+                  link: false
+                third_party_settings: {  }
             weight: -10
+            additional: {  }
         third_party_settings: {  }
 id: node.contact_info.teaser
 targetEntityType: node
@@ -88,9 +88,9 @@ bundle: contact_info
 mode: teaser
 content:
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
 hidden:
   field_email_address: true

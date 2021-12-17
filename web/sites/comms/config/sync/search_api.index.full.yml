@@ -2,11 +2,11 @@ uuid: e5c5fd40-c827-4f59-a4ae-5955020f3db8
 langcode: en
 status: true
 dependencies:
+  config:
+    - search_api.server.default
   module:
     - node
     - search_api
-  config:
-    - search_api.server.default
 id: full
 name: Full
 description: ''
@@ -56,6 +56,6 @@ tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
 server: default

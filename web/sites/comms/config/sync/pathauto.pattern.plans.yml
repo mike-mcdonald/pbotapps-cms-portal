@@ -11,12 +11,12 @@ pattern: '/plans/[node:title]'
 selection_criteria:
   413125f2-d093-443c-acca-02c0ef41681e:
     id: node_type
-    bundles:
-      public_involvement_plan: public_involvement_plan
     negate: false
+    uuid: 413125f2-d093-443c-acca-02c0ef41681e
     context_mapping:
       node: node
-    uuid: 413125f2-d093-443c-acca-02c0ef41681e
+    bundles:
+      public_involvement_plan: public_involvement_plan
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -21,16 +21,16 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       public_involvement_budget: public_involvement_budget
+    negate: 0
     target_bundles_drag_drop:
       public_engagement_timeframe:
         weight: 4
         enabled: false
       public_involvement_budget:
-        enabled: true
         weight: 5
+        enabled: true
       public_promise:
         weight: 7
         enabled: false

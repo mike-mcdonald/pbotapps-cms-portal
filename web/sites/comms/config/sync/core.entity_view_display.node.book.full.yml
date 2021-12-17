@@ -17,16 +17,16 @@ bundle: book
 mode: full
 content:
   body:
-    label: hidden
     type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
     weight: 1
     region: ds_content
+  links:
     settings: {  }
     third_party_settings: {  }
-  links:
     weight: 3
     region: ds_content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   search_api_excerpt: true

@@ -21,13 +21,13 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       public_engagement_timeframe: public_engagement_timeframe
+    negate: 0
     target_bundles_drag_drop:
       public_engagement_timeframe:
-        enabled: true
         weight: 3
+        enabled: true
       public_involvement_budget:
         weight: 5
         enabled: false

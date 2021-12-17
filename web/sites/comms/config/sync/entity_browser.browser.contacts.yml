@@ -21,22 +21,22 @@ widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   a3f3e5fa-6532-4601-b9c4-ac6e4535a919:
+    id: view
+    uuid: a3f3e5fa-6532-4601-b9c4-ac6e4535a919
+    label: Find
+    weight: 1
     settings:
-      view: contact_browser
-      view_display: entity_browser_6
       submit_text: 'Select contacts'
       auto_select: false
-    uuid: a3f3e5fa-6532-4601-b9c4-ac6e4535a919
-    weight: 1
-    label: Find
-    id: view
+      view: contact_browser
+      view_display: entity_browser_6
   3a5cba4d-f57b-4d34-94e1-a651d8a31218:
+    id: entity_form
+    uuid: 3a5cba4d-f57b-4d34-94e1-a651d8a31218
+    label: Create
+    weight: 2
     settings:
+      submit_text: 'Save contact'
       entity_type: node
       bundle: contact_info
       form_mode: browser
-      submit_text: 'Save contact'
-    uuid: 3a5cba4d-f57b-4d34-94e1-a651d8a31218
-    weight: 2
-    label: Create
-    id: entity_form
