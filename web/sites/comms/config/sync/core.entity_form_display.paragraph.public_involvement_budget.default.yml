@@ -12,20 +12,20 @@ bundle: public_involvement_budget
 mode: default
 content:
   field_activity:
+    type: string_textfield
     weight: 0
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
   field_budget:
+    type: number
     weight: 1
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
 hidden:
   created: true
   status: true

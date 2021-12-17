@@ -290,7 +290,7 @@ $settings['config_sync_directory'] = './sites/comms/config/sync';
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'wmy01kXdm_36MsOxMntgxi83uEsYf0iEh5ATliqCJCVdWaEk3WfdZelXrajy6cFCyYFL-MsLkQ';
+$settings['hash_salt'] = 'IJe89cfA013JXQ4skqvntDZK9A858CfschAqcaSbqYXwAHuaifQx7h4Q8Y3S0_V7_Goz1sxYUg';
 
 /**
  * Deployment identifier.
@@ -787,4 +787,11 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
+}
+
+if ($_ENV['DRUPAL_ENV'] == 'production') {
+  $config['config_split.config_split.dev']['status'] = FALSE;
+}
+else {
+  $config['config_split.config_split.dev']['status'] = TRUE;
 }

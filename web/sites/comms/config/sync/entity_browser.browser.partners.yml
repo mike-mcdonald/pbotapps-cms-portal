@@ -21,32 +21,32 @@ widget_selector: tabs
 widget_selector_configuration: {  }
 widgets:
   323787af-ba96-413b-a1c6-7e6e07c41e99:
+    id: view
+    uuid: 323787af-ba96-413b-a1c6-7e6e07c41e99
+    label: 'Find government agency'
+    weight: 1
     settings:
-      view: contact_browser
-      view_display: entity_browser_2
       submit_text: 'Select agencies'
       auto_select: false
-    uuid: 323787af-ba96-413b-a1c6-7e6e07c41e99
-    weight: 1
-    label: 'Find government agency'
-    id: view
-  5bcc032a-3e7b-4c43-aae3-6358324bb541:
-    settings:
       view: contact_browser
-      view_display: entity_browser_3
+      view_display: entity_browser_2
+  5bcc032a-3e7b-4c43-aae3-6358324bb541:
+    id: view
+    uuid: 5bcc032a-3e7b-4c43-aae3-6358324bb541
+    label: 'Find non-profit organization'
+    weight: 2
+    settings:
       submit_text: 'Select entities'
       auto_select: false
-    uuid: 5bcc032a-3e7b-4c43-aae3-6358324bb541
-    weight: 2
-    label: 'Find non-profit organization'
-    id: view
+      view: contact_browser
+      view_display: entity_browser_3
   17f96b77-2f7f-4b9c-9229-eec70f362967:
+    id: entity_form
+    uuid: 17f96b77-2f7f-4b9c-9229-eec70f362967
+    label: Create
+    weight: 3
     settings:
+      submit_text: 'Save contact'
       entity_type: node
       bundle: contact_info
       form_mode: browser
-      submit_text: 'Save contact'
-    uuid: 17f96b77-2f7f-4b9c-9229-eec70f362967
-    weight: 3
-    label: Create
-    id: entity_form

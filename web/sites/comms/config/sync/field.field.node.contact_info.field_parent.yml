@@ -10,7 +10,7 @@ field_name: field_parent
 entity_type: node
 bundle: contact_info
 label: 'Parent contact'
-description: 'Select the contacts whose organization that this contact belongs to or is otherwise related to in order to create a contact hierarchy.'
+description: 'Select a contact that this contact "belongs" to. This is meant to document an organizational structure for contacts.'
 required: false
 translatable: false
 default_value: {  }

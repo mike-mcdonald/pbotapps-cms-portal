@@ -89,11 +89,14 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   hierarchy:
-    fields:
-      field_div_sect: taxonomy_term-parent
     weights:
       preprocess_index: -45
+    fields:
+      field_div_sect: taxonomy_term-parent
   html_filter:
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
     all_fields: false
     fields:
       - rendered_item
@@ -107,15 +110,12 @@ processor_settings:
       h2: 3
       h3: 2
       strong: 2
-    weights:
-      preprocess_index: -15
-      preprocess_query: -15
   language_with_fallback: {  }
   rendered_item: {  }
 tracker_settings:
   default:
     indexing_order: fifo
 options:
-  index_directly: true
   cron_limit: 50
+  index_directly: true
 server: default

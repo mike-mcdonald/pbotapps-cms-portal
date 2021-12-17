@@ -19,8 +19,8 @@ dependencies:
     - rain
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: true
+    allow_custom: false
     sections:
       -
         layout_id: layout_onecol
@@ -31,87 +31,87 @@ third_party_settings:
             uuid: 59643964-253c-4125-be36-6befadbc8223
             region: content
             configuration:
+              id: 'extra_field_block:node:contact_info:links'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'extra_field_block:node:contact_info:links'
-            additional: {  }
             weight: 0
+            additional: {  }
           057b79f7-f2d2-4f6e-a772-3bc52845a0b7:
             uuid: 057b79f7-f2d2-4f6e-a772-3bc52845a0b7
             region: content
             configuration:
+              id: 'field_block:node:contact_info:field_type'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:contact_info:field_type'
               formatter:
+                type: list_default
                 label: above
                 settings: {  }
                 third_party_settings: {  }
-                type: list_default
-            additional: {  }
             weight: 1
+            additional: {  }
           1b42e881-e51f-41a7-9af4-b5d22f666fdd:
             uuid: 1b42e881-e51f-41a7-9af4-b5d22f666fdd
             region: content
             configuration:
+              id: 'field_block:node:contact_info:field_phone_number'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:contact_info:field_phone_number'
               formatter:
+                type: telephone_link
                 label: above
                 settings:
                   title: ''
                 third_party_settings: {  }
-                type: telephone_link
-            additional: {  }
             weight: 2
+            additional: {  }
           c92cf6ac-c1b8-4488-9f30-cae6732047be:
             uuid: c92cf6ac-c1b8-4488-9f30-cae6732047be
             region: content
             configuration:
+              id: 'field_block:node:contact_info:field_email_address'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:contact_info:field_email_address'
               formatter:
+                type: email_mailto
                 label: above
                 settings: {  }
                 third_party_settings: {  }
-                type: email_mailto
-            additional: {  }
             weight: 3
+            additional: {  }
           ce36cc9b-71de-45c2-b4f5-045fdb53c1a7:
             uuid: ce36cc9b-71de-45c2-b4f5-045fdb53c1a7
             region: content
             configuration:
+              id: 'field_block:node:contact_info:field_parent'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:contact_info:field_parent'
               formatter:
+                type: entity_reference_label
                 label: above
                 settings:
                   link: true
                 third_party_settings: {  }
-                type: entity_reference_label
-            additional: {  }
             weight: 4
+            additional: {  }
           95beff20-a6eb-47b1-97ab-191e813c70c1:
             uuid: 95beff20-a6eb-47b1-97ab-191e813c70c1
             region: content
             configuration:
               id: 'views_block:contacts_hierarchy-block_1'
               label: 'Associated contacts'
-              provider: views
               label_display: visible
+              provider: views
+              context_mapping: {  }
               views_label: 'Associated contacts'
               items_per_page: none
-              context_mapping: {  }
-            additional: {  }
             weight: 5
+            additional: {  }
         third_party_settings: {  }
 id: node.contact_info.default
 targetEntityType: node
@@ -119,39 +119,39 @@ bundle: contact_info
 mode: default
 content:
   field_email_address:
-    weight: 3
+    type: email_mailto
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: email_mailto
+    weight: 3
     region: content
   field_parent:
-    weight: 4
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 4
     region: content
   field_phone_number:
-    weight: 2
+    type: telephone_link
     label: above
     settings:
       title: ''
     third_party_settings: {  }
-    type: telephone_link
+    weight: 2
     region: content
   field_type:
-    weight: 1
+    type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
+    weight: 1
     region: content
   links:
-    weight: 0
-    region: content
     settings: {  }
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   search_api_excerpt: true

@@ -9,14 +9,14 @@ label: Contacts
 type: 'canonical_entities:node'
 pattern: '/contacts/[node:title]'
 selection_criteria:
-  cc4374d4-7c71-4521-b618-46d78d0b1a09:
+  5755b14b-07cd-4145-a897-b2dd3ad0bb90:
     id: node_type
-    bundles:
-      contact_info: contact_info
     negate: false
+    uuid: 5755b14b-07cd-4145-a897-b2dd3ad0bb90
     context_mapping:
       node: node
-    uuid: cc4374d4-7c71-4521-b618-46d78d0b1a09
+    bundles:
+      contact_info: contact_info
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -17,20 +17,20 @@ bundle: contact_info
 mode: browser
 content:
   field_email_address:
-    weight: 3
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
     type: email_default
+    weight: 3
     region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
   field_phone_number:
+    type: telephone_default
     weight: 2
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: telephone_default
-    region: content
   field_type:
     type: options_buttons
     weight: 1
