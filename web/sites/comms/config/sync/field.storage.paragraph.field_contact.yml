@@ -1,12 +1,13 @@
-uuid: f204f821-09ef-49c3-be28-1509eca25ede
+uuid: 6bacdcb9-aee9-48ce-89d4-8280111a90da
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.field_consultant
-field_name: field_consultant
-entity_type: node
+    - paragraphs
+id: paragraph.field_contact
+field_name: field_contact
+entity_type: paragraph
 type: entity_reference
 settings:
   target_type: node

@@ -1,0 +1,43 @@
+uuid: aa07dbe8-92d4-4518-a160-403836561a8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.public_involvement_plan
+    - paragraphs.paragraphs_type.contacts
+  module:
+    - entity_reference_revisions
+id: node.public_involvement_plan.field_contact
+field_name: field_contact
+entity_type: node
+bundle: public_involvement_plan
+label: Contacts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      contacts: contacts
+    negate: 0
+    target_bundles_drag_drop:
+      contacts:
+        weight: 6
+        enabled: true
+      public_engagement_timeframe:
+        weight: 7
+        enabled: false
+      public_involvement_budget:
+        weight: 8
+        enabled: false
+      public_promise:
+        weight: 9
+        enabled: false
+      stakeholder_involvement_strategy:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions
