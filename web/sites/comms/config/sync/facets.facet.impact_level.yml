@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - search_api.index.public_involvement_plans
-    - views.view.search_indexes
+    - views.view.index_plans
   module:
     - search_api
 id: impact_level
@@ -12,7 +12,7 @@ name: 'Impact Level'
 weight: 0
 min_count: 1
 url_alias: impact_level
-facet_source_id: 'search_api:views_block__search_indexes__block_1'
+facet_source_id: 'search_api:views_block__index_plans__block_1'
 field_identifier: field_impact_level
 query_operator: or
 hard_limit: 0
