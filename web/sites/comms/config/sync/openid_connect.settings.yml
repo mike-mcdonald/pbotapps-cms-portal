@@ -6,6 +6,6 @@ override_registration_settings: true
 user_login_display: replace
 userinfo_mappings:
   timezone: zoneinfo
-  path: 0
+  path: '0'
   field_first_name: given_name
   user_picture: picture
