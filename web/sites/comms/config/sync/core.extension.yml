@@ -10,6 +10,7 @@ module:
   book: 0
   breakpoint: 0
   ckeditor: 0
+  ckeditor5: 0
   color: 0
   comment: 0
   comms_graph: 0
@@ -68,7 +69,6 @@ module:
   page_manager_ui: 0
   path: 0
   path_alias: 0
-  quickedit: 0
   rdf: 0
   search_api: 0
   select2: 0
