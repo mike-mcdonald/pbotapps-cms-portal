@@ -70,7 +70,6 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
-  search: 0
   search_api: 0
   select2: 0
   select2_facets: 0

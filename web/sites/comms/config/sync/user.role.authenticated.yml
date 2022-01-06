@@ -14,7 +14,6 @@ dependencies:
     - filter
     - group
     - node
-    - search
     - shortcut
     - simple_oauth
     - system
@@ -43,7 +42,6 @@ permissions:
   - 'grant own content access'
   - 'grant simple_oauth codes'
   - 'post comments'
-  - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
   - 'view own unpublished content'
