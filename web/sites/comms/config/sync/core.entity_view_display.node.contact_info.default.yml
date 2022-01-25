@@ -35,7 +35,7 @@ third_party_settings:
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-            weight: 0
+            weight: -9
             additional: {  }
           057b79f7-f2d2-4f6e-a772-3bc52845a0b7:
             uuid: 057b79f7-f2d2-4f6e-a772-3bc52845a0b7
@@ -50,7 +50,7 @@ third_party_settings:
                 label: above
                 settings: {  }
                 third_party_settings: {  }
-            weight: 1
+            weight: -8
             additional: {  }
           1b42e881-e51f-41a7-9af4-b5d22f666fdd:
             uuid: 1b42e881-e51f-41a7-9af4-b5d22f666fdd
@@ -66,7 +66,7 @@ third_party_settings:
                 settings:
                   title: ''
                 third_party_settings: {  }
-            weight: 2
+            weight: -7
             additional: {  }
           c92cf6ac-c1b8-4488-9f30-cae6732047be:
             uuid: c92cf6ac-c1b8-4488-9f30-cae6732047be
@@ -81,7 +81,7 @@ third_party_settings:
                 label: above
                 settings: {  }
                 third_party_settings: {  }
-            weight: 3
+            weight: -6
             additional: {  }
           ce36cc9b-71de-45c2-b4f5-045fdb53c1a7:
             uuid: ce36cc9b-71de-45c2-b4f5-045fdb53c1a7
@@ -97,7 +97,7 @@ third_party_settings:
                 settings:
                   link: true
                 third_party_settings: {  }
-            weight: 4
+            weight: -5
             additional: {  }
           95beff20-a6eb-47b1-97ab-191e813c70c1:
             uuid: 95beff20-a6eb-47b1-97ab-191e813c70c1
@@ -110,7 +110,17 @@ third_party_settings:
               context_mapping: {  }
               views_label: 'Associated contacts'
               items_per_page: none
-            weight: 5
+            weight: -4
+            additional: {  }
+          56409e86-1550-4e77-a25e-e06167db3c7f:
+            uuid: 56409e86-1550-4e77-a25e-e06167db3c7f
+            region: content
+            configuration:
+              id: 'extra_field_block:node:contact_info:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: -10
             additional: {  }
         third_party_settings: {  }
 id: node.contact_info.default
@@ -118,6 +128,11 @@ targetEntityType: node
 bundle: contact_info
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
   field_email_address:
     type: email_mailto
     label: above

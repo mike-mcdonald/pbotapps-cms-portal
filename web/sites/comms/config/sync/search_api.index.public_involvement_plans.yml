@@ -49,6 +49,13 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_tags
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
@@ -59,6 +66,16 @@ field_settings:
       view_mode:
         'entity:node':
           public_involvement_plan: full
+  status:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -76,6 +93,16 @@ field_settings:
     dependencies:
       module:
         - node
+  uid:
+    label: null
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
 datasource_settings:
   'entity:node':
     bundles:
@@ -88,6 +115,10 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
   hierarchy:
     weights:
       preprocess_index: -45
@@ -112,10 +143,22 @@ processor_settings:
       strong: 2
   language_with_fallback: {  }
   rendered_item: {  }
+  stemmer:
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+    all_fields: true
+    fields:
+      - rendered_item
+      - title
+    exceptions:
+      mexican: mexic
+      texan: texa
 tracker_settings:
   default:
     indexing_order: fifo
 options:
   cron_limit: 50
   index_directly: true
+  track_changes_in_references: true
 server: default

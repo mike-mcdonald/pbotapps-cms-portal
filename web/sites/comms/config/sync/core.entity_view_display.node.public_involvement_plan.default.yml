@@ -291,7 +291,7 @@ third_party_settings:
             additional: {  }
           e211996f-f2cb-4525-a441-24625e43d36b:
             uuid: e211996f-f2cb-4525-a441-24625e43d36b
-            region: first
+            region: second
             configuration:
               id: 'field_block:node:public_involvement_plan:field_website'
               label_display: '0'
@@ -385,7 +385,7 @@ third_party_settings:
             additional: {  }
           e1b73625-6b58-4727-8a46-e564569dd263:
             uuid: e1b73625-6b58-4727-8a46-e564569dd263
-            region: first
+            region: second
             configuration:
               id: 'field_block:node:public_involvement_plan:field_related_documents'
               label_display: '0'
@@ -456,12 +456,27 @@ third_party_settings:
                 third_party_settings: {  }
             weight: -7
             additional: {  }
+          d7bc2da6-994a-4b17-9500-35a7ea943ad9:
+            uuid: d7bc2da6-994a-4b17-9500-35a7ea943ad9
+            region: first
+            configuration:
+              id: 'extra_field_block:node:public_involvement_plan:content_moderation_control'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 9
+            additional: {  }
         third_party_settings: {  }
 id: node.public_involvement_plan.default
 targetEntityType: node
 bundle: public_involvement_plan
 mode: default
 content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: first
   field_benefit:
     type: basic_string
     label: above

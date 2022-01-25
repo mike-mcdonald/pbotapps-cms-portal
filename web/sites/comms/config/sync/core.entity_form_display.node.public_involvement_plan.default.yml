@@ -25,7 +25,9 @@ dependencies:
     - field.field.node.public_involvement_plan.field_timeframe
     - field.field.node.public_involvement_plan.field_website
     - node.type.public_involvement_plan
+    - workflows.workflow.default
   module:
+    - content_moderation
     - cshs
     - file
     - link
@@ -39,13 +41,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 27
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
   field_benefit:
     type: string_textarea
-    weight: 18
+    weight: 15
     region: content
     settings:
       rows: 2
@@ -53,7 +55,7 @@ content:
     third_party_settings: {  }
   field_budget:
     type: paragraphs
-    weight: 20
+    weight: 17
     region: content
     settings:
       title: budget
@@ -90,7 +92,7 @@ content:
     third_party_settings: {  }
   field_decision:
     type: string_textfield
-    weight: 17
+    weight: 14
     region: content
     settings:
       size: 60
@@ -119,7 +121,7 @@ content:
     third_party_settings: {  }
   field_impact_description:
     type: string_textarea
-    weight: 13
+    weight: 10
     region: content
     settings:
       rows: 5
@@ -127,13 +129,13 @@ content:
     third_party_settings: {  }
   field_impact_level:
     type: options_select
-    weight: 12
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_intended_outcomes:
     type: string_textarea
-    weight: 19
+    weight: 16
     region: content
     settings:
       rows: 2
@@ -141,7 +143,7 @@ content:
     third_party_settings: {  }
   field_interest_description:
     type: string_textarea
-    weight: 11
+    weight: 8
     region: content
     settings:
       rows: 5
@@ -149,7 +151,7 @@ content:
     third_party_settings: {  }
   field_interest_level:
     type: options_select
-    weight: 10
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -169,7 +171,7 @@ content:
     third_party_settings: {  }
   field_promise_description:
     type: string_textarea
-    weight: 15
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -177,13 +179,13 @@ content:
     third_party_settings: {  }
   field_public_promise:
     type: options_select
-    weight: 14
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_question:
     type: string_textfield
-    weight: 16
+    weight: 13
     region: content
     settings:
       size: 60
@@ -191,14 +193,14 @@ content:
     third_party_settings: {  }
   field_related_documents:
     type: file_generic
-    weight: 24
+    weight: 21
     region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
   field_strategy:
     type: paragraphs
-    weight: 21
+    weight: 18
     region: content
     settings:
       title: Paragraph
@@ -222,7 +224,7 @@ content:
     third_party_settings: {  }
   field_timeframe:
     type: paragraphs
-    weight: 22
+    weight: 19
     region: content
     settings:
       title: Paragraph
@@ -240,26 +242,25 @@ content:
     third_party_settings: {  }
   field_website:
     type: link_default
-    weight: 23
+    weight: 20
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
-    weight: 28
+    weight: 24
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
-    type: boolean_checkbox
-    weight: 29
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  status:
     type: boolean_checkbox
     weight: 25
     region: content
@@ -268,7 +269,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 30
+    weight: 26
     region: content
     settings:
       display_label: true
@@ -283,7 +284,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 26
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS
@@ -291,4 +292,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  status: true
