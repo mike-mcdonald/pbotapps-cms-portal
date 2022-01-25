@@ -69,6 +69,7 @@ module:
   page_manager_ui: 0
   path: 0
   path_alias: 0
+  quick_node_clone: 0
   rdf: 0
   search_api: 0
   select2: 0
