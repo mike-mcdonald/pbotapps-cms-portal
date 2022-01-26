@@ -7,10 +7,12 @@ dependencies:
     - node.type.contact_info
     - node.type.forum
     - node.type.public_involvement_plan
+    - workflows.workflow.default
   module:
     - comment
     - contact
     - content_access
+    - content_moderation
     - entity_browser
     - filter
     - group
@@ -45,5 +47,7 @@ permissions:
   - 'grant simple_oauth codes'
   - 'post comments'
   - 'skip comment approval'
+  - 'use default transition create_new_draft'
+  - 'use default transition publish'
   - 'use text format basic_html'
   - 'view own unpublished content'
