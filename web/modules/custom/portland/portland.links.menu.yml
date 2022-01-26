@@ -1,0 +1,6 @@
+portland.feedback:
+  title: "Feedback"
+  description: "Form for providing feedback and reporting issues"
+  menu_name: footer
+  url: internal:/form/feedback
+  weight: 100

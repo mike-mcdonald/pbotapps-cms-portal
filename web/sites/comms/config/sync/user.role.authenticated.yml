@@ -9,7 +9,6 @@ dependencies:
     - node.type.public_involvement_plan
   module:
     - comment
-    - contact
     - content_access
     - entity_browser
     - filter
@@ -30,8 +29,6 @@ permissions:
   - 'access content'
   - 'access group overview'
   - 'access shortcuts'
-  - 'access site-wide contact form'
-  - 'access user contact forms'
   - 'create contact_info content'
   - 'create forum content'
   - 'create public_involvement_plan content'
