@@ -536,7 +536,7 @@ $settings['reverse_proxy_trusted_headers'] = \Symfony\Component\HttpFoundation\R
  * See https://www.drupal.org/documentation/modules/file for more information
  * about securing private files.
  */
-# $settings['file_private_path'] = '';
+$settings['file_private_path'] = 'sites/comms/files/private';
 
 /**
  * Temporary file path:
