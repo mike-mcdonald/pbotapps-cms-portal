@@ -50,16 +50,19 @@
         "drupal/page_manager": "^4.0@beta",
         "drupal/paragraphs": "^1.12",
         "drupal/pathauto": "^1.8",
+        "drupal/quick_node_clone": "^1.14",
         "drupal/search_api": "^1.20",
         "drupal/select2": "^1.13",
         "drupal/sendgrid_integration": "^1.7",
         "drupal/simple_oauth": "^5.0",
         "drupal/token": "^1.9",
+        "drupal/webform": "^6.1",
         "drush/drush": "^10.5",
         "npm-asset/select2": "^4.0",
         "oomphinc/composer-installers-extender": "^2.0",
         "vlucas/phpdotenv": "^5.1",
-        "webflo/drupal-finder": "^1.2"
+        "webflo/drupal-finder": "^1.2",
+        "wikimedia/composer-merge-plugin": "^2.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -67,7 +70,15 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "oomphinc/composer-installers-extender": true,
+            "wikimedia/composer-merge-plugin": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -145,6 +156,11 @@
             "drupal/openid_connect_windows_aad": {
                 "Fix OAuth2 scopes": "patches/openid_aad_patch.patch"
             }
+        },
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/webform/composer.libraries.json"
+            ]
         }
     },
     "require-dev": {

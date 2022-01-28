@@ -18,7 +18,6 @@ module:
   config_filter: 0
   config_split: 0
   consumers: 0
-  contact: 0
   content_access: 0
   contextual: 0
   cshs: 0
@@ -69,6 +68,8 @@ module:
   page_manager_ui: 0
   path: 0
   path_alias: 0
+  portland: 0
+  quick_node_clone: 0
   rdf: 0
   search_api: 0
   select2: 0
@@ -89,6 +90,8 @@ module:
   user: 0
   variationcache: 0
   views_ui: 0
+  webform: 0
+  webform_ui: 0
   workflows: 0
   forum: 1
   pathauto: 1
