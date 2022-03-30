@@ -19,7 +19,7 @@ nav[role="navigation"] {
 
 .vertical-tabs {
   a {
-    @apply border-0;
+    @apply flex flex-col border-0;
   }
 }
 /*! purgecss end ignore */
